@@ -1,0 +1,14 @@
+node_modules
+dist
+.svelte-kit
+package
+src/lib/assets/videos
+src/lib/assets/sound-effects
+*.mp3
+*.mp4
+*.png
+*.jpg
+*.jpeg
+*.gif
+*.svg
+*.webp
