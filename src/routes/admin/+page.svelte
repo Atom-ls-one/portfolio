@@ -5,13 +5,14 @@
 	import { signOut } from 'firebase/auth';
 	import { auth } from '$lib/firebase/config';
 	import { goto } from '$app/navigation';
+	import { base } from '$app/paths';
 
 	let saving = $state(false);
 	let message = $state({ text: '', type: '' });
 
 	async function handleLogout() {
 		await signOut(auth);
-		goto('/admin/login');
+		goto(`${base}/admin/login`);
 	}
 
 	async function saveChanges() {
