@@ -1,7 +1,7 @@
 <script lang="ts">
 	import Button from './Button.svelte';
 	import { i18n } from '$lib/i18n.svelte';
-	import { matches } from '$lib/data/matches';
+	import { matches } from '$lib/data/matches.svelte';
 	import { base } from '$app/paths';
 
 	interface Props {
