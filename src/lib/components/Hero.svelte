@@ -23,7 +23,7 @@
 				<strong class="hero__gamertag">Atom</strong>
 				<span class="hero__last-name">Menini</span>
 			</h1>
-			<p class="hero__subtitle">{i18n.t.hero.subtitle}</p>
+			<p class="hero__subtitle">{i18n.t.hero.catchphrase}</p>
 		</header>
 
 		<div class="hero__actions">
