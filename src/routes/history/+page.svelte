@@ -2,11 +2,12 @@
 	import MatchHistory from '$lib/components/MatchHistory.svelte';
 	import Button from '$lib/components/Button.svelte';
 	import { i18n } from '$lib/i18n.svelte';
+	import { base } from '$app/paths';
 </script>
 
 <div class="history-page">
 	<nav class="history-nav container">
-		<Button href="/">
+		<Button href="{base}/">
 			{i18n.locale === 'fr' ? 'Retour' : 'Back'}
 		</Button>
 	</nav>
