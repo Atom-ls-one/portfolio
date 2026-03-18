@@ -2,6 +2,7 @@
 	import Button from './Button.svelte';
 	import { i18n } from '$lib/i18n.svelte';
 	import { matches } from '$lib/data/matches';
+	import { base } from '$app/paths';
 
 	interface Props {
 		limit?: number;
@@ -60,7 +61,7 @@
 
 	{#if limit && matches.list.length > limit}
 		<footer class="section-footer">
-			<Button href="/history" className="btn--all">
+			<Button href="{base}/history" className="btn--all">
 				{i18n.t.projects.viewAll}
 			</Button>
 		</footer>

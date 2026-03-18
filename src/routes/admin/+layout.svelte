@@ -3,12 +3,13 @@
 	import { adminAuth } from '$lib/firebase/auth.svelte';
 	import type { Snippet } from 'svelte';
 	import { page } from '$app/state';
+	import { base } from '$app/paths';
 
 	let { children }: { children: Snippet } = $props();
 
 	$effect(() => {
-		if (!adminAuth.loading && !adminAuth.user && page.url.pathname !== '/admin/login') {
-			goto('/admin/login');
+		if (!adminAuth.loading && !adminAuth.user && page.url.pathname !== `${base}/admin/login`) {
+			goto(`${base}/admin/login`);
 		}
 	});
 </script>

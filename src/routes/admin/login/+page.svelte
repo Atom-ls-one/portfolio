@@ -3,6 +3,7 @@
 	import { auth } from '$lib/firebase/config';
 	import { goto } from '$app/navigation';
 	import Button from '$lib/components/Button.svelte';
+	import { base } from '$app/paths';
 
 	let email = $state('');
 	let password = $state('');
@@ -14,7 +15,7 @@
 		error = '';
 		try {
 			await signInWithEmailAndPassword(auth, email, password);
-			goto('/admin');
+			goto(`${base}/admin`);
 		} catch (err: any) {
 			error = err.message;
 		} finally {
