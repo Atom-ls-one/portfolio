@@ -1,42 +1,42 @@
-# sv
+# Guide de l'Édition du Portfolio
 
-Everything you need to build a Svelte project, powered by [`sv`](https://github.com/sveltejs/cli).
+Ce projet est conçu pour être édité sans aucune connaissance en développement. Suivez simplement ces étapes pour mettre à jour votre site.
 
-## Creating a project
+## Modifier les Textes et le SEO
+Tous les textes du site (Français et Anglais) se trouvent dans un seul fichier :
+src/lib/data/i18n.json
 
-If you're seeing this, you've probably already done this step. Congrats!
+**Comment faire ?**
+1. Ouvrez ce fichier avec un éditeur de texte.
+2. Identifiez la clé que vous voulez changer (ex: "catchphrase", "bio", "keywords").
+3. Modifiez la valeur entre les guillemets. **Ne changez jamais le nom de la clé (à gauche des deux points).**
+4. Enregistrez le fichier.
 
-```sh
-# create a new project
-npx sv create my-app
-```
+---
 
-To recreate this project with the same configuration:
+## Ajouter un Match à l'Historique
+Chaque match est représenté par un dossier dans le répertoire suivant :
+src/lib/history/
 
-```sh
-# recreate this project
-npx sv@0.12.8 create --template minimal --types ts --add prettier eslint sveltekit-adapter="adapter:auto" --install npm .
-```
+**Procédure pour ajouter un nouveau match :**
+1. **Copiez** un dossier existant (ex: 2026-03-20).
+2. **Renommez** le dossier avec la date du jour (format YYYY-MM-DD). Le site triera automatiquement les matchs du plus récent au plus ancien.
+3. À l'intérieur du dossier :
+   - Mettez vos captures d'écran dans le dossier images/.
+   - Mettez vos clips dans le dossier videos/.
+   - Ouvrez details.json pour mettre à jour les statistiques (Champion, KDA, Descriptions fr/en).
 
-## Developing
+---
 
-Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
+## Utiliser des Images et Vidéos
+Pour que vos médias s'affichent, assurez-vous de mettre le bon chemin dans le fichier details.json de votre match.
+*Exemple : $lib/history/2026-03-22/images/mon-image.png*
 
-```sh
-npm run dev
+---
 
-# or start the server and open the app in a new browser tab
-npm run dev -- --open
-```
+## Mettre à jour le Site en Ligne
+Une fois vos modifications terminées :
+1. Faites un Commit de vos changements.
+2. Faites un Push vers le repository GitHub.
+3. Le site se mettra à jour automatiquement après quelques minutes.
 
-## Building
-
-To create a production version of your app:
-
-```sh
-npm run build
-```
-
-You can preview the production build with `npm run preview`.
-
-> To deploy your app, you may need to install an [adapter](https://svelte.dev/docs/kit/adapters) for your target environment.
