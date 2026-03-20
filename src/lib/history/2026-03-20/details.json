@@ -1,0 +1,23 @@
+{
+	"championId": "Thresh",
+	"championName": "Thresh",
+	"win": true,
+	"kda": "2/1/18",
+	"url": "#",
+	"en": {
+		"title": "Macro Dominance",
+		"role": "Analyst",
+		"result": "Victory",
+		"type": "Scrim",
+		"duration": "24:30",
+		"description": "Perfect objective control and vision rotation leading to a clean 20-minute lead."
+	},
+	"fr": {
+		"title": "Dominance Macro",
+		"role": "Analyste",
+		"result": "Victoire",
+		"type": "Scrim",
+		"duration": "24:30",
+		"description": "Contrôle parfait des objectifs et rotation de vision menant à une avance nette dès 20 min."
+	}
+}

@@ -16,7 +16,7 @@
 <section id="projects" class="portfolio-section container">
 	<header class="section-header-unified">
 		<div class="header-line left"></div>
-		<h2>{i18n.t.projects.title}</h2>
+		<h2>{i18n.t?.projects?.title}</h2>
 		<div class="header-line right"></div>
 	</header>
 
@@ -24,10 +24,10 @@
 		{#each displayedMatches as match (match.championId + match.kda)}
 			<article class="match-card {match.win ? 'match-card--victory' : 'match-card--defeat'}">
 				<div class="match-status">
-					<span class="status-result">{match[i18n.locale].result}</span>
+					<span class="status-result">{match[i18n.locale]?.result}</span>
 					<div class="status-divider"></div>
-					<span class="status-type">{match[i18n.locale].type}</span>
-					<time class="status-duration">{match[i18n.locale].duration}</time>
+					<span class="status-type">{match[i18n.locale]?.type}</span>
+					<time class="status-duration">{match[i18n.locale]?.duration}</time>
 				</div>
 
 				<div class="match-main">
@@ -42,18 +42,18 @@
 					</div>
 
 					<div class="match-details">
-						<h3 class="match-title">{match[i18n.locale].title}</h3>
-						<span class="match-role">{match[i18n.locale].role}</span>
-						<p class="match-desc">{match[i18n.locale].description}</p>
+						<h3 class="match-title">{match[i18n.locale]?.title}</h3>
+						<span class="match-role">{match[i18n.locale]?.role}</span>
+						<p class="match-desc">{match[i18n.locale]?.description}</p>
 					</div>
 				</div>
 
 				<div class="match-stats">
-					<span class="kda">{i18n.t.projects.score} {match.kda}</span>
+					<span class="kda">{i18n.t?.projects?.score} {match.kda}</span>
 				</div>
 
 				<div class="match-actions">
-					<Button href={match.url} className="btn--view">{i18n.t.projects.btn}</Button>
+					<Button href={match.url} className="btn--view">{i18n.t?.projects?.btn}</Button>
 				</div>
 			</article>
 		{/each}
@@ -62,7 +62,7 @@
 	{#if limit && matches.list.length > limit}
 		<footer class="section-footer">
 			<Button href="{base}/history" className="btn--all">
-				{i18n.t.projects.viewAll}
+				{i18n.t?.projects?.viewAll}
 			</Button>
 		</footer>
 	{/if}

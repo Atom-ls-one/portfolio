@@ -1,13 +1,10 @@
-import { fetchRemoteMatches } from '../firebase/data';
-
 export interface MatchEntry {
-	id?: string;
 	championId: string;
 	championName: string;
 	win: boolean;
 	kda: string;
 	url: string;
-	// Localized fields
+	date: string;
 	en: {
 		title: string;
 		role: string;
@@ -26,28 +23,26 @@ export interface MatchEntry {
 	};
 }
 
+// Automatically discover all details.json files in the history directory
+const matchFiles = import.meta.glob('../history/*/details.json', { eager: true });
+
+const loadMatches = (): MatchEntry[] => {
+	const items: MatchEntry[] = [];
+
+	for (const path in matchFiles) {
+		const match = (matchFiles[path] as any).default || (matchFiles[path] as any);
+		// Extract date from the path (e.g., ../history/2026-03-20/details.json -> 2026-03-20)
+		const date = path.split('/').slice(-2, -1)[0];
+		items.push({ ...match, date });
+	}
+
+	// Sort by date (newest first)
+	return items.sort((a, b) => b.date.localeCompare(a.date));
+};
+
 class MatchStore {
-	list = $state<MatchEntry[]>([]);
-	loading = $state(true);
-
-	constructor() {
-		this.refresh();
-	}
-
-	async refresh() {
-		if (typeof window === 'undefined') return;
-		try {
-			this.loading = true;
-			const remote = await fetchRemoteMatches();
-			if (remote && remote.length > 0) {
-				this.list = remote as MatchEntry[];
-			}
-		} catch (err) {
-			console.error('Failed to fetch matches:', err);
-		} finally {
-			this.loading = false;
-		}
-	}
+	list = $state<MatchEntry[]>(loadMatches());
+	loading = $state(false);
 }
 
 export const matches = new MatchStore();

@@ -24,7 +24,7 @@
 <section id="contact" class="portfolio-section container">
 	<header class="section-header-unified">
 		<div class="header-line left"></div>
-		<h2>{i18n.t.contact.title}</h2>
+		<h2>{i18n.t?.contact?.title}</h2>
 		<div class="header-line right"></div>
 	</header>
 
@@ -51,7 +51,7 @@
 			<div class="card-action">
 				<Button onclick={() => copyToClipboard(discordTag)}>
 					<span class:is-copied={copied}>
-						{copied ? i18n.t.contact.copied : i18n.locale === 'fr' ? 'Copier le tag' : 'Copy tag'}
+						{copied ? i18n.t?.contact?.copied : i18n.locale === 'fr' ? 'Copier le tag' : 'Copy tag'}
 					</span>
 				</Button>
 			</div>

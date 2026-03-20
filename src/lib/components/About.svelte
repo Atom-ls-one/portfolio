@@ -14,13 +14,13 @@
 
 		<div class="about-content">
 			<header class="section-header">
-				<span class="section-tag">{i18n.t.about.title}</span>
+				<span class="section-tag">{i18n.t?.about?.title}</span>
 				<h2>Théo <span class="text-gold">Atom</span> Menini</h2>
-				<p class="section-subtitle">{i18n.t.about.subtitle}</p>
+				<p class="section-subtitle">{i18n.t?.about?.subtitle}</p>
 			</header>
 
 			<div class="bio-card">
-				<p>{i18n.t.about.bio}</p>
+				<p>{i18n.t?.about?.bio}</p>
 			</div>
 
 			<div class="stats-grid">

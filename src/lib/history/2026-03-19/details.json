@@ -1,0 +1,23 @@
+{
+	"championId": "LeeSin",
+	"championName": "Lee Sin",
+	"win": false,
+	"kda": "5/6/4",
+	"url": "#",
+	"en": {
+		"title": "Early Pressure",
+		"role": "Coach",
+		"result": "Defeat",
+		"type": "Tournament",
+		"duration": "32:15",
+		"description": "Strong early game but failed to secure the soul due to poor smite fight conditions."
+	},
+	"fr": {
+		"title": "Pression Early",
+		"role": "Coach",
+		"result": "Défaite",
+		"type": "Tournoi",
+		"duration": "32:15",
+		"description": "Début de partie solide mais échec de récupération de l'âme à cause de mauvaises conditions de smite."
+	}
+}

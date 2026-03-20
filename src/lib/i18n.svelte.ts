@@ -1,105 +1,13 @@
-import { fetchRemoteDict } from './firebase/data';
-
-const defaultDict = {
-	en: {
-		seo: {
-			title: 'Théo "Atom" MENINI - League of Legends Coach & Analyst',
-			description:
-				'Portfolio of Théo Menini, Assistant Coach & Analyst for Antic Esport. Specializing in draft strategy, VOD reviews, and high-performance staff support.',
-			keywords:
-				'League of Legends, Coach, Analyst, Antic Esport, Esports, VOD Review, Draft Strategy, Lyon, Esport Coach'
-		},
-		nav: {
-			lang_en: 'EN',
-			lang_fr: 'FR'
-		},
-		hero: {
-			catchphrase: 'Aiming for perfection by mastering the variables',
-			role: 'Coach & Strategic Analyst',
-			btn1: 'History',
-			btn2: 'Contact'
-		},
-		about: {
-			title: 'In-Game Profile',
-			subtitle: 'The architect behind the strategy.',
-			bio: 'Passionate League of Legends coach with a focus on meta-analysis, macro-strategy, and individual player growth. I transform raw talent into tactical dominance.'
-		},
-		experience: {
-			title: 'Experience'
-		},
-		projects: {
-			title: 'History',
-			subtitle: 'In-depth analysis of competitive and high-elo games.',
-			viewAll: 'View Full History'
-		},
-		contact: {
-			title: 'Contact',
-			subtitle: 'Join the network and stay updated on latest strategies.',
-			copied: 'Copied!'
-		}
-	},
-	fr: {
-		seo: {
-			title: 'Théo "Atom" MENINI - Coach & Analyste League of Legends',
-			description:
-				'Portfolio de Théo Menini, Assistant Coach & Analyste chez Antic Esport. Expert en stratégie de draft, VOD reviews et accompagnement de staff haute performance.',
-			keywords:
-				'League of Legends, Coach, Analyste, Antic Esport, Esports, VOD Review, Stratégie de Draft, Lyon, Coach Esport'
-		},
-		nav: {
-			lang_en: 'EN',
-			lang_fr: 'FR'
-		},
-		hero: {
-			catchphrase: 'Viser la perfection par la maîtrise des variables',
-			role: 'Coach & Analyste Stratégique',
-			btn1: 'Historique',
-			btn2: 'Contact'
-		},
-		about: {
-			title: 'Profil In-Game',
-			subtitle: "L'architecte derrière la stratégie.",
-			bio: 'Coach League of Legends passionné, expert en méta-analyse, macro-stratégie et progression individuelle. Je transforme le talent brut en domination tactique.'
-		},
-		experience: {
-			title: 'Expérience'
-		},
-		projects: {
-			title: 'Historique',
-			subtitle: 'Analyses approfondies de parties compétitives et haut elo.',
-			viewAll: "Voir tout l'historique"
-		},
-		contact: {
-			title: 'Contact',
-			subtitle: 'Rejoignez le réseau pour rester informé des dernières stratégies.',
-			copied: 'Copié !'
-		}
-	}
-};
+import i18nData from './data/i18n.json';
 
 type Language = 'en' | 'fr';
 
 class I18nStore {
 	locale = $state<Language>('fr');
-	data = $state(JSON.parse(JSON.stringify(defaultDict)));
-
-	constructor() {
-		this.refresh();
-	}
-
-	async refresh() {
-		if (typeof window === 'undefined') return;
-		try {
-			const remoteData = await fetchRemoteDict();
-			if (remoteData) {
-				this.data = remoteData;
-			}
-		} catch (err) {
-			console.error('Failed to fetch remote i18n:', err);
-		}
-	}
+	data = i18nData;
 
 	get t() {
+		// We return a safe version and we ensure all keys are there
 		return this.data[this.locale];
 	}
 

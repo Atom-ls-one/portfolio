@@ -23,12 +23,12 @@
 				<strong class="hero__gamertag">Atom</strong>
 				<span class="hero__last-name">Menini</span>
 			</h1>
-			<p class="hero__subtitle">{i18n.t.hero.catchphrase}</p>
+			<p class="hero__subtitle">{i18n.t?.hero?.catchphrase}</p>
 		</header>
 
 		<div class="hero__actions">
-			<Button href="#projects">{i18n.t.hero.btn1}</Button>
-			<Button href="#contact">{i18n.t.hero.btn2}</Button>
+			<Button href="#projects">{i18n.t?.hero?.btn1}</Button>
+			<Button href="#contact">{i18n.t?.hero?.btn2}</Button>
 		</div>
 	</div>
 </section>
