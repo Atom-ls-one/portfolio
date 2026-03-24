@@ -87,7 +87,7 @@
 		display: flex;
 		flex-direction: column;
 		align-items: center;
-		padding: var(--spacing-xl) var(--spacing-md);
+		padding: var(--spacing-lg) var(--spacing-md);
 		background: linear-gradient(
 			180deg,
 			color-mix(in oklch, var(--color-bg-surface) 60%, transparent),
@@ -104,7 +104,7 @@
 		flex-direction: column;
 		align-items: center;
 		gap: 8px;
-		margin-bottom: var(--spacing-lg);
+		margin-bottom: var(--spacing-md);
 		position: relative;
 		z-index: 1;
 	}

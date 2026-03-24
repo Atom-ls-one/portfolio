@@ -28,7 +28,7 @@
 	</header>
 
 	<div class="timeline-container">
-		<div class="timeline">
+		<div class="timeline" style="--items-count: {timeline.length}">
 			{#each timeline as item (item.year)}
 				<div class="timeline-item">
 					<div class="timeline-year">{item.year}</div>
@@ -53,18 +53,19 @@
 	}
 
 	.timeline {
-		display: flex;
-		justify-content: space-between;
+		display: grid;
+		grid-template-columns: repeat(var(--items-count, 3), 1fr);
+		grid-template-rows: auto 20px auto;
+		row-gap: var(--spacing-md);
 		position: relative;
 		padding-block: var(--spacing-xl);
 	}
 
 	.timeline::before {
 		content: '';
-		position: absolute;
-		top: 50%;
-		left: 0;
-		right: 0;
+		grid-row: 2;
+		grid-column: 1 / -1;
+		align-self: center;
 		height: 1px;
 		background: linear-gradient(
 			to right,
@@ -74,21 +75,22 @@
 			var(--color-gold-dark) 90%,
 			transparent 100%
 		);
-		transform: translateY(-50%);
+		z-index: 0;
+		pointer-events: none;
 	}
 
 	.timeline-item {
-		flex: 1;
-		display: flex;
-		flex-direction: column;
-		align-items: center;
+		display: grid;
+		grid-template-rows: subgrid;
+		grid-row: 1 / 4;
+		justify-items: center;
 		text-align: center;
-		gap: var(--spacing-md);
 		position: relative;
 		z-index: 1;
 	}
 
 	.timeline-year {
+		grid-row: 1;
 		font-family: var(--font-heading);
 		font-size: 0.875rem;
 		color: var(--color-magic-base);
@@ -98,6 +100,7 @@
 	}
 
 	.timeline-marker {
+		grid-row: 2;
 		display: flex;
 		align-items: center;
 		justify-content: center;
@@ -123,6 +126,7 @@
 	}
 
 	.timeline-content {
+		grid-row: 3;
 		display: flex;
 		flex-direction: column;
 		gap: 6px;
@@ -145,6 +149,7 @@
 
 	@media (max-width: 768px) {
 		.timeline {
+			display: flex;
 			flex-direction: column;
 			gap: var(--spacing-xl);
 			padding-left: 30px;
@@ -152,6 +157,7 @@
 		}
 
 		.timeline::before {
+			position: absolute;
 			width: 1px;
 			height: 100%;
 			top: 0;
@@ -169,6 +175,7 @@
 		}
 
 		.timeline-item {
+			display: flex;
 			flex-direction: row;
 			text-align: left;
 			align-items: flex-start;
