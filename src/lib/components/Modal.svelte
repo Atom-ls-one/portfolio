@@ -112,39 +112,46 @@
 		width: 34px;
 		height: 34px;
 		border-radius: 50%;
-		background: oklch(22.1% 0.015 251.7); /* Matching Button.svelte background */
-		border: 2px solid var(--color-gold-dark);
-		color: var(--color-gold-base);
+
+		/* Exact match from Button.svelte */
+		background: oklch(22.1% 0.015 251.7); /* #1e2328 */
+		color: oklch(79.4% 0.065 92.5); /* #cdbe91 */
+		border: 2px solid oklch(73.5% 0.093 83.2); /* Using the primary gold from Button's border-image */
+		box-shadow: inset 0 0 2px oklch(0% 0 0); /* #000000 */
+
 		display: flex;
 		align-items: center;
 		justify-content: center;
 		cursor: pointer;
-		transition: all var(--transition-fast);
-		box-shadow: 
-			inset 0 0 2px rgba(0, 0, 0, 1),
-			0 4px 12px rgba(0, 0, 0, 0.8);
+		transition:
+			background 0.1s,
+			text-shadow 0.1s,
+			box-shadow 0.1s,
+			color 0.1s;
 		z-index: 10;
 		padding: 0;
 	}
 
 	.close-button:hover {
-		color: var(--color-gold-light);
-		border-color: var(--color-gold-base);
 		background: linear-gradient(
 			to bottom,
 			oklch(22.1% 0.015 251.7),
 			oklch(33.1% 0.032 94.6)
 		);
-		box-shadow: 
-			inset 0 0 2px rgba(0, 0, 0, 1),
-			0 0 12px color-mix(in oklch, var(--color-gold-base) 40%, transparent);
+		text-shadow: 0 0 5px oklch(100% 0 0 / 0.5); /* #ffffff80 */
+		box-shadow: inset 0 0 2px oklch(0% 0 0);
 		outline: none;
 	}
 
+	.close-button:active {
+		text-shadow: none;
+		box-shadow: inset 0 0 2px oklch(0% 0 0);
+		color: oklch(79.4% 0.065 92.5 / 0.19); /* #cdbe9130 */
+	}
+
 	.close-button svg {
-		width: 16px;
-		height: 16px;
-		filter: drop-shadow(0 0 2px rgba(0, 0, 0, 0.5));
+		width: 14px;
+		height: 14px;
 	}
 
 	.modal-content {
