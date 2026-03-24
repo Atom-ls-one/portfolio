@@ -17,6 +17,13 @@
 	function openMatchDetails(match: MatchEntry) {
 		selectedMatch = match;
 	}
+
+	function getYoutubeId(url: string | undefined): string | null {
+		if (!url) return null;
+		const regex = /(?:youtube\.com\/(?:[^\/]+\/.+\/|(?:v|e(?:mbed)?)\/|.*[?&]v=)|youtu\.be\/)([^"&?\/\s]{11})/i;
+		const match = url.match(regex);
+		return match ? match[1] : null;
+	}
 </script>
 
 <section id="projects" class="portfolio-section container">
@@ -126,9 +133,7 @@
 					</div>
 				</div>
 
-				<div class="match-modal-footer">
-					<Button onclick={() => (selectedMatch = null)}>Close Analysis</Button>
-				</div>
+				{/if}
 			</div>
 		{/if}
 	</Modal>
@@ -143,12 +148,12 @@
 
 	.match-card {
 		display: grid;
-		grid-template-columns: 150px 2fr 1.5fr auto;
+		grid-template-columns: 9.375rem 2fr 1.5fr auto;
 		gap: var(--spacing-md);
 		align-items: center;
-		padding: var(--spacing-md) var(--spacing-md) var(--spacing-md) calc(var(--spacing-md) + 6px);
+		padding: var(--spacing-md) var(--spacing-md) var(--spacing-md) calc(var(--spacing-md) + 0.375rem);
 		background: color-mix(in oklch, var(--color-bg-surface) 40%, transparent);
-		border: 2px solid;
+		border: 0.125rem solid;
 		border-image: linear-gradient(
 			to bottom,
 			oklch(73.5% 0.093 83.2),
@@ -166,7 +171,7 @@
 		left: 0;
 		top: 0;
 		bottom: 0;
-		width: 6px;
+		width: 0.375rem;
 		background: var(--indicator-color, var(--color-gold-dark));
 	}
 
@@ -203,17 +208,17 @@
 
 	.match-card--victory .status-result {
 		color: var(--color-magic-glow);
-		text-shadow: 0 0 10px var(--color-magic-base);
+		text-shadow: 0 0 0.625rem var(--color-magic-base);
 	}
 
 	.match-card--defeat .status-result {
 		color: oklch(70% 0.15 20);
-		text-shadow: 0 0 10px oklch(50% 0.15 20);
+		text-shadow: 0 0 0.625rem oklch(50% 0.15 20);
 	}
 
 	.status-divider {
-		width: 40px;
-		height: 2px;
+		width: 2.5rem;
+		height: 0.125rem;
 		background-color: var(--color-gold-dark);
 	}
 
@@ -235,13 +240,13 @@
 
 	.champion-icon {
 		position: relative;
-		width: 72px;
-		height: 72px;
+		width: 4.5rem;
+		height: 4.5rem;
 		border-radius: 50%;
-		border: 2px solid var(--color-gold-base);
+		border: 0.125rem solid var(--color-gold-base);
 		overflow: hidden;
 		background: var(--color-bg-base);
-		box-shadow: 0 0 15px color-mix(in oklch, var(--color-gold-base) 20%, transparent);
+		box-shadow: 0 0 0.9375rem color-mix(in oklch, var(--color-gold-base) 20%, transparent);
 		flex-shrink: 0;
 	}
 
@@ -291,7 +296,7 @@
 		font-size: 0.875rem;
 		color: var(--color-text-secondary);
 		line-height: 1.4;
-		max-width: 400px;
+		max-width: 25rem;
 	}
 
 	.match-stats {
@@ -314,7 +319,7 @@
 		margin-top: var(--spacing-md);
 	}
 
-	@media (max-width: 1024px) {
+	@media (max-width: 64rem) {
 		.match-card {
 			grid-template-columns: 1fr;
 			gap: var(--spacing-md);
@@ -325,7 +330,7 @@
 			align-items: center;
 			justify-content: space-between;
 			width: 100%;
-			border-bottom: 1px solid var(--color-gold-dark);
+			border-bottom: 0.0625rem solid var(--color-gold-dark);
 			padding-bottom: var(--spacing-xs);
 		}
 
@@ -350,7 +355,7 @@
 		justify-content: space-between;
 		align-items: center;
 		padding-bottom: var(--spacing-md);
-		border-bottom: 1px solid color-mix(in oklch, var(--color-gold-dark) 20%, transparent);
+		border-bottom: 0.0625rem solid color-mix(in oklch, var(--color-gold-dark) 20%, transparent);
 	}
 
 	.champion-display {
@@ -360,11 +365,11 @@
 	}
 
 	.champion-hex {
-		width: 80px;
-		height: 80px;
-		border: 2px solid var(--color-gold-base);
+		width: 5rem;
+		height: 5rem;
+		border: 0.125rem solid var(--color-gold-base);
 		overflow: hidden;
-		box-shadow: 0 0 20px color-mix(in oklch, var(--color-gold-base) 30%, transparent);
+		box-shadow: 0 0 1.25rem color-mix(in oklch, var(--color-gold-base) 30%, transparent);
 	}
 
 	.modal-champion-img {
@@ -376,7 +381,7 @@
 	.match-main-info {
 		display: flex;
 		flex-direction: column;
-		gap: 4px;
+		gap: 0.25rem;
 	}
 
 	.match-date {
@@ -391,7 +396,7 @@
 		letter-spacing: 0.1em;
 		color: var(--color-magic-base);
 		background: color-mix(in oklch, var(--color-magic-base) 10%, transparent);
-		padding: 2px 8px;
+		padding: 0.125rem 0.5rem;
 		width: fit-content;
 	}
 
@@ -399,7 +404,7 @@
 		display: flex;
 		flex-direction: column;
 		align-items: flex-end;
-		gap: 4px;
+		gap: 0.25rem;
 	}
 
 	.performance-metric {
@@ -430,7 +435,7 @@
 
 	.performance-status.win {
 		color: var(--color-magic-glow);
-		text-shadow: 0 0 10px var(--color-magic-base);
+		text-shadow: 0 0 0.625rem var(--color-magic-base);
 	}
 
 	.performance-status.loss {
@@ -443,13 +448,13 @@
 		gap: var(--spacing-md);
 		background: color-mix(in oklch, var(--color-bg-surface) 50%, transparent);
 		padding: var(--spacing-md);
-		border: 1px solid color-mix(in oklch, var(--color-gold-dark) 10%, transparent);
+		border: 0.0625rem solid color-mix(in oklch, var(--color-gold-dark) 10%, transparent);
 	}
 
 	.info-group {
 		display: flex;
 		flex-direction: column;
-		gap: 2px;
+		gap: 0.125rem;
 	}
 
 	.group-label {
@@ -464,11 +469,12 @@
 		color: var(--color-gold-base);
 	}
 
-	.match-modal-analysis h3 {
+	.match-modal-analysis h3,
+	.match-modal-video h3 {
 		font-size: 1.125rem;
 		margin-bottom: var(--spacing-md);
 		color: var(--color-gold-light);
-		border-left: 3px solid var(--color-gold-base);
+		border-left: 0.1875rem solid var(--color-gold-base);
 		padding-left: var(--spacing-sm);
 	}
 
@@ -477,7 +483,23 @@
 		color: var(--color-text-secondary);
 		background: color-mix(in oklch, var(--color-bg-surface) 30%, transparent);
 		padding: var(--spacing-md);
-		border: 1px solid color-mix(in oklch, var(--color-gold-dark) 10%, transparent);
+		border: 0.0625rem solid color-mix(in oklch, var(--color-gold-dark) 10%, transparent);
+	}
+
+	.video-container {
+		position: relative;
+		width: 100%;
+		padding-top: 56.25%; /* 16:9 Aspect Ratio */
+		background: #000;
+		border: 0.0625rem solid var(--color-gold-dark);
+	}
+
+	.video-container iframe {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
 	}
 
 	.match-modal-footer {
@@ -486,7 +508,7 @@
 		margin-top: var(--spacing-sm);
 	}
 
-	@media (max-width: 600px) {
+	@media (max-width: 37.5rem) {
 		.match-modal-header {
 			flex-direction: column;
 			align-items: flex-start;

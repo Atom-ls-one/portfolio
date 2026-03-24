@@ -4,6 +4,7 @@ export interface MatchEntry {
 	win: boolean;
 	kda: string;
 	url: string;
+	videoUrl?: string;
 	date: string;
 	en: {
 		title: string;

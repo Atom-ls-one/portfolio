@@ -40,15 +40,15 @@
 <style>
 	.btn {
 		font-family: var(--font-menu-button, 'Marcellus SC', serif);
-		font-size: 15px;
+		font-size: 0.9375rem;
 		font-weight: bold;
-		letter-spacing: 1px;
-		padding: 5px 15px;
+		letter-spacing: 0.0625rem;
+		padding: 0.3125rem 0.9375rem;
 		background: oklch(22.1% 0.015 251.7); /* #1e2328 */
 		color: oklch(79.4% 0.065 92.5); /* #cdbe91 */
-		box-shadow: inset 0 0 2px oklch(0% 0 0); /* #000000 */
+		box-shadow: inset 0 0 0.125rem oklch(0% 0 0); /* #000000 */
 		border-style: solid;
-		border-width: 2px;
+		border-width: 0.125rem;
 		border-image: linear-gradient(
 			to bottom,
 			oklch(73.5% 0.093 83.2),
@@ -71,8 +71,8 @@
 
 	.btn:hover,
 	.btn:focus-visible {
-		text-shadow: 0 0 5px oklch(100% 0 0 / 0.5); /* #ffffff80 */
-		box-shadow: inset 0 0 2px oklch(0% 0 0);
+		text-shadow: 0 0 0.3125rem oklch(100% 0 0 / 0.5); /* #ffffff80 */
+		box-shadow: inset 0 0 0.125rem oklch(0% 0 0);
 		background: linear-gradient(
 			to bottom,
 			oklch(22.1% 0.015 251.7),
@@ -83,7 +83,7 @@
 
 	.btn:active {
 		text-shadow: none;
-		box-shadow: inset 0 0 2px oklch(0% 0 0);
+		box-shadow: inset 0 0 0.125rem oklch(0% 0 0);
 		color: oklch(79.4% 0.065 92.5 / 0.19); /* #cdbe9130 */
 	}
 </style>

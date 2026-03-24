@@ -66,7 +66,7 @@
 		position: fixed;
 		inset: 0;
 		background: color-mix(in oklch, var(--color-bg-base) 80%, transparent);
-		backdrop-filter: blur(8px);
+		backdrop-filter: blur(0.5rem);
 		display: flex;
 		align-items: center;
 		justify-content: center;
@@ -80,7 +80,7 @@
 			color-mix(in oklch, var(--color-bg-surface) 95%, white 2%),
 			var(--color-bg-base)
 		);
-		border: 2px solid;
+		border: 0.125rem solid;
 		border-image: linear-gradient(
 			to bottom,
 			oklch(73.5% 0.093 83.2),
@@ -88,19 +88,19 @@
 		);
 		border-image-slice: 1;
 		width: 100%;
-		max-width: 800px;
+		max-width: 62.5rem;
 		max-height: 90vh;
 		position: relative;
 		display: flex;
 		flex-direction: column;
-		box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+		box-shadow: 0 1.5rem 3rem -0.75rem rgba(0, 0, 0, 0.5);
 	}
 
 	.modal-header {
 		display: flex;
 		align-items: center;
 		padding: var(--spacing-md) var(--spacing-lg);
-		border-bottom: 1px solid color-mix(in oklch, var(--color-gold-dark) 30%, transparent);
+		border-bottom: 0.0625rem solid color-mix(in oklch, var(--color-gold-dark) 30%, transparent);
 	}
 
 	.modal-header h2 {
@@ -113,20 +113,20 @@
 
 	.close-button {
 		position: absolute;
-		top: -12px;
-		right: -12px;
-		width: 34px;
-		height: 34px;
+		top: -0.75rem;
+		right: -0.75rem;
+		width: 2.125rem;
+		height: 2.125rem;
 		border-radius: 50%;
 
 		/* Exact match from Button.svelte */
 		background: oklch(22.1% 0.015 251.7); /* #1e2328 */
 		color: oklch(79.4% 0.065 92.5); /* #cdbe91 */
-		border: 2px solid oklch(73.5% 0.093 83.2); /* Using the primary gold from Button's border-image */
+		border: 0.125rem solid oklch(73.5% 0.093 83.2); /* Using the primary gold from Button's border-image */
 		box-shadow: 
-			inset 0 0 2px oklch(0% 0 0),
-			0 0 8px rgba(0, 0, 0, 0.8), /* Added subtle outer black glow for definition (Point 3) */
-			0 4px 12px rgba(0, 0, 0, 0.6);
+			inset 0 0 0.125rem oklch(0% 0 0),
+			0 0 0.5rem rgba(0, 0, 0, 0.8),
+			0 0.25rem 0.75rem rgba(0, 0, 0, 0.6);
 		display: flex;
 		align-items: center;
 		justify-content: center;
@@ -146,22 +146,22 @@
 			oklch(22.1% 0.015 251.7),
 			oklch(33.1% 0.032 94.6)
 		);
-		text-shadow: 0 0 5px oklch(100% 0 0 / 0.5); /* #ffffff80 */
+		text-shadow: 0 0 0.3125rem oklch(100% 0 0 / 0.5); /* #ffffff80 */
 		box-shadow: 
-			inset 0 0 2px oklch(0% 0 0),
-			0 0 8px rgba(0, 0, 0, 0.9);
+			inset 0 0 0.125rem oklch(0% 0 0),
+			0 0 0.5rem rgba(0, 0, 0, 0.9);
 		outline: none;
 	}
 
 	.close-button:active {
 		text-shadow: none;
-		box-shadow: inset 0 0 2px oklch(0% 0 0);
+		box-shadow: inset 0 0 0.125rem oklch(0% 0 0);
 		color: oklch(79.4% 0.065 92.5 / 0.19); /* #cdbe9130 */
 	}
 
 	.close-button svg {
-		width: 18px; /* Increased size (Point 2) */
-		height: 18px;
+		width: 1.125rem;
+		height: 1.125rem;
 	}
 
 	.modal-content {
@@ -172,7 +172,7 @@
 
 	/* Scrollbar for modal content */
 	.modal-content::-webkit-scrollbar {
-		width: 8px;
+		width: 0.5rem;
 	}
 
 	.modal-content::-webkit-scrollbar-track {
@@ -181,10 +181,10 @@
 
 	.modal-content::-webkit-scrollbar-thumb {
 		background: var(--color-gold-dark);
-		border-radius: 4px;
+		border-radius: 0.25rem;
 	}
 
-	@media (max-width: 768px) {
+	@media (max-width: 48rem) {
 		.modal-container {
 			max-height: 100vh;
 			height: 100%;

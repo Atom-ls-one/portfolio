@@ -48,14 +48,14 @@
 <style>
 	.timeline-container {
 		width: 100%;
-		max-width: 1100px;
+		max-width: 68.75rem;
 		margin-top: var(--spacing-xl);
 	}
 
 	.timeline {
 		display: grid;
 		grid-template-columns: repeat(var(--items-count, 3), 1fr);
-		grid-template-rows: auto 20px auto;
+		grid-template-rows: auto 1.25rem auto;
 		row-gap: var(--spacing-md);
 		position: relative;
 		padding-block: var(--spacing-xl);
@@ -66,7 +66,7 @@
 		grid-row: 2;
 		grid-column: 1 / -1;
 		align-self: center;
-		height: 1px;
+		height: 0.0625rem;
 		background: linear-gradient(
 			to right,
 			transparent 0%,
@@ -104,24 +104,24 @@
 		display: flex;
 		align-items: center;
 		justify-content: center;
-		height: 20px;
+		height: 1.25rem;
 	}
 
 	.timeline-crystal {
-		width: 12px;
-		height: 12px;
+		width: 0.75rem;
+		height: 0.75rem;
 		background: var(--color-gold-base);
 		transform: rotate(45deg);
-		border: 1px solid var(--color-gold-light);
-		box-shadow: 0 0 15px var(--color-gold-base);
+		border: 0.0625rem solid var(--color-gold-light);
+		box-shadow: 0 0 0.9375rem var(--color-gold-base);
 		position: relative;
 	}
 
 	.timeline-crystal::after {
 		content: '';
 		position: absolute;
-		inset: -5px;
-		border: 1px solid color-mix(in oklch, var(--color-gold-dark) 50%, transparent);
+		inset: -0.3125rem;
+		border: 0.0625rem solid color-mix(in oklch, var(--color-gold-dark) 50%, transparent);
 		transform: rotate(45deg);
 	}
 
@@ -129,8 +129,8 @@
 		grid-row: 3;
 		display: flex;
 		flex-direction: column;
-		gap: 6px;
-		max-width: 250px;
+		gap: 0.375rem;
+		max-width: 15.625rem;
 	}
 
 	.timeline-title {
@@ -147,21 +147,21 @@
 		line-height: 1.5;
 	}
 
-	@media (max-width: 768px) {
+	@media (max-width: 48rem) {
 		.timeline {
 			display: flex;
 			flex-direction: column;
 			gap: var(--spacing-xl);
-			padding-left: 30px;
+			padding-left: 1.875rem;
 			padding-block: 0;
 		}
 
 		.timeline::before {
 			position: absolute;
-			width: 1px;
+			width: 0.0625rem;
 			height: 100%;
 			top: 0;
-			left: 4px;
+			left: 0.25rem;
 			right: auto;
 			transform: none;
 			background: linear-gradient(
@@ -184,13 +184,13 @@
 
 		.timeline-year {
 			order: 1;
-			min-width: 60px;
-			margin-top: 4px;
+			min-width: 3.75rem;
+			margin-top: 0.25rem;
 		}
 
 		.timeline-marker {
 			order: 0;
-			margin-top: 8px;
+			margin-top: 0.5rem;
 		}
 
 		.timeline-content {
@@ -200,8 +200,8 @@
 
 		.timeline-year {
 			position: absolute;
-			left: 30px;
-			top: -4px;
+			left: 1.875rem;
+			top: -0.25rem;
 		}
 
 		.timeline-content {

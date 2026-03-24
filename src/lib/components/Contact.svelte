@@ -76,10 +76,10 @@
 	/* Local Contact Grid Styles */
 	.contact-grid {
 		display: grid;
-		grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+		grid-template-columns: repeat(auto-fit, minmax(18.75rem, 1fr));
 		gap: var(--spacing-lg);
 		width: 100%;
-		max-width: 1100px;
+		max-width: 68.75rem;
 	}
 
 	.contact-card {
@@ -93,7 +93,7 @@
 			color-mix(in oklch, var(--color-bg-surface) 60%, transparent),
 			color-mix(in oklch, var(--color-bg-base) 80%, transparent)
 		);
-		border: 2px solid;
+		border: 0.125rem solid;
 		border-image: linear-gradient(
 			to bottom,
 			oklch(73.5% 0.093 83.2),
@@ -109,7 +109,7 @@
 		display: flex;
 		flex-direction: column;
 		align-items: center;
-		gap: 8px;
+		gap: 0.5rem;
 		margin-bottom: var(--spacing-md);
 		position: relative;
 		z-index: 1;
@@ -140,7 +140,7 @@
 		font-weight: bold;
 	}
 
-	@media (max-width: 768px) {
+	@media (max-width: 48rem) {
 		.contact-grid {
 			grid-template-columns: 1fr;
 		}
