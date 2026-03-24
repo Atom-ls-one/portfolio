@@ -39,5 +39,3 @@ Une fois vos modifications terminées :
 1. Faites un Commit de vos changements.
 2. Faites un Push vers le repository GitHub.
 3. Le site se mettra à jour automatiquement après quelques minutes.
-
-test
