@@ -29,8 +29,8 @@
 
 	<div class="timeline-container">
 		<div class="timeline" style="--items-count: {timeline.length}">
-			{#each timeline as item (item.year)}
-				<div class="timeline-item">
+			{#each timeline as item, i (item.year)}
+				<div class="timeline-item" style="--item-col: {i + 1}">
 					<div class="timeline-year">{item.year}</div>
 					<div class="timeline-marker">
 						<div class="timeline-crystal"></div>
@@ -54,10 +54,12 @@
 
 	.timeline {
 		display: grid;
-		grid-template-columns: repeat(var(--items-count, 3), 1fr);
+		grid-template-columns: repeat(var(--items-count, 3), minmax(0, 1fr));
 		grid-template-rows: auto 1.25rem auto;
+		column-gap: var(--spacing-lg);
 		row-gap: var(--spacing-md);
 		position: relative;
+		width: 100%;
 		padding-block: var(--spacing-xl);
 	}
 
@@ -83,6 +85,7 @@
 		display: grid;
 		grid-template-rows: subgrid;
 		grid-row: 1 / 4;
+		grid-column: var(--item-col, auto);
 		justify-items: center;
 		text-align: center;
 		position: relative;
