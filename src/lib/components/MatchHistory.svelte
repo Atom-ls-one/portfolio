@@ -146,17 +146,32 @@
 		grid-template-columns: 150px 2fr 1.5fr auto;
 		gap: var(--spacing-md);
 		align-items: center;
-		padding: var(--spacing-md);
+		padding: var(--spacing-md) var(--spacing-md) var(--spacing-md) calc(var(--spacing-md) + 6px);
 		background: color-mix(in oklch, var(--color-bg-surface) 40%, transparent);
-		border-left: 6px solid;
-		border-top: 1px solid var(--color-gold-dark);
-		border-bottom: 1px solid var(--color-gold-dark);
-		border-right: 1px solid var(--color-gold-dark);
+		border: 2px solid;
+		border-image: linear-gradient(
+			to bottom,
+			oklch(73.5% 0.093 83.2),
+			oklch(44.8% 0.094 77.1)
+		);
+		border-image-slice: 1;
 		transition: background var(--transition-base);
+		position: relative;
+	}
+
+	/* Win/Loss Vertical Indicator */
+	.match-card::after {
+		content: '';
+		position: absolute;
+		left: 0;
+		top: 0;
+		bottom: 0;
+		width: 6px;
+		background: var(--indicator-color, var(--color-gold-dark));
 	}
 
 	.match-card--victory {
-		border-left-color: var(--color-magic-base);
+		--indicator-color: var(--color-magic-base);
 		background: linear-gradient(
 			90deg,
 			color-mix(in oklch, var(--color-magic-base) 10%, transparent),
@@ -165,7 +180,7 @@
 	}
 
 	.match-card--defeat {
-		border-left-color: oklch(50% 0.15 20);
+		--indicator-color: oklch(50% 0.15 20);
 		background: linear-gradient(
 			90deg,
 			oklch(50% 0.15 20 / 0.1),

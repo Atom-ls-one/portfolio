@@ -48,7 +48,7 @@
 						<path
 							d="M18 6L6 18M6 6l12 12"
 							stroke="currentColor"
-							stroke-width="2"
+							stroke-width="3"
 							stroke-linecap="round"
 						/>
 					</svg>
@@ -80,7 +80,13 @@
 			color-mix(in oklch, var(--color-bg-surface) 95%, white 2%),
 			var(--color-bg-base)
 		);
-		border: 1px solid var(--color-gold-dark);
+		border: 2px solid;
+		border-image: linear-gradient(
+			to bottom,
+			oklch(73.5% 0.093 83.2),
+			oklch(44.8% 0.094 77.1)
+		);
+		border-image-slice: 1;
 		width: 100%;
 		max-width: 800px;
 		max-height: 90vh;
@@ -117,8 +123,10 @@
 		background: oklch(22.1% 0.015 251.7); /* #1e2328 */
 		color: oklch(79.4% 0.065 92.5); /* #cdbe91 */
 		border: 2px solid oklch(73.5% 0.093 83.2); /* Using the primary gold from Button's border-image */
-		box-shadow: inset 0 0 2px oklch(0% 0 0); /* #000000 */
-
+		box-shadow: 
+			inset 0 0 2px oklch(0% 0 0),
+			0 0 8px rgba(0, 0, 0, 0.8), /* Added subtle outer black glow for definition (Point 3) */
+			0 4px 12px rgba(0, 0, 0, 0.6);
 		display: flex;
 		align-items: center;
 		justify-content: center;
@@ -139,7 +147,9 @@
 			oklch(33.1% 0.032 94.6)
 		);
 		text-shadow: 0 0 5px oklch(100% 0 0 / 0.5); /* #ffffff80 */
-		box-shadow: inset 0 0 2px oklch(0% 0 0);
+		box-shadow: 
+			inset 0 0 2px oklch(0% 0 0),
+			0 0 8px rgba(0, 0, 0, 0.9);
 		outline: none;
 	}
 
@@ -150,8 +160,8 @@
 	}
 
 	.close-button svg {
-		width: 14px;
-		height: 14px;
+		width: 18px; /* Increased size (Point 2) */
+		height: 18px;
 	}
 
 	.modal-content {

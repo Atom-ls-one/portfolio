@@ -93,7 +93,13 @@
 			color-mix(in oklch, var(--color-bg-surface) 60%, transparent),
 			color-mix(in oklch, var(--color-bg-base) 80%, transparent)
 		);
-		border: 1px solid var(--color-gold-dark);
+		border: 2px solid;
+		border-image: linear-gradient(
+			to bottom,
+			oklch(73.5% 0.093 83.2),
+			oklch(44.8% 0.094 77.1)
+		);
+		border-image-slice: 1;
 		text-decoration: none;
 		color: inherit;
 		overflow: hidden;
