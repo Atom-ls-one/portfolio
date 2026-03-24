@@ -133,6 +133,24 @@
 					</div>
 				</div>
 
+				{#if selectedMatch.videoUrl}
+					{@const videoId = getYoutubeId(selectedMatch.videoUrl)}
+					{#if videoId}
+						<div class="match-modal-video">
+							<h3>Match VOD (Unlisted)</h3>
+							<div class="video-container">
+								<iframe
+									width="560"
+									height="315"
+									src="https://www.youtube.com/embed/{videoId}"
+									title="YouTube video player"
+									frameborder="0"
+									allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+									allowfullscreen
+								></iframe>
+							</div>
+						</div>
+					{/if}
 				{/if}
 			</div>
 		{/if}
@@ -500,12 +518,6 @@
 		left: 0;
 		width: 100%;
 		height: 100%;
-	}
-
-	.match-modal-footer {
-		display: flex;
-		justify-content: center;
-		margin-top: var(--spacing-sm);
 	}
 
 	@media (max-width: 37.5rem) {
