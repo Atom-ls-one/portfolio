@@ -16,17 +16,20 @@
 			<header class="section-header">
 				<span class="section-tag">{i18n.t?.about?.title}</span>
 				<h2>Théo <span class="text-gold">Atom</span> Menini</h2>
-				<p class="section-subtitle">{i18n.t?.about?.subtitle}</p>
+
 			</header>
 
-			<div class="bio-card">
-				<p>{i18n.t?.about?.bio}</p>
+			<div class="bio-container">
+				<span class="bio-label">{i18n.locale === 'fr' ? 'À propos' : 'About Me'}</span>
+				<div class="bio-card">
+					<p>{i18n.t?.about?.bio}</p>
+				</div>
 			</div>
 
 			<div class="stats-grid">
 				<div class="stat-item">
 					<span class="stat-label">Role</span>
-					<span class="stat-value">Head Coach</span>
+					<span class="stat-value">{i18n.locale === 'fr' ? 'Coach / Analyste' : 'Coach / Analyst'}</span>
 				</div>
 				<div class="stat-item">
 					<span class="stat-label">Experience</span>
@@ -101,10 +104,19 @@
 		color: var(--color-gold-light);
 	}
 
-	.section-subtitle {
-		font-family: 'Marcellus', serif;
-		font-style: italic;
-		color: var(--color-text-secondary);
+	.bio-container {
+		display: flex;
+		flex-direction: column;
+		gap: var(--spacing-xs);
+		margin-bottom: var(--spacing-lg);
+	}
+
+	.bio-label {
+		font-family: var(--font-heading);
+		font-size: 0.75rem;
+		text-transform: uppercase;
+		letter-spacing: 0.15em;
+		color: var(--color-magic-base);
 		opacity: 0.8;
 	}
 
@@ -138,7 +150,7 @@
 		font-family: 'Marcellus', serif;
 		font-size: 1.2rem;
 		line-height: 1.8;
-		color: var(--color-text-primary);
+		color: var(--color-text-secondary);
 		text-wrap: balance;
 		letter-spacing: 0.02em;
 	}

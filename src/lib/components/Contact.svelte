@@ -19,7 +19,7 @@
 	const linkedinUrl = 'https://www.linkedin.com/in/théo-menini-43695b298/';
 	const twitterUrl = 'https://x.com/ls_atom';
 	const discordTag = 'atom.0601';
-	const emailAddress = 'theo.menini@gmail.com';
+	const emailAddress = 'theo.menini@hotmail.fr';
 </script>
 
 <section id="contact" class="portfolio-section container">

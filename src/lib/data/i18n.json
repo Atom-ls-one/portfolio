@@ -1,8 +1,8 @@
 {
 	"en": {
 		"seo": {
-			"title": "Théo \"Atom\" MENINI - League of Legends Coach & Analyst",
-			"description": "Portfolio of Théo Menini, Assistant Coach & Analyst for Stuverance. Specializing in draft strategy, VOD reviews, and high-performance staff support.",
+			"title": "Théo \"Atom\" MENINI - League of Legends Coach / Analyst",
+			"description": "Portfolio of Théo Menini, Coach / Analyst for Stuverance. Specializing in draft strategy, VOD reviews, and high-performance staff support.",
 			"keywords": "League of Legends, Coach, Analyst, Stuverance, Antic Esport, Esports, VOD Review, Draft Strategy, Lyon, Esport Coach"
 		},
 		"nav": {
@@ -11,7 +11,7 @@
 		},
 		"hero": {
 			"catchphrase": "Aiming for perfection by mastering the variables",
-			"role": "Coach & Strategic Analyst",
+			"role": "Coach / Analyst",
 			"btn1": "History",
 			"btn2": "Contact"
 		},
@@ -41,8 +41,8 @@
 	},
 	"fr": {
 		"seo": {
-			"title": "Théo \"Atom\" MENINI - Coach & Analyste League of Legends",
-			"description": "Portfolio de Théo Menini, Assistant Coach & Analyste chez Stuverance. Expert en stratégie de draft, VOD reviews et accompagnement de staff haute performance.",
+			"title": "Théo \"Atom\" MENINI - Coach / Analyste League of Legends",
+			"description": "Portfolio de Théo Menini, Coach / Analyste chez Stuverance. Expert en stratégie de draft, VOD reviews et accompagnement de staff haute performance.",
 			"keywords": "League of Legends, Coach, Analyste, Stuverance, Antic Esport, Esports, VOD Review, Stratégie de Draft, Lyon, Coach Esport"
 		},
 		"nav": {
@@ -51,7 +51,7 @@
 		},
 		"hero": {
 			"catchphrase": "Viser la perfection par la maîtrise des variables",
-			"role": "Coach & Analyste Stratégique",
+			"role": "Coach / Analyste",
 			"btn1": "Historique",
 			"btn2": "Contact"
 		},
@@ -80,3 +80,4 @@
 		}
 	}
 }
+
