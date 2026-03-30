@@ -172,7 +172,6 @@
 	.date-arrow {
 		color: var(--color-gold-base);
 		opacity: 0.8;
-		filter: drop-shadow(0 0 2px var(--color-gold-base));
 	}
 
 	.date-end {

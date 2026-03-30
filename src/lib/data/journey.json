@@ -7,7 +7,16 @@
 		"place": "Top 6"
 	},
 	{
-		"date": "Oct 2025 -> Ongoing",
+		"date": "Mars 2026 -> Ongoing",
+		"type": "experience",
+		"title": { "en": "Stuverance", "fr": "Stuverance" },
+		"desc": {
+			"en": "Assistant Coach / Analyst (Nexus Tour)",
+			"fr": "Assistant Coach / Analyste (Nexus Tour)"
+		}
+	},
+	{
+		"date": "Oct 2025 -> Mars 2026",
 		"type": "experience",
 		"title": { "en": "Antic Esport", "fr": "Antic Esport" },
 		"desc": {
