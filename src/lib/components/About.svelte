@@ -102,27 +102,55 @@
 	}
 
 	.section-subtitle {
+		font-family: 'Marcellus', serif;
 		font-style: italic;
 		color: var(--color-text-secondary);
+		opacity: 0.8;
 	}
 
 	.bio-card {
 		padding: var(--spacing-md);
 		background: color-mix(in oklch, var(--color-bg-surface) 40%, transparent);
-		border: 0.125rem solid;
+		border: 1px solid;
 		border-image: linear-gradient(
 			to bottom,
-			oklch(73.5% 0.093 83.2),
-			oklch(44.8% 0.094 77.1)
-		);
-		border-image-slice: 1;
+			var(--color-gold-light),
+			var(--color-gold-dark)
+		) 1;
 		margin-bottom: var(--spacing-lg);
+		position: relative;
+		box-shadow: 
+			inset 0 0 20px color-mix(in oklch, var(--color-gold-base) 2%, transparent),
+			0 10px 30px -10px rgba(0, 0, 0, 0.4);
+	}
+
+	.bio-card::before {
+		content: '';
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 2px;
+		background: linear-gradient(90deg, transparent, var(--color-gold-base), transparent);
 	}
 
 	.bio-card p {
-		font-size: 1.125rem;
-		line-height: 1.6;
+		font-family: 'Marcellus', serif;
+		font-size: 1.2rem;
+		line-height: 1.8;
 		color: var(--color-text-primary);
+		text-wrap: balance;
+		letter-spacing: 0.02em;
+	}
+
+	.bio-card p::first-letter {
+		float: left;
+		font-family: var(--font-heading);
+		font-size: 3.5rem;
+		line-height: 1;
+		padding-right: 0.5rem;
+		color: var(--color-gold-base);
+		text-shadow: 0 0 10px color-mix(in oklch, var(--color-gold-base) 30%, transparent);
 	}
 
 	.stats-grid {

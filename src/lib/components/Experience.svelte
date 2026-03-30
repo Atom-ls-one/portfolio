@@ -264,10 +264,13 @@
 	}
 
 	.event-desc, .event-event {
-		font-size: 0.875rem;
+		font-family: 'Marcellus', serif;
+		font-size: 0.9375rem;
 		color: var(--color-text-secondary);
+		line-height: 1.5;
 		position: relative;
 		z-index: 1;
+		text-wrap: balance;
 	}
 
 	.event-place {

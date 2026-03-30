@@ -195,10 +195,12 @@
 	}
 
 	.match-desc {
-		font-size: 0.875rem;
+		font-family: 'Marcellus', serif;
+		font-size: 0.9375rem;
 		color: var(--color-text-secondary);
-		line-height: 1.4;
+		line-height: 1.5;
 		max-width: 25rem;
+		text-wrap: balance;
 	}
 
 	.match-stats {
