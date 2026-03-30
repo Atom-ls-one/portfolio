@@ -18,6 +18,12 @@ class I18nStore {
 	setLocale(lang: Language) {
 		this.locale = lang;
 	}
+
+	translate(field: { en: string; fr: string } | string | undefined): string {
+		if (!field) return '';
+		if (typeof field === 'string') return field;
+		return field[this.locale] || '';
+	}
 }
 
 export const i18n = new I18nStore();

@@ -21,7 +21,10 @@
 			"bio": "Passionate League of Legends coach with a focus on meta-analysis, macro-strategy, and individual player growth. I transform raw talent into tactical dominance."
 		},
 		"experience": {
-			"title": "Experience"
+			"title": "Career & Palmarès"
+		},
+		"achievements": {
+			"title": "Accomplishments"
 		},
 		"projects": {
 			"title": "History",
@@ -58,7 +61,10 @@
 			"bio": "Coach League of Legends passionné, expert en méta-analyse, macro-stratégie et progression individuelle. Je transforme le talent brut en domination tactique."
 		},
 		"experience": {
-			"title": "Expérience"
+			"title": "Parcours & Palmarès"
+		},
+		"achievements": {
+			"title": "Accomplissements"
 		},
 		"projects": {
 			"title": "Historique",

@@ -108,9 +108,14 @@
 
 	.bio-card {
 		padding: var(--spacing-md);
-		background: color-mix(in oklch, var(--color-bg-surface) 30%, transparent);
-		border: 1px solid var(--color-gold-dark);
-		border-left: 4px solid var(--color-gold-base);
+		background: color-mix(in oklch, var(--color-bg-surface) 40%, transparent);
+		border: 0.125rem solid;
+		border-image: linear-gradient(
+			to bottom,
+			oklch(73.5% 0.093 83.2),
+			oklch(44.8% 0.094 77.1)
+		);
+		border-image-slice: 1;
 		margin-bottom: var(--spacing-lg);
 	}
 
