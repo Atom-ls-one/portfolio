@@ -2,6 +2,8 @@
 	import '../app.css';
 	import type { Snippet } from 'svelte';
 	import { i18n } from '$lib/i18n.svelte';
+	import MagicWaves from '$lib/components/MagicWaves.svelte';
+	import Footer from '$lib/components/Footer.svelte';
 
 	let { children }: { children: Snippet } = $props();
 
@@ -21,6 +23,8 @@
 	<meta property="og:type" content="website" />
 </svelte:head>
 
+<MagicWaves />
+
 <nav class="lang-switcher" aria-label="Language">
 	<button
 		class="lang-btn {i18n.locale === 'fr' ? 'active' : ''}"
@@ -37,31 +41,42 @@
 	{#if children}
 		{@render children()}
 	{/if}
+	<Footer />
 </div>
 
 <style>
 	.page-wrapper {
+		position: relative;
+		z-index: 1;
 		display: flex;
 		flex-direction: column;
 		min-height: 100vh;
+		min-width: 0;
+		overflow-x: clip;
+	}
+
+	.page-wrapper > :global(main),
+	.page-wrapper > :global(.history-page) {
+		flex: 1 1 auto;
 	}
 
 	.lang-switcher {
 		position: absolute;
-		top: var(--spacing-md);
-		right: var(--spacing-md);
+		top: max(var(--page-gutter), env(safe-area-inset-top, 0px));
+		right: max(var(--page-gutter), env(safe-area-inset-right, 0px));
 		display: flex;
-		gap: 0.5rem;
+		gap: var(--space-2);
 		z-index: 100;
 		font-family: var(--font-heading);
 	}
 
 	.lang-btn {
-		color: var(--color-text-muted);
+		color: var(--fg-subtle);
 		transition: color var(--transition-fast);
-		font-size: 0.875rem;
+		font-size: var(--text-ui-sm);
+		line-height: var(--leading-ui);
 		text-transform: uppercase;
-		letter-spacing: 0.1em;
+		letter-spacing: var(--tracking-caps);
 	}
 
 	.lang-btn:hover {
@@ -70,7 +85,7 @@
 
 	.lang-btn.active {
 		color: var(--color-gold-base);
-		font-weight: 700;
+		font-weight: var(--font-weight-bold);
 	}
 
 	.lang-sep {

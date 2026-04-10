@@ -25,27 +25,37 @@
 	}
 </script>
 
-<section id="projects" class="portfolio-section container">
-	<SectionHeader title={i18n.t?.projects?.title} />
+<section id="projects" class="portfolio-section container section-lol-bg section-lol-bg--alpha">
+	<SectionHeader title={i18n.t?.projects?.title} subtitle={i18n.t?.projects?.subtitle} />
 
-	<div class="match-list">
-		{#each displayedMatches as match (match.championId + match.kda)}
-			<MatchCard {match} onViewDetails={openMatchDetails} />
-		{/each}
+	<div class="match-history-stack">
+		<div class="match-list">
+			{#each displayedMatches as match (match.date)}
+				<MatchCard {match} onViewDetails={openMatchDetails} />
+			{/each}
+		</div>
+
+		{#if limit && matches.list.length > limit}
+			<footer class="section-footer">
+				<Button href="{base}/history" className="btn--all">
+					{i18n.t?.projects?.viewAll}
+				</Button>
+			</footer>
+		{/if}
 	</div>
-
-	{#if limit && matches.list.length > limit}
-		<footer class="section-footer">
-			<Button href="{base}/history" className="btn--all">
-				{i18n.t?.projects?.viewAll}
-			</Button>
-		</footer>
-	{/if}
 
 	<MatchModal match={selectedMatch} onClose={closeMatchDetails} />
 </section>
 
 <style>
+	.match-history-stack {
+		display: flex;
+		flex-direction: column;
+		gap: var(--spacing-md);
+		width: 100%;
+		align-items: center;
+	}
+
 	.match-list {
 		display: flex;
 		flex-direction: column;
@@ -56,6 +66,5 @@
 	.section-footer {
 		display: flex;
 		justify-content: center;
-		margin-top: var(--spacing-md);
 	}
 </style>

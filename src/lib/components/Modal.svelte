@@ -1,6 +1,5 @@
 <script lang="ts">
 	import { fade, scale } from 'svelte/transition';
-	import { onMount } from 'svelte';
 
 	interface Props {
 		isOpen: boolean;
@@ -66,7 +65,7 @@
 		position: fixed;
 		inset: 0;
 		background: color-mix(in oklch, var(--color-bg-base) 80%, transparent);
-		backdrop-filter: blur(0.5rem);
+		backdrop-filter: blur(var(--space-2));
 		display: flex;
 		align-items: center;
 		justify-content: center;
@@ -80,7 +79,7 @@
 			color-mix(in oklch, var(--color-bg-surface) 95%, white 2%),
 			var(--color-bg-base)
 		);
-		border: 0.125rem solid;
+		border: var(--border-default) solid;
 		border-image: linear-gradient(
 			to bottom,
 			oklch(73.5% 0.093 83.2),
@@ -88,24 +87,25 @@
 		);
 		border-image-slice: 1;
 		width: 100%;
-		max-width: 62.5rem;
+		max-width: var(--container-modal);
 		max-height: 90vh;
 		position: relative;
 		display: flex;
 		flex-direction: column;
-		box-shadow: 0 1.5rem 3rem -0.75rem rgba(0, 0, 0, 0.5);
+		box-shadow: 0 var(--space-7) var(--space-13) calc(-1 * var(--space-3)) rgba(0, 0, 0, 0.5);
 	}
 
 	.modal-header {
 		display: flex;
 		align-items: center;
 		padding: var(--spacing-md) var(--spacing-lg);
-		border-bottom: 0.0625rem solid color-mix(in oklch, var(--color-gold-dark) 30%, transparent);
+		border-bottom: var(--border-hairline) solid color-mix(in oklch, var(--color-gold-dark) 30%, transparent);
 	}
 
 	.modal-header h2 {
 		margin: 0;
-		font-size: 1.5rem;
+		font-size: var(--text-modal-title);
+		line-height: var(--leading-tight);
 		color: var(--color-gold-light);
 		flex: 1;
 		text-align: center;
@@ -113,20 +113,20 @@
 
 	.close-button {
 		position: absolute;
-		top: -0.75rem;
-		right: -0.75rem;
-		width: 2.125rem;
-		height: 2.125rem;
+		top: calc(-1 * var(--space-3));
+		right: calc(-1 * var(--space-3));
+		width: var(--size-close-button);
+		height: var(--size-close-button);
 		border-radius: 50%;
 
 		/* Exact match from Button.svelte */
 		background: oklch(22.1% 0.015 251.7); /* #1e2328 */
 		color: oklch(79.4% 0.065 92.5); /* #cdbe91 */
-		border: 0.125rem solid oklch(73.5% 0.093 83.2); /* Using the primary gold from Button's border-image */
-		box-shadow: 
-			inset 0 0 0.125rem oklch(0% 0 0),
-			0 0 0.5rem rgba(0, 0, 0, 0.8),
-			0 0.25rem 0.75rem rgba(0, 0, 0, 0.6);
+		border: var(--border-default) solid oklch(73.5% 0.093 83.2); /* Using the primary gold from Button's border-image */
+		box-shadow:
+			inset 0 0 var(--border-default) oklch(0% 0 0),
+			0 0 var(--space-2) rgba(0, 0, 0, 0.8),
+			0 var(--space-1) var(--space-3) rgba(0, 0, 0, 0.6);
 		display: flex;
 		align-items: center;
 		justify-content: center;
@@ -147,21 +147,21 @@
 			oklch(33.1% 0.032 94.6)
 		);
 		text-shadow: 0 0 0.3125rem oklch(100% 0 0 / 0.5); /* #ffffff80 */
-		box-shadow: 
-			inset 0 0 0.125rem oklch(0% 0 0),
-			0 0 0.5rem rgba(0, 0, 0, 0.9);
+		box-shadow:
+			inset 0 0 var(--border-default) oklch(0% 0 0),
+			0 0 var(--space-2) rgba(0, 0, 0, 0.9);
 		outline: none;
 	}
 
 	.close-button:active {
 		text-shadow: none;
-		box-shadow: inset 0 0 0.125rem oklch(0% 0 0);
+		box-shadow: inset 0 0 var(--border-default) oklch(0% 0 0);
 		color: oklch(79.4% 0.065 92.5 / 0.19); /* #cdbe9130 */
 	}
 
 	.close-button svg {
-		width: 1.125rem;
-		height: 1.125rem;
+		width: var(--size-icon-close-inner);
+		height: var(--size-icon-close-inner);
 	}
 
 	.modal-content {
@@ -172,7 +172,7 @@
 
 	/* Scrollbar for modal content */
 	.modal-content::-webkit-scrollbar {
-		width: 0.5rem;
+		width: var(--space-2);
 	}
 
 	.modal-content::-webkit-scrollbar-track {
@@ -181,7 +181,7 @@
 
 	.modal-content::-webkit-scrollbar-thumb {
 		background: var(--color-gold-dark);
-		border-radius: 0.25rem;
+		border-radius: var(--radius-xs);
 	}
 
 	@media (max-width: 48rem) {

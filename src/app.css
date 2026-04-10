@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400..900&family=Inter:wght@100..900&family=Marcellus&family=Marcellus+SC&display=swap');
+@import './lib/styles/lol-communitydragon-fonts.css';
 
 :root {
 	/* League of Legends DA OKLCH Colors */
@@ -13,29 +13,226 @@
 	--color-magic-base: oklch(80% 0.12 210);
 	--color-magic-glow: oklch(90% 0.08 210);
 
-	--color-text-primary: oklch(95% 0.01 250);
-	--color-text-secondary: oklch(75% 0.02 250);
-	--color-text-muted: oklch(60% 0.03 250);
+	/*
+	 * Texte : échelle OKLCH calibrée pour fond sombre (~L 18–32 %).
+	 * L espacées pour hiérarchie lisible ; chroma bas sur les neutres (confort + contraste).
+	 * Vérification auto : npm run check:a11y-color (WCAG 2.2 + APCA sur les paires listées dans scripts/check-contrast-tokens.mjs).
+	 */
+	--fg-1: oklch(93% 0.005 250);
+	--fg-2: oklch(87% 0.007 250);
+	--fg-3: oklch(80% 0.009 250);
+	--fg-4: oklch(71% 0.011 250);
+	--fg-5: oklch(59% 0.012 250);
+
+	--fg-default: var(--fg-1);
+	--fg-ui: var(--fg-2);
+	--fg-muted: var(--fg-3);
+	--fg-subtle: var(--fg-4);
+	--fg-disabled: var(--fg-5);
+	/* Paragraphes longs (serif / prose) : proche du default, un peu moins agressif. */
+	--fg-prose: oklch(90.5% 0.006 250);
+
+	--fg-link: var(--color-gold-base);
+	--fg-link-hover: var(--color-gold-light);
 
 	--color-border: var(--color-gold-dark);
 
-	/* Typography */
-	--font-heading: 'Cinzel', serif;
-	--font-body: 'Inter', sans-serif;
+	/* Fonds sections — assets client rcp-fe-lol-static-assets, CommunityDragon RAW latest */
+	--lol-bg-client: url('https://raw.communitydragon.org/latest/plugins/rcp-fe-lol-static-assets/global/default/images/background.png');
+	--lol-bg-alpha: url('https://raw.communitydragon.org/latest/plugins/rcp-fe-lol-static-assets/global/default/images/lcu-alpha-backdrop.jpg');
+	--lol-bg-article: url('https://raw.communitydragon.org/latest/plugins/rcp-fe-lol-static-assets/global/default/images/lcu-article-backdrop.jpg');
+	--lol-bg-collection: url('https://raw.communitydragon.org/latest/plugins/rcp-fe-lol-static-assets/global/default/images/challenges-shared/background-collection.png');
 
-	/* Spacing & Layout */
-	--spacing-xs: clamp(0.25rem, 0.5vw, 0.5rem);
-	--spacing-sm: clamp(0.5rem, 1vw, 1rem);
-	--spacing-md: clamp(1rem, 2vw, 2rem);
-	--spacing-lg: clamp(2rem, 4vw, 4rem);
-	--spacing-xl: clamp(4rem, 8vw, 8rem);
+	/*
+	 * Typo = client LoL (fichiers game/assets/ux/fonts du patch latest, pas PBE).
+	 * Titres / boutons : Beaufort for LoL · Texte & UI : Spiegel · JA / CJK : mêmes familles que le client.
+	 */
+	--font-display: 'Beaufort for LoL', 'Beaufort for LoL JA', 'Noto Sans CJK LoL', serif;
+	--font-ui: 'Spiegel', 'Spiegel JA', 'Noto Sans CJK LoL', sans-serif;
+	--font-serif: 'Spiegel', 'Spiegel JA', 'Noto Sans CJK LoL', serif;
+	--font-button: 'Beaufort for LoL', 'Beaufort for LoL JA', 'Noto Sans CJK LoL', serif;
+	--font-menu-button: var(--font-button);
+	--font-heading: var(--font-display);
+	--font-body: var(--font-ui);
 
-	--container-max-width: 1200px;
+	/*
+	 * Fluid type scale (minor-third-ish), vmin + rem : équilibre lisibilité mobile / grand écran.
+	 * Toutes les tailles sémantiques en dérivent ; pas de font-size « magique » hors tokens.
+	 */
+	--type--3: clamp(0.625rem, 0.58rem + 0.12vmin, 0.6875rem);
+	--type--2: clamp(0.6875rem, 0.64rem + 0.14vmin, 0.75rem);
+	--type--1: clamp(0.78125rem, 0.72rem + 0.2vmin, 0.875rem);
+	--type-0: clamp(0.9375rem, 0.86rem + 0.22vmin, 1rem);
+	--type-1: clamp(1rem, 0.9rem + 0.32vmin, 1.125rem);
+	--type-2: clamp(1.0625rem, 0.94rem + 0.45vmin, 1.25rem);
+	--type-3: clamp(1.125rem, 0.96rem + 0.62vmin, 1.375rem);
+	--type-4: clamp(1.25rem, 1rem + 0.85vmin, 1.5rem);
+	--type-5: clamp(1.375rem, 1.08rem + 1.1vmin, 1.75rem);
+	--type-6: clamp(1.625rem, 1.2rem + 1.65vmin, 2.25rem);
+	--type-7: clamp(2rem, 1.35rem + 2.4vmin, 3.25rem);
+	--type-8: clamp(2.5rem, 1.45rem + 4.2vmin, 4.75rem);
+	--type-9: clamp(2.75rem, 1.5rem + 5.5vmin, 5.5rem);
+
+	/* Rôles sémantiques (alias = composition du scale) */
+	--text-micro: var(--type--3);
+	--text-overline: var(--type--2);
+	--text-caption: var(--type--1);
+	--text-label: var(--type--1);
+	--text-ui-sm: var(--type--1);
+	--text-ui: var(--type-0);
+	--text-body-sm: var(--type--1);
+	--text-body: var(--type-0);
+	--text-body-lg: var(--type-1);
+	--text-lead: var(--type-2);
+	--text-subheading: var(--type-3);
+	--text-card-title: var(--type-4);
+	--text-match-title: var(--type-5);
+	--text-section: var(--type-5);
+	--text-modal-title: var(--type-5);
+	--text-display-sm: var(--type-6);
+	--text-champion-glyph: var(--type-6);
+	--text-stat-value: var(--type-4);
+	--text-hero: var(--type-9);
+	--text-hero-sub: var(--type-3);
+	--text-button: var(--type-1);
+
+	/* Interlignes (sans unité = ratio) */
+	--leading-none: 1;
+	--leading-tight: 1.12;
+	--leading-snug: 1.22;
+	--leading-ui: 1.35;
+	--leading-normal: 1.47;
+	--leading-body: 1.6;
+	--leading-prose: 1.72;
+	--leading-relaxed: 1.75;
+
+	/*
+	 * Tracking : écart réduit entre niveaux (évite titres « aérés » vs UI/corps « collé »).
+	 * Titres Beaufort uppercase : --tracking-wide · petites caps / nav : --tracking-caps (+ variantes légères).
+	 */
+	--tracking-tight: -0.02em;
+	--tracking-snug: -0.01em;
+	--tracking-normal: 0;
+	--tracking-ui: 0.015em;
+	--tracking-wide: 0.048em;
+	--tracking-caps: 0.065em;
+	--tracking-caps-wide: 0.07em;
+	--tracking-caps-wider: 0.075em;
+	--tracking-hero-sub: 0.048em;
+	--tracking-display: -0.02em;
+	--tracking-button: 0.048em;
+
+	--font-weight-regular: 400;
+	--font-weight-medium: 500;
+	--font-weight-semibold: 600;
+	--font-weight-bold: 700;
+
+	/*
+	 * Spacing (long terme) :
+	 * - --space-* : échelle fixe en rem (insets, micro-gaps, repères alignés au zoom utilisateur).
+	 * - --spacing-* : fluide, bornée par la même échelle (sections, grands blocs).
+	 * Les @media restent en largeurs rem littérales (custom properties non utilisables dans les requêtes).
+	 * Repères : 48rem ≈ 768px · 60.5rem ≈ 968px · 64rem ≈ 1024px · 37.5rem = 600px
+	 */
+	--space-px: 1px;
+	--space-0-5: 0.125rem;
+	--space-1: 0.25rem;
+	--space-1-5: 0.375rem;
+	--space-2: 0.5rem;
+	--space-2-5: 0.625rem;
+	--space-3: 0.75rem;
+	--space-3a: 0.875rem;
+	--space-4: 1rem;
+	--space-5: 1.125rem;
+	--space-6: 1.25rem;
+	--space-7: 1.5rem;
+	--space-8: 1.75rem;
+	--space-9: 2rem;
+	--space-10: 2.25rem;
+	--space-11: 2.5rem;
+	--space-12: 2.75rem;
+	--space-13: 3rem;
+	--space-14: 3.5rem;
+	--space-15: 4rem;
+	--space-16: 4.5rem;
+	--space-17: 5rem;
+	--space-18: 5.5rem;
+	--space-19: 6rem;
+	--space-20: 6.5rem;
+	--space-21: 8rem;
+
+	--space-focus-outline: 2px;
+	--space-focus-offset: var(--space-1);
+
+	--border-hairline: 0.0625rem;
+	--border-default: 0.125rem;
+	--border-accent: 0.1875rem;
+
+	--radius-xs: 0.25rem;
+	--radius-sm: 0.375rem;
+	--radius-md: 0.75rem;
+
+	--space-button-pad-y: 0.3125rem;
+	--space-button-pad-x: 0.9375rem;
+
+	--size-icon-contact: var(--space-11);
+	--size-close-button: 2.125rem;
+	--size-icon-close-inner: var(--space-5);
+	--layout-match-sidebar: 9.375rem;
+	--size-champion-thumb: 4.5rem;
+	--content-measure-match-desc: 25rem;
+	--layout-timeline-row-min: 6.25rem;
+	--container-modal: 62.5rem;
+	--container-journey: 76rem;
+
+	--space-about-grid-gap-lg: clamp(var(--space-12), 7vw, var(--space-18));
+	--space-about-grid-gap-xl: clamp(var(--space-13), 7.5vw, var(--space-20));
+
+	/* Fluides (dérivés du fixe) */
+	--spacing-xs: clamp(var(--space-1), 0.5vw, var(--space-2));
+	--spacing-sm: clamp(var(--space-2), 1vw, var(--space-4));
+	--spacing-md: clamp(var(--space-4), 2vw, var(--space-9));
+	--spacing-lg: clamp(var(--space-9), 4vw, var(--space-15));
+	--spacing-xl: clamp(var(--space-15), 8vw, var(--space-21));
+
+	/* Stacks About (après --spacing-* pour éviter références circulaires) */
+	--space-about-grid-gap: clamp(var(--spacing-lg), 6vw, var(--spacing-xl));
+	/* Titre display → premier paragraphe : plus serré que le reste de la colonne */
+	--space-about-title-to-bio: clamp(var(--space-3), 1.2vw, var(--space-5));
+	/* Bio+FAQ → grille stats (respiration section) */
+	--space-about-content-y: clamp(var(--spacing-md), 2vw, var(--spacing-lg));
+	--space-about-main-y: clamp(var(--spacing-lg), 3vw, var(--spacing-xl));
+
+	/* Horizontal page gutters: tighter than --spacing-md, fluid + safe-area friendly */
+	--page-gutter: clamp(0.625rem, 1.25vw + 0.35rem, 1rem);
+
+	/* Plafond large écran ; le bloc .container utilise min(..., 100%) pour rester dans la viewport */
+	--container-max-width: 96rem;
+	--about-bio-max: 36rem;
+	--about-faq-max: 28rem;
+	--about-visual-max: 26rem;
 
 	/* Transitions */
 	--transition-fast: 150ms cubic-bezier(0.4, 0, 0.2, 1);
 	--transition-base: 300ms cubic-bezier(0.4, 0, 0.2, 1);
 	--transition-slow: 500ms cubic-bezier(0.4, 0, 0.2, 1);
+
+	/* Séparateur section / hero : 1px, gradient doré (pas de double filet) */
+	--lol-section-separator-height: var(--border-hairline);
+	--lol-section-separator-gradient: linear-gradient(
+		90deg,
+		transparent,
+		var(--color-gold-light),
+		var(--color-gold-base),
+		transparent
+	);
+
+	/* Voile au-dessus des textures section (ex-::after, désormais 1er calque du ::before) */
+	--section-lol-veil: linear-gradient(
+		180deg,
+		color-mix(in oklch, var(--color-bg-base) 42%, transparent) 0%,
+		color-mix(in oklch, var(--color-bg-base) 42%, transparent) 100%
+	);
 }
 
 /* Unified Section Header */
@@ -47,13 +244,37 @@
 	width: 100%;
 }
 
-.section-header-unified h2 {
+.section-header-unified__center {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: var(--space-2);
+	min-width: 0;
 	text-align: center;
+}
+
+.section-header-unified__heading {
 	white-space: nowrap;
 	margin: 0;
 	font-family: var(--font-heading);
+	font-size: var(--text-section);
+	line-height: var(--leading-tight);
+	font-weight: var(--font-weight-medium);
 	text-transform: uppercase;
-	letter-spacing: 0.1em;
+	letter-spacing: var(--tracking-caps);
+	color: inherit;
+}
+
+.section-header-unified__subtitle {
+	margin: 0;
+	max-width: 36rem;
+	font-family: var(--font-body);
+	font-size: var(--text-ui-sm);
+	line-height: var(--leading-snug);
+	color: var(--fg-muted);
+	font-weight: var(--font-weight-regular);
+	text-transform: none;
+	letter-spacing: var(--tracking-ui);
 }
 
 .header-line {
@@ -75,9 +296,75 @@
 	align-items: center;
 }
 
-@media (max-width: 768px) {
+/*
+ * Fond pleine largeur (image client LoL) derrière le contenu en `container`.
+ * ::before = voile + texture · ::after = ligne 1px gradient (comme .hero::after)
+ */
+.section-lol-bg {
+	position: relative;
+	isolation: isolate;
+}
+
+.section-lol-bg::before {
+	content: '';
+	position: absolute;
+	inset-block: 0;
+	left: 50%;
+	transform: translateX(-50%);
+	width: 100vw;
+	z-index: 0;
+	pointer-events: none;
+	background-image: var(--section-lol-veil), var(--lol-bg-client);
+	background-size: cover, cover;
+	background-position: center, center;
+	background-repeat: no-repeat, no-repeat;
+}
+
+.section-lol-bg--client::before {
+	background-image: var(--section-lol-veil), var(--lol-bg-client);
+}
+
+.section-lol-bg--alpha::before {
+	background-image: var(--section-lol-veil), var(--lol-bg-alpha);
+}
+
+.section-lol-bg--article::before {
+	background-image: var(--section-lol-veil), var(--lol-bg-article);
+}
+
+.section-lol-bg--collection::before {
+	background-image: var(--section-lol-veil), var(--lol-bg-collection);
+}
+
+/*
+ * Ligne 1px gradient en pleine largeur viewport (comme le hero) : le bloc .section-lol-bg
+ * est souvent un .container — left/right seuls ne dépassent pas du max-width.
+ */
+.section-lol-bg::after {
+	content: '';
+	position: absolute;
+	bottom: 0;
+	left: 50%;
+	transform: translateX(-50%);
+	width: 100vw;
+	height: var(--lol-section-separator-height);
+	background: var(--lol-section-separator-gradient);
+	z-index: 10;
+	pointer-events: none;
+}
+
+.section-lol-bg > * {
+	position: relative;
+	z-index: 1;
+}
+
+@media (max-width: 48rem) {
 	.section-header-unified {
 		gap: var(--spacing-sm);
+	}
+
+	.section-header-unified__heading {
+		white-space: normal;
 	}
 
 	.header-line {
@@ -99,12 +386,19 @@
 
 html {
 	font-family: var(--font-body);
+	font-size: 100%;
 	background-color: var(--color-bg-base);
-	color: var(--color-text-primary);
-	line-height: 1.6;
+	color: var(--fg-default);
+	line-height: var(--leading-body);
 	scroll-behavior: smooth;
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
+	text-size-adjust: 100%;
+	/*
+	 * 100vw (textures section, iframe hero) inclut souvent la largeur de la barre de scroll :
+	 * dès qu’une barre verticale apparaît, le document dépasse sans ce garde-fou sur <html>.
+	 */
+	overflow-x: hidden;
 }
 
 body {
@@ -132,22 +426,46 @@ h4,
 h5,
 h6 {
 	font-family: var(--font-heading);
-	font-weight: 700;
-	line-height: 1.2;
+	font-weight: var(--font-weight-bold);
+	line-height: var(--leading-tight);
 	color: var(--color-gold-light);
 	text-transform: uppercase;
-	letter-spacing: 0.05em;
+	letter-spacing: var(--tracking-wide);
+}
+
+h1 {
+	font-size: var(--text-display-sm);
+	letter-spacing: normal;
+}
+
+h2 {
+	font-size: var(--text-section);
+	font-weight: var(--font-weight-medium);
+}
+
+h3 {
+	font-size: var(--text-card-title);
+}
+
+h4 {
+	font-size: var(--text-subheading);
+}
+
+h5,
+h6 {
+	font-size: var(--text-body-lg);
+	line-height: var(--leading-snug);
 }
 
 a {
-	color: var(--color-gold-base);
+	color: var(--fg-link);
 	text-decoration: none;
 	transition: color var(--transition-fast);
 }
 
 a:hover,
 a:focus-visible {
-	color: var(--color-gold-light);
+	color: var(--fg-link-hover);
 	outline: none;
 }
 
@@ -175,9 +493,11 @@ button {
 /* Utilities */
 .container {
 	width: 100%;
-	max-width: var(--container-max-width);
+	max-width: min(var(--container-max-width), 100%);
 	margin-inline: auto;
-	padding-inline: var(--spacing-md);
+	box-sizing: border-box;
+	padding-inline-start: max(var(--page-gutter), env(safe-area-inset-left, 0px));
+	padding-inline-end: max(var(--page-gutter), env(safe-area-inset-right, 0px));
 }
 
 .sr-only {
@@ -194,7 +514,7 @@ button {
 
 /* Scrollbar */
 ::-webkit-scrollbar {
-	width: 12px;
+	width: var(--space-3);
 }
 
 ::-webkit-scrollbar-track {
@@ -203,8 +523,8 @@ button {
 
 ::-webkit-scrollbar-thumb {
 	background-color: var(--color-gold-dark);
-	border: 3px solid var(--color-bg-base);
-	border-radius: 6px;
+	border: var(--border-accent) solid var(--color-bg-base);
+	border-radius: var(--radius-sm);
 }
 
 ::-webkit-scrollbar-thumb:hover {

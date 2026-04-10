@@ -3,7 +3,6 @@
 	import About from '$lib/components/About.svelte';
 	import Experience from '$lib/components/Experience.svelte';
 	import MatchHistory from '$lib/components/MatchHistory.svelte';
-	import Contact from '$lib/components/Contact.svelte';
 </script>
 
 <main class="portfolio-main">
@@ -11,7 +10,6 @@
 	<About />
 	<Experience />
 	<MatchHistory limit={3} />
-	<Contact />
 </main>
 
 <style>

@@ -1,5 +1,6 @@
 <script lang="ts">
 	import Modal from './Modal.svelte';
+	import ChampionPortrait from './ChampionPortrait.svelte';
 	import { i18n } from '$lib/i18n.svelte';
 	import type { MatchEntry } from '$lib/data/matches.svelte';
 	import { getYoutubeId } from '$lib/utils/video';
@@ -21,13 +22,11 @@
 		<div class="match-modal-layout">
 			<div class="match-modal-header">
 				<div class="champion-display">
-					<div class="champion-hex">
-						<img
-							src="https://ddragon.leagueoflegends.com/cdn/14.5.1/img/champion/{match.championId}.png"
-							alt={match.championName}
-							class="modal-champion-img"
-						/>
-					</div>
+					<ChampionPortrait
+						championId={match.championId}
+						championName={match.championName}
+						variant="modal"
+					/>
 					<div class="match-main-info">
 						<div class="match-date">{match.date}</div>
 						<div class="match-type-tag">{match[i18n.locale].type}</div>
@@ -36,7 +35,7 @@
 
 				<div class="match-performance">
 					<div class="performance-metric">
-						<span class="metric-label">{i18n.t?.projects?.score || 'KDA'}</span>
+						<span class="metric-label">{i18n.t?.projects?.score}</span>
 						<span class="metric-value">{match.kda}</span>
 					</div>
 					<div class="performance-status {match.win ? 'win' : 'loss'}">
@@ -47,17 +46,17 @@
 
 			<div class="match-modal-grid">
 				<div class="info-group">
-					<span class="group-label">Role</span>
+					<span class="group-label">{i18n.t?.projects?.modalRole}</span>
 					<span class="group-value">{match[i18n.locale].role}</span>
 				</div>
 				<div class="info-group">
-					<span class="group-label">Duration</span>
+					<span class="group-label">{i18n.t?.projects?.modalDuration}</span>
 					<span class="group-value">{match[i18n.locale].duration}</span>
 				</div>
 			</div>
 
 			<div class="match-modal-analysis">
-				<h3>Strategic Analysis</h3>
+				<h3>{i18n.t?.projects?.modalAnalysis}</h3>
 				<div class="analysis-content">
 					<p>{match[i18n.locale].description}</p>
 				</div>
@@ -67,13 +66,13 @@
 				{@const videoId = getYoutubeId(match.videoUrl)}
 				{#if videoId}
 					<div class="match-modal-video">
-						<h3>Match VOD (Unlisted)</h3>
+						<h3>{i18n.t?.projects?.modalVod}</h3>
 						<div class="video-container">
 							<iframe
 								width="560"
 								height="315"
 								src="https://www.youtube.com/embed/{videoId}"
-								title="YouTube video player"
+								title={i18n.t?.projects?.youtubeIframeTitle ?? ''}
 								frameborder="0"
 								allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
 								allowfullscreen
@@ -98,7 +97,7 @@
 		justify-content: space-between;
 		align-items: center;
 		padding-bottom: var(--spacing-md);
-		border-bottom: 0.0625rem solid color-mix(in oklch, var(--color-gold-dark) 20%, transparent);
+		border-bottom: var(--border-hairline) solid color-mix(in oklch, var(--color-gold-dark) 20%, transparent);
 	}
 
 	.champion-display {
@@ -107,39 +106,27 @@
 		gap: var(--spacing-md);
 	}
 
-	.champion-hex {
-		width: 5rem;
-		height: 5rem;
-		border: 0.125rem solid var(--color-gold-base);
-		overflow: hidden;
-		box-shadow: 0 0 1.25rem color-mix(in oklch, var(--color-gold-dark) 30%, transparent);
-	}
-
-	.modal-champion-img {
-		width: 100%;
-		height: 100%;
-		object-fit: cover;
-	}
-
 	.match-main-info {
 		display: flex;
 		flex-direction: column;
-		gap: 0.25rem;
+		gap: var(--space-1);
 	}
 
 	.match-date {
 		font-family: var(--font-heading);
-		font-size: 0.875rem;
-		color: var(--color-text-secondary);
+		font-size: var(--text-ui-sm);
+		line-height: var(--leading-ui);
+		color: var(--fg-muted);
 	}
 
 	.match-type-tag {
-		font-size: 0.75rem;
+		font-size: var(--text-overline);
+		line-height: var(--leading-ui);
 		text-transform: uppercase;
-		letter-spacing: 0.1em;
+		letter-spacing: var(--tracking-caps);
 		color: var(--color-magic-base);
 		background: color-mix(in oklch, var(--color-magic-base) 10%, transparent);
-		padding: 0.125rem 0.5rem;
+		padding: var(--space-1) var(--space-2);
 		width: fit-content;
 	}
 
@@ -147,7 +134,7 @@
 		display: flex;
 		flex-direction: column;
 		align-items: flex-end;
-		gap: 0.25rem;
+		gap: var(--space-1);
 	}
 
 	.performance-metric {
@@ -157,17 +144,20 @@
 	}
 
 	.metric-label {
-		font-size: 0.75rem;
-		color: var(--color-text-muted);
+		font-size: var(--text-overline);
+		line-height: var(--leading-ui);
+		color: var(--fg-subtle);
 		text-transform: uppercase;
+		letter-spacing: var(--tracking-caps-wide);
 	}
 
 	.performance-status {
 		font-family: var(--font-heading);
-		font-size: 0.875rem;
-		font-weight: bold;
+		font-size: var(--text-ui-sm);
+		line-height: var(--leading-ui);
+		font-weight: var(--font-weight-bold);
 		text-transform: uppercase;
-		letter-spacing: 0.1em;
+		letter-spacing: var(--tracking-caps);
 	}
 
 	.performance-status.win {
@@ -181,7 +171,8 @@
 
 	.metric-value {
 		font-family: var(--font-heading);
-		font-size: 1.5rem;
+		font-size: var(--text-match-title);
+		line-height: var(--leading-tight);
 		color: var(--color-gold-light);
 	}
 
@@ -191,42 +182,54 @@
 		gap: var(--spacing-md);
 		background: color-mix(in oklch, var(--color-bg-surface) 50%, transparent);
 		padding: var(--spacing-md);
-		border: 0.0625rem solid color-mix(in oklch, var(--color-gold-dark) 10%, transparent);
+		border: var(--border-hairline) solid color-mix(in oklch, var(--color-gold-dark) 10%, transparent);
 	}
 
 	.info-group {
 		display: flex;
 		flex-direction: column;
-		gap: 0.125rem;
+		gap: var(--space-0-5);
 	}
 
 	.group-label {
-		font-size: 0.75rem;
-		color: var(--color-text-muted);
+		font-size: var(--text-overline);
+		line-height: var(--leading-ui);
+		color: var(--fg-subtle);
 		text-transform: uppercase;
-		letter-spacing: 0.12em;
+		letter-spacing: var(--tracking-caps-wide);
 	}
 
 	.group-value {
 		font-family: var(--font-heading);
+		font-size: var(--text-subheading);
+		line-height: var(--leading-snug);
 		color: var(--color-gold-base);
+	}
+
+	.match-modal-analysis,
+	.match-modal-video {
+		display: flex;
+		flex-direction: column;
+		gap: var(--spacing-md);
 	}
 
 	.match-modal-analysis h3,
 	.match-modal-video h3 {
-		font-size: 1.125rem;
-		margin-bottom: var(--spacing-md);
+		font-size: var(--text-subheading);
+		line-height: var(--leading-snug);
 		color: var(--color-gold-light);
-		border-left: 0.1875rem solid var(--color-gold-base);
+		border-left: var(--border-accent) solid var(--color-gold-base);
 		padding-left: var(--spacing-sm);
 	}
 
 	.analysis-content {
-		line-height: 1.7;
-		color: var(--color-text-secondary);
+		font-size: var(--text-body);
+		line-height: var(--leading-relaxed);
+		letter-spacing: var(--tracking-ui);
+		color: var(--fg-prose);
 		background: color-mix(in oklch, var(--color-bg-surface) 30%, transparent);
 		padding: var(--spacing-md);
-		border: 0.0625rem solid color-mix(in oklch, var(--color-gold-dark) 10%, transparent);
+		border: var(--border-hairline) solid color-mix(in oklch, var(--color-gold-dark) 10%, transparent);
 	}
 
 	.video-container {
@@ -234,7 +237,7 @@
 		width: 100%;
 		padding-top: 56.25%; /* 16:9 Aspect Ratio */
 		background: #000;
-		border: 0.0625rem solid var(--color-gold-dark);
+		border: var(--border-hairline) solid var(--color-gold-dark);
 	}
 
 	.video-container iframe {

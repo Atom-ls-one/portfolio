@@ -1,43 +1,64 @@
 <script lang="ts">
 	import { i18n } from '$lib/i18n.svelte';
-	import profileImg from '$lib/assets/images/profile.png';
+	import profileImg from '$lib/assets/images/profile-2.jpg';
 </script>
 
-<section id="about" class="about-section container">
+<section id="about" class="about-section container section-lol-bg section-lol-bg--collection">
 	<div class="about-grid">
 		<div class="about-visual">
-			<div class="profile-ring">
-				<img src={profileImg} alt="Théo Atom Menini" class="profile-img" width="320" height="320" />
-			</div>
-			<div class="visual-decor"></div>
+			<img
+				src={profileImg}
+				alt="Théo Atom Menini"
+				class="about-profile-img"
+				width="800"
+				height="1200"
+				loading="lazy"
+				decoding="async"
+			/>
 		</div>
 
 		<div class="about-content">
 			<header class="section-header">
-				<span class="section-tag">{i18n.t?.about?.title}</span>
-				<h2>Théo <span class="text-gold">Atom</span> Menini</h2>
-
+				<p class="about-eyebrow">{i18n.t?.about?.title}</p>
+				<h2>Théo <span class="text-gold">&ldquo;Atom&rdquo;</span> Menini</h2>
+				<p class="about-tagline">{i18n.t?.about?.subtitle}</p>
 			</header>
 
-			<div class="bio-container">
-				<span class="bio-label">{i18n.locale === 'fr' ? 'À propos' : 'About Me'}</span>
-				<div class="bio-card">
-					<p>{i18n.t?.about?.bio}</p>
+			<div class="about-main">
+				<div class="bio-container">
+					<div class="bio-card">
+						<p>{i18n.t?.about?.bio}</p>
+					</div>
 				</div>
+
+				<aside class="faq-aside" aria-label={i18n.t?.about?.faqLabel}>
+					<span class="faq-label">{i18n.t?.about?.faqLabel}</span>
+					{#each i18n.t.about.faq as item (item.q)}
+						<details class="faq-item">
+							<summary>
+								<span class="faq-chevron" aria-hidden="true">›</span>
+								<span class="faq-q">{item.q}</span>
+							</summary>
+							<div class="faq-answer">
+								<p>{item.a}</p>
+							</div>
+						</details>
+					{/each}
+				</aside>
 			</div>
 
 			<div class="stats-grid">
 				<div class="stat-item">
-					<span class="stat-label">Role</span>
-					<span class="stat-value">{i18n.locale === 'fr' ? 'Coach / Analyste' : 'Coach / Analyst'}</span>
+					<span class="stat-label">{i18n.t?.about?.stats?.role}</span>
+					<span class="stat-value">{i18n.t?.hero?.role}</span>
 				</div>
 				<div class="stat-item">
-					<span class="stat-label">Experience</span>
-					<span class="stat-value">5+ Years</span>
+					<span class="stat-label">{i18n.t?.about?.stats?.experience}</span>
+					<span class="stat-value">{i18n.t?.about?.stats?.experienceValue}</span>
 				</div>
 				<div class="stat-item">
-					<span class="stat-label">Region</span>
-					<span class="stat-value">Europe (EUW)</span>
+					<span class="stat-label">{i18n.t?.about?.stats?.region}</span>
+					<span class="stat-value">{i18n.t?.about?.stats?.regionValue}</span>
 				</div>
 			</div>
 		</div>
@@ -47,172 +68,332 @@
 <style>
 	.about-section {
 		padding-block: var(--spacing-xl);
-		position: relative;
 	}
 
 	.about-grid {
 		display: grid;
-		grid-template-columns: 1fr 1.5fr;
-		gap: var(--spacing-xl);
-		align-items: center;
+		grid-template-columns: minmax(0, 40%) minmax(0, 1fr);
+		gap: var(--space-about-grid-gap);
+		/* Photo : hauteur intrinsèque (ratio), pas étirée sur toute la colonne texte. */
+		align-items: start;
 	}
 
+	/* Même encadrement que les FAQ (dégradé + bordure dorée type client). */
 	.about-visual {
 		position: relative;
-		display: flex;
-		justify-content: center;
-	}
-
-	.profile-ring {
-		width: clamp(200px, 25vw, 320px);
-		height: clamp(200px, 25vw, 320px);
-		border-radius: 50%;
-		padding: 6px;
+		width: 100%;
+		max-width: 100%;
+		/* Occupe toute la colonne (~40 %) ; ratio source 2:3, plafond pour ne pas « manger » tout l’écran. */
+		aspect-ratio: 2 / 3;
+		max-height: min(72vh, 46rem);
+		overflow: hidden;
 		background: linear-gradient(
-			135deg,
-			var(--color-gold-light),
-			var(--color-gold-base),
-			var(--color-gold-dark)
+			180deg,
+			color-mix(in oklch, var(--color-bg-surface) 60%, transparent),
+			color-mix(in oklch, var(--color-bg-base) 80%, transparent)
 		);
-		z-index: 2;
+		border-style: solid;
+		border-width: var(--border-default);
+		border-image: linear-gradient(
+			to bottom,
+			oklch(73.5% 0.093 83.2),
+			oklch(44.8% 0.094 77.1)
+		);
+		border-image-slice: 1;
 	}
 
-	.profile-img {
+	.about-profile-img {
 		width: 100%;
 		height: 100%;
-		border-radius: 50%;
 		object-fit: cover;
-		border: 4px solid var(--color-bg-base);
+		/* Ancrage un peu plus bas dans le fichier pour remonter le sujet (évite d’être collé en bas du cadre). */
+		object-position: 48% 28%;
+		display: block;
 	}
 
 	.section-header {
 		display: flex;
 		flex-direction: column;
 		gap: var(--spacing-xs);
-		margin-bottom: var(--spacing-lg);
 	}
 
-	.section-tag {
+	.section-header h2 {
+		font-size: var(--text-display-sm);
+	}
+
+	.about-eyebrow {
+		margin: 0;
 		font-family: var(--font-heading);
-		font-size: 0.875rem;
+		font-size: var(--text-overline);
+		line-height: var(--leading-ui);
 		text-transform: uppercase;
-		letter-spacing: 0.2em;
+		letter-spacing: var(--tracking-caps);
 		color: var(--color-magic-base);
+	}
+
+	.about-tagline {
+		margin: 0;
+		font-size: var(--text-ui-sm);
+		line-height: var(--leading-snug);
+		color: var(--fg-muted);
+		max-width: var(--about-prose-measure);
 	}
 
 	.text-gold {
 		color: var(--color-gold-light);
 	}
 
-	.bio-container {
+	.about-content {
 		display: flex;
 		flex-direction: column;
-		gap: var(--spacing-xs);
-		margin-bottom: var(--spacing-lg);
+		min-height: 100%;
+		min-width: 0;
+		/* gap uniforme = trop d’air titre ↔ bio ; marges séparées ci-dessous */
+		gap: 0;
+		/* ~65–75 caractères (mesure éditoriale) pour les paragraphes descriptifs */
+		--about-prose-measure: 70ch;
 	}
 
-	.bio-label {
-		font-family: var(--font-heading);
-		font-size: 0.75rem;
-		text-transform: uppercase;
-		letter-spacing: 0.15em;
-		color: var(--color-magic-base);
-		opacity: 0.8;
+	.about-content > .section-header {
+		margin-block-end: var(--space-about-title-to-bio);
+	}
+
+	.about-content > .about-main {
+		margin-block-end: var(--space-about-content-y);
+	}
+
+	/* Remplit l’espace vertical entre le titre et les stats (aligné avec la hauteur du portrait). */
+	.about-main {
+		flex: 1 1 auto;
+		display: flex;
+		flex-direction: column;
+		gap: var(--space-about-main-y);
+		min-width: 0;
+	}
+
+	.bio-container {
+		min-width: 0;
 	}
 
 	.bio-card {
-		padding: var(--spacing-md);
-		background: color-mix(in oklch, var(--color-bg-surface) 40%, transparent);
-		border: 1px solid;
-		border-image: linear-gradient(
-			to bottom,
-			var(--color-gold-light),
-			var(--color-gold-dark)
-		) 1;
-		margin-bottom: var(--spacing-lg);
+		padding: 0;
 		position: relative;
-		box-shadow: 
-			inset 0 0 20px color-mix(in oklch, var(--color-gold-base) 2%, transparent),
-			0 10px 30px -10px rgba(0, 0, 0, 0.4);
-	}
-
-	.bio-card::before {
-		content: '';
-		position: absolute;
-		top: 0;
-		left: 0;
-		width: 100%;
-		height: 2px;
-		background: linear-gradient(90deg, transparent, var(--color-gold-base), transparent);
 	}
 
 	.bio-card p {
-		font-family: 'Marcellus', serif;
-		font-size: 1.2rem;
-		line-height: 1.8;
-		color: var(--color-text-secondary);
+		max-width: var(--about-prose-measure);
+		font-family: var(--font-serif);
+		font-size: var(--text-lead);
+		line-height: var(--leading-body);
+		color: var(--fg-prose);
 		text-wrap: balance;
-		letter-spacing: 0.02em;
+		letter-spacing: var(--tracking-normal);
 	}
 
-	.bio-card p::first-letter {
-		float: left;
+	.faq-aside {
+		display: flex;
+		flex-direction: column;
+		gap: var(--spacing-sm);
+		text-align: start;
+		min-width: 0;
+	}
+
+	.faq-label {
 		font-family: var(--font-heading);
-		font-size: 3.5rem;
-		line-height: 1;
-		padding-right: 0.5rem;
-		color: var(--color-gold-base);
-		text-shadow: 0 0 10px color-mix(in oklch, var(--color-gold-base) 30%, transparent);
+		font-size: var(--text-overline);
+		line-height: var(--leading-ui);
+		text-transform: uppercase;
+		letter-spacing: var(--tracking-caps-wider);
+		color: var(--fg-subtle);
+	}
+
+	.faq-item {
+		background: linear-gradient(
+			180deg,
+			color-mix(in oklch, var(--color-bg-surface) 60%, transparent),
+			color-mix(in oklch, var(--color-bg-base) 80%, transparent)
+		);
+		border-style: solid;
+		border-width: var(--border-default);
+		border-image: linear-gradient(
+			to bottom,
+			oklch(73.5% 0.093 83.2),
+			oklch(44.8% 0.094 77.1)
+		);
+		border-image-slice: 1;
+		transition: background var(--transition-fast), box-shadow var(--transition-fast);
+	}
+
+	.faq-item:hover {
+		background: linear-gradient(
+			180deg,
+			color-mix(in oklch, var(--color-bg-surface) 72%, transparent),
+			color-mix(in oklch, var(--color-bg-base) 88%, transparent)
+		);
+		box-shadow: inset 0 0 var(--border-default) oklch(0% 0 0);
+	}
+
+	.faq-item[open] {
+		background: linear-gradient(
+			180deg,
+			color-mix(in oklch, var(--color-bg-surface) 68%, transparent),
+			color-mix(in oklch, var(--color-bg-base) 84%, transparent)
+		);
+	}
+
+	.faq-item summary {
+		list-style: none;
+		display: flex;
+		align-items: flex-start;
+		gap: var(--space-2);
+		padding: var(--space-3) var(--space-3a);
+		cursor: pointer;
+		font-family: var(--font-body);
+		font-size: var(--text-ui);
+		font-weight: var(--font-weight-medium);
+		line-height: var(--leading-ui);
+		color: var(--fg-ui);
+		user-select: none;
+	}
+
+	.faq-item summary::-webkit-details-marker {
+		display: none;
+	}
+
+	.faq-item summary:focus {
+		outline: none;
+	}
+
+	.faq-item summary:focus-visible {
+		outline: var(--space-focus-outline) solid var(--color-magic-base);
+		outline-offset: var(--space-focus-offset);
+		border-radius: var(--radius-sm);
+	}
+
+	.faq-chevron {
+		flex-shrink: 0;
+		width: var(--space-5);
+		text-align: center;
+		font-size: var(--text-ui);
+		line-height: var(--leading-ui);
+		color: var(--color-magic-base);
+		transition: transform var(--transition-fast);
+	}
+
+	.faq-item[open] .faq-chevron {
+		transform: rotate(90deg);
+	}
+
+	.faq-q {
+		flex: 1;
+		min-width: 0;
+	}
+
+	.faq-answer {
+		display: flex;
+		flex-direction: column;
+		gap: var(--space-2-5);
+		padding: var(--space-2-5) var(--space-3a) var(--space-3) var(--space-10);
+		border-top: var(--border-hairline) solid
+			color-mix(in oklch, var(--color-gold-dark) 70%, transparent);
+	}
+
+	.faq-answer p {
+		max-width: var(--about-prose-measure);
+		margin: 0;
+		font-family: var(--font-body);
+		font-size: var(--text-body);
+		line-height: var(--leading-body);
+		letter-spacing: var(--tracking-ui);
+		color: var(--fg-muted);
+		text-wrap: pretty;
 	}
 
 	.stats-grid {
 		display: grid;
-		grid-template-columns: repeat(3, 1fr);
+		grid-template-columns: repeat(3, minmax(0, 1fr));
 		gap: var(--spacing-md);
+		flex-shrink: 0;
+		padding-top: var(--spacing-md);
+		border-top: var(--border-hairline) solid color-mix(in oklch, var(--color-gold-dark) 28%, transparent);
 	}
 
 	.stat-item {
 		display: flex;
 		flex-direction: column;
-		gap: 4px;
+		gap: var(--space-1);
 	}
 
 	.stat-label {
-		font-size: 0.75rem;
+		font-size: var(--text-overline);
+		line-height: var(--leading-ui);
 		text-transform: uppercase;
-		letter-spacing: 0.1em;
-		color: var(--color-text-muted);
+		letter-spacing: var(--tracking-caps);
+		color: var(--fg-subtle);
 	}
 
 	.stat-value {
 		font-family: var(--font-heading);
-		font-size: 1.25rem;
+		font-size: var(--text-stat-value);
+		line-height: var(--leading-snug);
 		color: var(--color-gold-light);
 	}
 
-	@media (max-width: 968px) {
+	@media (min-width: 75rem) {
+		.about-grid {
+			gap: var(--space-about-grid-gap-lg);
+		}
+	}
+
+	@media (min-width: 100rem) {
+		.about-grid {
+			gap: var(--space-about-grid-gap-xl);
+		}
+	}
+
+	@media (max-width: 60.5rem) {
 		.about-grid {
 			grid-template-columns: 1fr;
+			gap: var(--spacing-xl);
 			text-align: center;
 		}
 
-		.profile-ring {
-			width: 240px;
-			height: 240px;
+		.about-visual {
+			width: min(100%, var(--about-visual-max));
+			aspect-ratio: 2 / 3;
+			max-height: min(58vh, 34rem);
+			margin-inline: auto;
 		}
 
 		.section-header {
 			align-items: center;
 		}
 
-		.bio-card {
-			border-left: 1px solid var(--color-gold-dark);
-			border-top: 4px solid var(--color-gold-base);
+		.about-main {
+			align-items: stretch;
+		}
+
+		.bio-container {
+			max-width: var(--about-bio-max);
+			margin-inline: auto;
+			text-align: start;
+		}
+
+		.faq-aside {
+			max-width: var(--about-faq-max);
+			width: 100%;
+			margin-inline: auto;
 		}
 
 		.stats-grid {
 			grid-template-columns: 1fr;
 			gap: var(--spacing-sm);
+			text-align: start;
+		}
+
+		.stat-item {
+			align-items: center;
+			text-align: center;
 		}
 	}
 </style>

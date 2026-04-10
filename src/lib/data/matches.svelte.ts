@@ -43,7 +43,6 @@ const loadMatches = (): MatchEntry[] => {
 
 class MatchStore {
 	list = $state<MatchEntry[]>(loadMatches());
-	loading = $state(false);
 }
 
 export const matches = new MatchStore();

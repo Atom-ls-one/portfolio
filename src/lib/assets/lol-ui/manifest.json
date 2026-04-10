@@ -1,0 +1,15 @@
+{
+	"base": "https://raw.communitydragon.org/latest",
+	"files": [
+		{
+			"source": "plugins/rcp-fe-lol-static-assets/global/default/images/border-unranked.png",
+			"file": "border-unranked.png",
+			"bytes": 6116
+		},
+		{
+			"source": "plugins/rcp-fe-lol-static-assets/global/default/svg/circle-lines-gold.svg",
+			"file": "circle-lines-gold.svg",
+			"bytes": 757
+		}
+	]
+}

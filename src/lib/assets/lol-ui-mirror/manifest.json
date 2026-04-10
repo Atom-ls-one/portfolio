@@ -1,0 +1,35 @@
+{
+	"base": "https://raw.communitydragon.org/latest",
+	"generatedAt": "2026-04-10T14:04:48.506Z",
+	"options": {
+		"dryRun": false,
+		"feOnly": false,
+		"noGameData": false,
+		"maxFiles": 5,
+		"delayMs": 40,
+		"maxBytes": 52428800
+	},
+	"files": [
+		{
+			"source": "/latest/plugins/rcp-fe-lol-champ-select/unknown/05e8f5bb7fe2d9e9.png",
+			"bytes": 607
+		},
+		{
+			"source": "/latest/plugins/rcp-fe-lol-champ-select/unknown/18a4c75e21cdb058.png",
+			"bytes": 1541
+		},
+		{
+			"source": "/latest/plugins/rcp-fe-lol-champ-select/unknown/20ab5690a770bcde.png",
+			"bytes": 80935
+		},
+		{
+			"source": "/latest/plugins/rcp-fe-lol-champ-select/unknown/8fb717d1e048e44e.png",
+			"bytes": 2121
+		},
+		{
+			"source": "/latest/plugins/rcp-fe-lol-champ-select/unknown/905e289a86ca3897.png",
+			"bytes": 346
+		}
+	],
+	"count": 5
+}

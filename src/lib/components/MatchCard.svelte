@@ -1,5 +1,6 @@
 <script lang="ts">
 	import Button from './Button.svelte';
+	import ChampionPortrait from './ChampionPortrait.svelte';
 	import { i18n } from '$lib/i18n.svelte';
 	import type { MatchEntry } from '$lib/data/matches.svelte';
 
@@ -20,15 +21,11 @@
 	</div>
 
 	<div class="match-main">
-		<div class="champion-icon">
-			<img
-				src="https://ddragon.leagueoflegends.com/cdn/14.5.1/img/champion/{match.championId}.png"
-				alt={match.championName}
-				class="champion-img"
-				loading="lazy"
-			/>
-			<span class="champion-fallback">{match.championName[0]}</span>
-		</div>
+		<ChampionPortrait
+			championId={match.championId}
+			championName={match.championName}
+			variant="card"
+		/>
 
 		<div class="match-details">
 			<h3 class="match-title">{match[i18n.locale]?.title}</h3>
@@ -51,12 +48,13 @@
 <style>
 	.match-card {
 		display: grid;
-		grid-template-columns: 9.375rem 2fr 1.5fr auto;
+		grid-template-columns: var(--layout-match-sidebar) 2fr 1.5fr auto;
 		gap: var(--spacing-md);
 		align-items: center;
-		padding: var(--spacing-md) var(--spacing-md) var(--spacing-md) calc(var(--spacing-md) + 0.375rem);
+		padding: var(--spacing-md) var(--spacing-md) var(--spacing-md)
+			calc(var(--spacing-md) + var(--space-1-5));
 		background: color-mix(in oklch, var(--color-bg-surface) 40%, transparent);
-		border: 0.125rem solid;
+		border: var(--border-default) solid;
 		border-image: linear-gradient(
 			to bottom,
 			oklch(73.5% 0.093 83.2),
@@ -73,7 +71,7 @@
 		left: 0;
 		top: 0;
 		bottom: 0;
-		width: 0.375rem;
+		width: var(--space-1-5);
 		background: var(--indicator-color, var(--color-gold-dark));
 	}
 
@@ -99,13 +97,14 @@
 		display: flex;
 		flex-direction: column;
 		align-items: flex-start;
-		gap: 0.25rem;
+		gap: var(--space-1);
 	}
 
 	.status-result {
 		font-family: var(--font-heading);
-		font-size: 1.25rem;
-		font-weight: 700;
+		font-size: var(--text-card-title);
+		line-height: var(--leading-tight);
+		font-weight: var(--font-weight-bold);
 	}
 
 	.match-card--victory .status-result {
@@ -119,19 +118,21 @@
 	}
 
 	.status-divider {
-		width: 2.5rem;
-		height: 0.125rem;
+		width: var(--space-11);
+		height: var(--border-default);
 		background-color: var(--color-gold-dark);
 	}
 
 	.status-type {
-		font-size: 0.875rem;
-		color: var(--color-text-secondary);
+		font-size: var(--text-ui-sm);
+		line-height: var(--leading-ui);
+		color: var(--fg-muted);
 	}
 
 	.status-duration {
-		font-size: 0.75rem;
-		color: var(--color-text-muted);
+		font-size: var(--text-overline);
+		line-height: var(--leading-ui);
+		color: var(--fg-subtle);
 	}
 
 	.match-main {
@@ -140,66 +141,34 @@
 		gap: var(--spacing-md);
 	}
 
-	.champion-icon {
-		position: relative;
-		width: 4.5rem;
-		height: 4.5rem;
-		border-radius: 50%;
-		border: 0.125rem solid var(--color-gold-base);
-		overflow: hidden;
-		background: var(--color-bg-base);
-		box-shadow: 0 0 0.9375rem color-mix(in oklch, var(--color-gold-base) 20%, transparent);
-		flex-shrink: 0;
-	}
-
-	.champion-img {
-		position: relative;
-		z-index: 2;
-		width: 100%;
-		height: 100%;
-		object-fit: cover;
-		display: block;
-	}
-
-	.champion-fallback {
-		position: absolute;
-		inset: 0;
-		display: flex;
-		align-items: center;
-		justify-content: center;
-		font-family: var(--font-heading);
-		font-size: 2rem;
-		color: var(--color-magic-base);
-		font-weight: 700;
-		z-index: 1;
-	}
-
 	.match-details {
 		display: flex;
 		flex-direction: column;
-		gap: 0.25rem;
+		gap: var(--space-0-5);
 	}
 
 	.match-title {
-		font-size: 1.5rem;
+		font-size: var(--text-match-title);
+		line-height: var(--leading-tight);
 		color: var(--color-gold-light);
-		margin-bottom: -0.25rem;
 	}
 
 	.match-role {
-		font-size: 0.875rem;
+		font-size: var(--text-ui-sm);
+		line-height: var(--leading-ui);
 		color: var(--color-magic-base);
-		font-weight: 600;
+		font-weight: var(--font-weight-semibold);
 		text-transform: uppercase;
-		letter-spacing: 0.05em;
+		letter-spacing: var(--tracking-hero-sub);
 	}
 
 	.match-desc {
-		font-family: 'Marcellus', serif;
-		font-size: 0.9375rem;
-		color: var(--color-text-secondary);
-		line-height: 1.5;
-		max-width: 25rem;
+		font-family: var(--font-serif);
+		font-size: var(--text-body);
+		color: var(--fg-muted);
+		line-height: var(--leading-normal);
+		letter-spacing: var(--tracking-ui);
+		max-width: var(--content-measure-match-desc);
 		text-wrap: balance;
 	}
 
@@ -212,9 +181,10 @@
 
 	.kda {
 		font-family: var(--font-heading);
-		font-size: 1rem;
-		color: var(--color-text-primary);
-		letter-spacing: 0.1em;
+		font-size: var(--text-ui);
+		line-height: var(--leading-ui);
+		color: var(--fg-default);
+		letter-spacing: var(--tracking-caps);
 	}
 
 	@media (max-width: 64rem) {
@@ -228,7 +198,7 @@
 			align-items: center;
 			justify-content: space-between;
 			width: 100%;
-			border-bottom: 0.0625rem solid var(--color-gold-dark);
+			border-bottom: var(--border-hairline) solid var(--color-gold-dark);
 			padding-bottom: var(--spacing-xs);
 		}
 

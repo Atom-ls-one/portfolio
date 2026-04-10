@@ -1,8 +1,11 @@
 {
 	"en": {
+		"common": {
+			"back": "Back"
+		},
 		"seo": {
-			"title": "Théo \"Atom\" MENINI - League of Legends Coach / Analyst",
-			"description": "Portfolio of Théo Menini, Coach / Analyst for Stuverance. Specializing in draft strategy, VOD reviews, and high-performance staff support.",
+			"title": "Théo \"Atom\" MENINI - League of Legends Assistant Coach Analyst",
+			"description": "Portfolio of Théo Menini, Assistant Coach Analyst for Stuverance. Specializing in draft strategy, VOD reviews, and high-performance staff support.",
 			"keywords": "League of Legends, Coach, Analyst, Stuverance, Antic Esport, Esports, VOD Review, Draft Strategy, Lyon, Esport Coach"
 		},
 		"nav": {
@@ -11,38 +14,75 @@
 		},
 		"hero": {
 			"catchphrase": "Aiming for perfection by mastering the variables",
-			"role": "Coach / Analyst",
+			"role": "Assistant Coach Analyst",
 			"btn1": "History",
 			"btn2": "Contact"
 		},
 		"about": {
 			"title": "In-Game Profile",
 			"subtitle": "The architect behind the strategy.",
-			"bio": "Passionate League of Legends coach with a focus on meta-analysis, macro-strategy, and individual player growth. I transform raw talent into tactical dominance."
+			"bio": "Passionate League of Legends coach with a focus on meta-analysis, macro-strategy, and individual player growth. I transform raw talent into tactical dominance.",
+			"faqLabel": "Quick info",
+			"stats": {
+				"role": "Role",
+				"experience": "Experience",
+				"region": "Region",
+				"experienceValue": "5+ years",
+				"regionValue": "Europe (EUW)"
+			},
+			"faq": [
+				{
+					"q": "What is my background outside of esports?",
+					"a": "Studies and work experience outside gaming sharpen how I structure feedback, communicate with staff, and keep a steady process under pressure. I apply those skills every day in coaching and analysis."
+				},
+				{
+					"q": "Where am I located?",
+					"a": "I'm based in France (Lyon area), EUW timezone, ideal for European teams and remote collaboration."
+				},
+				{
+					"q": "Am I able to relocate for a team?",
+					"a": "For the right project and terms, yes. I'm open to discussing relocation if the role and structure are a good fit."
+				},
+				{
+					"q": "Am I able to travel for a team?",
+					"a": "Yes. I'm used to bootcamps, on-site stages, and LAN events, and I can plan travel around the competitive calendar."
+				}
+			]
 		},
 		"experience": {
-			"title": "Career & Palmarès"
-		},
-		"achievements": {
-			"title": "Accomplishments"
+			"title": "Career & Palmarès",
+			"tagRole": "Role",
+			"tagAchievement": "Achievement"
 		},
 		"projects": {
 			"title": "History",
 			"subtitle": "In-depth analysis of competitive and high-elo games.",
 			"viewAll": "View Full History",
 			"score": "KDA",
-			"btn": "View Details"
+			"btn": "View Details",
+			"modalRole": "Role",
+			"modalDuration": "Duration",
+			"modalAnalysis": "Strategic analysis",
+			"modalVod": "Match VOD (unlisted)",
+			"youtubeIframeTitle": "YouTube video player"
 		},
 		"contact": {
 			"title": "Contact",
 			"subtitle": "Join the network and stay updated on latest strategies.",
-			"copied": "Copied!"
+			"copied": "Copied!",
+			"connect": "Connect",
+			"follow": "Follow",
+			"copyTag": "Copy tag",
+			"sendEmail": "Send message"
 		}
 	},
 	"fr": {
+		"common": {
+			"back": "Retour"
+		},
 		"seo": {
-			"title": "Théo \"Atom\" MENINI - Coach / Analyste League of Legends",
-			"description": "Portfolio de Théo Menini, Coach / Analyste chez Stuverance. Expert en stratégie de draft, VOD reviews et accompagnement de staff haute performance.",
+			"title": "Théo \"Atom\" MENINI - Assistant Coach Analyste League of Legends",
+			"description": "Portfolio de Théo Menini, Assistant Coach Analyste chez Stuverance. Expert en stratégie de draft, VOD reviews et accompagnement de staff haute performance.",
 			"keywords": "League of Legends, Coach, Analyste, Stuverance, Antic Esport, Esports, VOD Review, Stratégie de Draft, Lyon, Coach Esport"
 		},
 		"nav": {
@@ -51,33 +91,66 @@
 		},
 		"hero": {
 			"catchphrase": "Viser la perfection par la maîtrise des variables",
-			"role": "Coach / Analyste",
+			"role": "Assistant Coach Analyste",
 			"btn1": "Historique",
 			"btn2": "Contact"
 		},
 		"about": {
 			"title": "Profil In-Game",
 			"subtitle": "L'architecte derrière la stratégie.",
-			"bio": "Coach League of Legends passionné, expert en méta-analyse, macro-stratégie et progression individuelle. Je transforme le talent brut en domination tactique."
+			"bio": "Coach League of Legends passionné, expert en méta-analyse, macro-stratégie et progression individuelle. Je transforme le talent brut en domination tactique.",
+			"faqLabel": "Infos rapides",
+			"stats": {
+				"role": "Rôle",
+				"experience": "Expérience",
+				"region": "Région",
+				"experienceValue": "5+ ans",
+				"regionValue": "Europe (EUW)"
+			},
+			"faq": [
+				{
+					"q": "Quel est mon parcours en dehors de l'esport ?",
+					"a": "Études et expériences pro hors jeu vidéo : ça renforce ma façon de structurer le feedback, de parler au staff et de garder un cadre clair sous pression. C'est utile au quotidien en coaching et analyse."
+				},
+				{
+					"q": "Où suis-je basé ?",
+					"a": "En France (région lyonnaise), fuseau EUW, pratique pour les équipes européennes et le travail à distance."
+				},
+				{
+					"q": "Puis-je déménager pour une équipe ?",
+					"a": "Pour le bon projet et les bonnes conditions, oui. Je suis ouvert à en discuter si le rôle et la structure sont alignés."
+				},
+				{
+					"q": "Puis-je me déplacer pour une équipe ?",
+					"a": "Oui. Bootcamps, stages sur place, LAN : j'ai l'habitude et je peux organiser les déplacements selon le calendrier compétitif."
+				}
+			]
 		},
 		"experience": {
-			"title": "Parcours & Palmarès"
-		},
-		"achievements": {
-			"title": "Accomplissements"
+			"title": "Parcours & Palmarès",
+			"tagRole": "Poste",
+			"tagAchievement": "Palmarès"
 		},
 		"projects": {
 			"title": "Historique",
 			"subtitle": "Analyses approfondies de parties compétitives et haut elo.",
 			"viewAll": "Voir tout l'historique",
 			"score": "KDA",
-			"btn": "Voir Détails"
+			"btn": "Voir Détails",
+			"modalRole": "Rôle",
+			"modalDuration": "Durée",
+			"modalAnalysis": "Analyse stratégique",
+			"modalVod": "VOD du match (non répertoriée)",
+			"youtubeIframeTitle": "Lecteur vidéo YouTube"
 		},
 		"contact": {
 			"title": "Contact",
 			"subtitle": "Rejoignez le réseau pour rester informé des dernières stratégies.",
-			"copied": "Copié !"
+			"copied": "Copié !",
+			"connect": "Se connecter",
+			"follow": "Suivre",
+			"copyTag": "Copier le tag",
+			"sendEmail": "Envoyer un mail"
 		}
 	}
 }
-
