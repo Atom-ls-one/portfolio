@@ -27,7 +27,7 @@
 		if (!labels) return cat;
 		const map: Record<WorkCategory, string> = {
 			'scouting-report': labels.scoutingReport,
-			'reviews': labels.reviews,
+			reviews: labels.reviews,
 			'draft-simulations': labels.draftSimulations
 		};
 		return map[cat] ?? cat;
@@ -69,7 +69,6 @@
 			</div>
 		{/key}
 	</div>
-
 </section>
 
 <WorkModal work={selectedWork} onClose={closeWorkDetails} />
@@ -85,7 +84,8 @@
 		padding: var(--space-2) var(--space-3);
 		background: color-mix(in oklch, var(--color-bg-base) 85%, transparent);
 		backdrop-filter: blur(12px);
-		border: var(--border-hairline) solid color-mix(in oklch, var(--color-gold-dark) 30%, transparent);
+		border: var(--border-hairline) solid
+			color-mix(in oklch, var(--color-gold-dark) 30%, transparent);
 	}
 
 	.category-tab {
@@ -120,7 +120,12 @@
 		left: var(--space-4);
 		right: var(--space-4);
 		height: var(--border-default);
-		background: linear-gradient(90deg, var(--color-gold-dark), var(--color-gold-light), var(--color-gold-dark));
+		background: linear-gradient(
+			90deg,
+			var(--color-gold-dark),
+			var(--color-gold-light),
+			var(--color-gold-dark)
+		);
 	}
 
 	.work-stack {

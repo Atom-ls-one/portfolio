@@ -78,7 +78,8 @@
 		position: absolute;
 		z-index: 2;
 		inset: 0;
-		background: url('../assets/lol-ui/circle-lines-gold.svg') center 38% / min(72vw, 24rem) no-repeat;
+		background: url('../assets/lol-ui/circle-lines-gold.svg') center 38% / min(72vw, 24rem)
+			no-repeat;
 		opacity: 0.12;
 		pointer-events: none;
 	}

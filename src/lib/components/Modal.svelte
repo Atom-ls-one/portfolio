@@ -1,11 +1,12 @@
 <script lang="ts">
 	import { fade, scale } from 'svelte/transition';
+	import type { Snippet } from 'svelte';
 
 	interface Props {
 		isOpen: boolean;
 		onClose: () => void;
 		title?: string;
-		children?: any;
+		children?: Snippet;
 	}
 
 	let { isOpen, onClose, title, children }: Props = $props();
@@ -80,11 +81,7 @@
 			var(--color-bg-base)
 		);
 		border: var(--border-default) solid;
-		border-image: linear-gradient(
-			to bottom,
-			oklch(73.5% 0.093 83.2),
-			oklch(44.8% 0.094 77.1)
-		);
+		border-image: linear-gradient(to bottom, oklch(73.5% 0.093 83.2), oklch(44.8% 0.094 77.1));
 		border-image-slice: 1;
 		width: 100%;
 		max-width: var(--container-modal);
@@ -99,7 +96,8 @@
 		display: flex;
 		align-items: center;
 		padding: var(--spacing-md) var(--spacing-lg);
-		border-bottom: var(--border-hairline) solid color-mix(in oklch, var(--color-gold-dark) 30%, transparent);
+		border-bottom: var(--border-hairline) solid
+			color-mix(in oklch, var(--color-gold-dark) 30%, transparent);
 	}
 
 	.modal-header h2 {
@@ -141,11 +139,7 @@
 	}
 
 	.close-button:hover {
-		background: linear-gradient(
-			to bottom,
-			oklch(22.1% 0.015 251.7),
-			oklch(33.1% 0.032 94.6)
-		);
+		background: linear-gradient(to bottom, oklch(22.1% 0.015 251.7), oklch(33.1% 0.032 94.6));
 		text-shadow: 0 0 0.3125rem oklch(100% 0 0 / 0.5); /* #ffffff80 */
 		box-shadow:
 			inset 0 0 var(--border-default) oklch(0% 0 0),

@@ -50,11 +50,7 @@
 			calc(var(--spacing-md) + var(--space-1-5));
 		background: color-mix(in oklch, var(--color-bg-surface) 40%, transparent);
 		border: var(--border-default) solid;
-		border-image: linear-gradient(
-			to bottom,
-			oklch(73.5% 0.093 83.2),
-			oklch(44.8% 0.094 77.1)
-		);
+		border-image: linear-gradient(to bottom, oklch(73.5% 0.093 83.2), oklch(44.8% 0.094 77.1));
 		border-image-slice: 1;
 		transition: background var(--transition-base);
 		position: relative;

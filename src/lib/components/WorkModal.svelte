@@ -13,11 +13,7 @@
 	let { work, onClose }: Props = $props();
 </script>
 
-<Modal
-	isOpen={!!work}
-	{onClose}
-	title={work ? work[i18n.locale].title : ''}
->
+<Modal isOpen={!!work} {onClose} title={work ? work[i18n.locale].title : ''}>
 	{#if work}
 		<div class="work-modal-layout">
 			<div class="work-modal-header">
@@ -87,7 +83,8 @@
 		justify-content: space-between;
 		align-items: center;
 		padding-bottom: var(--spacing-md);
-		border-bottom: var(--border-hairline) solid color-mix(in oklch, var(--color-gold-dark) 20%, transparent);
+		border-bottom: var(--border-hairline) solid
+			color-mix(in oklch, var(--color-gold-dark) 20%, transparent);
 	}
 
 	.champion-display {
@@ -126,7 +123,8 @@
 		gap: var(--spacing-md);
 		background: color-mix(in oklch, var(--color-bg-surface) 50%, transparent);
 		padding: var(--spacing-md);
-		border: var(--border-hairline) solid color-mix(in oklch, var(--color-gold-dark) 10%, transparent);
+		border: var(--border-hairline) solid
+			color-mix(in oklch, var(--color-gold-dark) 10%, transparent);
 	}
 
 	.info-group {
@@ -173,7 +171,8 @@
 		color: var(--fg-prose);
 		background: color-mix(in oklch, var(--color-bg-surface) 30%, transparent);
 		padding: var(--spacing-md);
-		border: var(--border-hairline) solid color-mix(in oklch, var(--color-gold-dark) 10%, transparent);
+		border: var(--border-hairline) solid
+			color-mix(in oklch, var(--color-gold-dark) 10%, transparent);
 	}
 
 	.video-container {

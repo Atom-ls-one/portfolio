@@ -13,8 +13,14 @@ const RAW = 'https://raw.communitydragon.org/latest';
 
 /** [chemin sur RAW, nom local] */
 const ASSETS = [
-	['plugins/rcp-fe-lol-static-assets/global/default/images/border-unranked.png', 'border-unranked.png'],
-	['plugins/rcp-fe-lol-static-assets/global/default/svg/circle-lines-gold.svg', 'circle-lines-gold.svg']
+	[
+		'plugins/rcp-fe-lol-static-assets/global/default/images/border-unranked.png',
+		'border-unranked.png'
+	],
+	[
+		'plugins/rcp-fe-lol-static-assets/global/default/svg/circle-lines-gold.svg',
+		'circle-lines-gold.svg'
+	]
 ];
 
 mkdirSync(OUT, { recursive: true });

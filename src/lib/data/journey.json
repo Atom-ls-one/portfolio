@@ -63,7 +63,11 @@
 		"date": "2024",
 		"type": "experience",
 		"title": { "en": "Thônon Gaming Fest", "fr": "Thônon Gaming Fest", "ko": "Thônon Gaming Fest" },
-		"desc": { "en": "Caster (TGF Tournament)", "fr": "Caster (Tournoi TGF)", "ko": "캐스터 (TGF 토너먼트)" }
+		"desc": {
+			"en": "Caster (TGF Tournament)",
+			"fr": "Caster (Tournoi TGF)",
+			"ko": "캐스터 (TGF 토너먼트)"
+		}
 	},
 	{
 		"date": "2023 -> 2025",

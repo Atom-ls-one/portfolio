@@ -6,7 +6,8 @@
 /* --- Americana --- */
 @font-face {
 	font-family: 'Americana';
-	src: url('https://raw.communitydragon.org/latest/game/assets/ux/fonts/americana.ttf') format('truetype');
+	src: url('https://raw.communitydragon.org/latest/game/assets/ux/fonts/americana.ttf')
+		format('truetype');
 	font-weight: 400;
 	font-style: normal;
 	font-display: swap;
@@ -15,21 +16,24 @@
 /* --- Arial (client) --- */
 @font-face {
 	font-family: 'Arial LoL';
-	src: url('https://raw.communitydragon.org/latest/game/assets/ux/fonts/arial.ttf') format('truetype');
+	src: url('https://raw.communitydragon.org/latest/game/assets/ux/fonts/arial.ttf')
+		format('truetype');
 	font-weight: 400;
 	font-style: normal;
 	font-display: swap;
 }
 @font-face {
 	font-family: 'Arial LoL';
-	src: url('https://raw.communitydragon.org/latest/game/assets/ux/fonts/arialbd.ttf') format('truetype');
+	src: url('https://raw.communitydragon.org/latest/game/assets/ux/fonts/arialbd.ttf')
+		format('truetype');
 	font-weight: 700;
 	font-style: normal;
 	font-display: swap;
 }
 @font-face {
 	font-family: 'Arial LoL JA';
-	src: url('https://raw.communitydragon.org/latest/game/assets/ux/fonts/arialja-regular.ttf') format('truetype');
+	src: url('https://raw.communitydragon.org/latest/game/assets/ux/fonts/arialja-regular.ttf')
+		format('truetype');
 	font-weight: 400;
 	font-style: normal;
 	font-display: swap;
@@ -37,7 +41,8 @@
 }
 @font-face {
 	font-family: 'Arial Unicode LoL';
-	src: url('https://raw.communitydragon.org/latest/game/assets/ux/fonts/arialuni.ttf') format('truetype');
+	src: url('https://raw.communitydragon.org/latest/game/assets/ux/fonts/arialuni.ttf')
+		format('truetype');
 	font-weight: 400;
 	font-style: normal;
 	font-display: optional;
@@ -47,77 +52,88 @@
 /* --- Beaufort for LoL --- */
 @font-face {
 	font-family: 'Beaufort for LoL';
-	src: url('https://raw.communitydragon.org/latest/game/assets/ux/fonts/beaufortforlol-light.otf') format('opentype');
+	src: url('https://raw.communitydragon.org/latest/game/assets/ux/fonts/beaufortforlol-light.otf')
+		format('opentype');
 	font-weight: 300;
 	font-style: normal;
 	font-display: swap;
 }
 @font-face {
 	font-family: 'Beaufort for LoL';
-	src: url('https://raw.communitydragon.org/latest/game/assets/ux/fonts/beaufortforlol-lightitalic.otf') format('opentype');
+	src: url('https://raw.communitydragon.org/latest/game/assets/ux/fonts/beaufortforlol-lightitalic.otf')
+		format('opentype');
 	font-weight: 300;
 	font-style: italic;
 	font-display: swap;
 }
 @font-face {
 	font-family: 'Beaufort for LoL';
-	src: url('https://raw.communitydragon.org/latest/game/assets/ux/fonts/beaufortforlol-regular.otf') format('opentype');
+	src: url('https://raw.communitydragon.org/latest/game/assets/ux/fonts/beaufortforlol-regular.otf')
+		format('opentype');
 	font-weight: 400;
 	font-style: normal;
 	font-display: swap;
 }
 @font-face {
 	font-family: 'Beaufort for LoL';
-	src: url('https://raw.communitydragon.org/latest/game/assets/ux/fonts/beaufortforlol-italic.otf') format('opentype');
+	src: url('https://raw.communitydragon.org/latest/game/assets/ux/fonts/beaufortforlol-italic.otf')
+		format('opentype');
 	font-weight: 400;
 	font-style: italic;
 	font-display: swap;
 }
 @font-face {
 	font-family: 'Beaufort for LoL';
-	src: url('https://raw.communitydragon.org/latest/game/assets/ux/fonts/beaufortforlol-medium.otf') format('opentype');
+	src: url('https://raw.communitydragon.org/latest/game/assets/ux/fonts/beaufortforlol-medium.otf')
+		format('opentype');
 	font-weight: 500;
 	font-style: normal;
 	font-display: swap;
 }
 @font-face {
 	font-family: 'Beaufort for LoL';
-	src: url('https://raw.communitydragon.org/latest/game/assets/ux/fonts/beaufortforlol-mediumitalic.otf') format('opentype');
+	src: url('https://raw.communitydragon.org/latest/game/assets/ux/fonts/beaufortforlol-mediumitalic.otf')
+		format('opentype');
 	font-weight: 500;
 	font-style: italic;
 	font-display: swap;
 }
 @font-face {
 	font-family: 'Beaufort for LoL';
-	src: url('https://raw.communitydragon.org/latest/game/assets/ux/fonts/beaufortforlol-bold.otf') format('opentype');
+	src: url('https://raw.communitydragon.org/latest/game/assets/ux/fonts/beaufortforlol-bold.otf')
+		format('opentype');
 	font-weight: 700;
 	font-style: normal;
 	font-display: swap;
 }
 @font-face {
 	font-family: 'Beaufort for LoL';
-	src: url('https://raw.communitydragon.org/latest/game/assets/ux/fonts/beaufortforlol-bolditalic.otf') format('opentype');
+	src: url('https://raw.communitydragon.org/latest/game/assets/ux/fonts/beaufortforlol-bolditalic.otf')
+		format('opentype');
 	font-weight: 700;
 	font-style: italic;
 	font-display: swap;
 }
 @font-face {
 	font-family: 'Beaufort for LoL';
-	src: url('https://raw.communitydragon.org/latest/game/assets/ux/fonts/beaufortforlol-heavy.otf') format('opentype');
+	src: url('https://raw.communitydragon.org/latest/game/assets/ux/fonts/beaufortforlol-heavy.otf')
+		format('opentype');
 	font-weight: 800;
 	font-style: normal;
 	font-display: swap;
 }
 @font-face {
 	font-family: 'Beaufort for LoL';
-	src: url('https://raw.communitydragon.org/latest/game/assets/ux/fonts/beaufortforlol-heavyitalic.otf') format('opentype');
+	src: url('https://raw.communitydragon.org/latest/game/assets/ux/fonts/beaufortforlol-heavyitalic.otf')
+		format('opentype');
 	font-weight: 800;
 	font-style: italic;
 	font-display: swap;
 }
 @font-face {
 	font-family: 'Beaufort for LoL JA';
-	src: url('https://raw.communitydragon.org/latest/game/assets/ux/fonts/beaufortforlolja-regular.ttf') format('truetype');
+	src: url('https://raw.communitydragon.org/latest/game/assets/ux/fonts/beaufortforlolja-regular.ttf')
+		format('truetype');
 	font-weight: 400;
 	font-style: normal;
 	font-display: swap;
@@ -125,7 +141,8 @@
 }
 @font-face {
 	font-family: 'Beaufort for LoL JA';
-	src: url('https://raw.communitydragon.org/latest/game/assets/ux/fonts/beaufortforlolja-bold.ttf') format('truetype');
+	src: url('https://raw.communitydragon.org/latest/game/assets/ux/fonts/beaufortforlolja-bold.ttf')
+		format('truetype');
 	font-weight: 700;
 	font-style: normal;
 	font-display: swap;
@@ -135,7 +152,8 @@
 /* --- Cairo (variable) --- */
 @font-face {
 	font-family: 'Cairo LoL';
-	src: url('https://raw.communitydragon.org/latest/game/assets/ux/fonts/cairo-variablefont_wght.ttf') format('truetype');
+	src: url('https://raw.communitydragon.org/latest/game/assets/ux/fonts/cairo-variablefont_wght.ttf')
+		format('truetype');
 	font-weight: 100 900;
 	font-style: normal;
 	font-display: swap;
@@ -144,14 +162,16 @@
 /* --- DejaVu Sans --- */
 @font-face {
 	font-family: 'DejaVu Sans LoL';
-	src: url('https://raw.communitydragon.org/latest/game/assets/ux/fonts/dejavusans.ttf') format('truetype');
+	src: url('https://raw.communitydragon.org/latest/game/assets/ux/fonts/dejavusans.ttf')
+		format('truetype');
 	font-weight: 400;
 	font-style: normal;
 	font-display: swap;
 }
 @font-face {
 	font-family: 'DejaVu Sans LoL';
-	src: url('https://raw.communitydragon.org/latest/game/assets/ux/fonts/dejavusans-bold.ttf') format('truetype');
+	src: url('https://raw.communitydragon.org/latest/game/assets/ux/fonts/dejavusans-bold.ttf')
+		format('truetype');
 	font-weight: 700;
 	font-style: normal;
 	font-display: swap;
@@ -160,21 +180,24 @@
 /* --- Chinois / locale (FZ) --- */
 @font-face {
 	font-family: 'FZDaHei LoL';
-	src: url('https://raw.communitydragon.org/latest/game/assets/ux/fonts/fzdhtk.ttf') format('truetype');
+	src: url('https://raw.communitydragon.org/latest/game/assets/ux/fonts/fzdhtk.ttf')
+		format('truetype');
 	font-weight: 400;
 	font-style: normal;
 	font-display: swap;
 }
 @font-face {
 	font-family: 'FZLTXIHK LoL';
-	src: url('https://raw.communitydragon.org/latest/game/assets/ux/fonts/fzltxihk.ttf') format('truetype');
+	src: url('https://raw.communitydragon.org/latest/game/assets/ux/fonts/fzltxihk.ttf')
+		format('truetype');
 	font-weight: 400;
 	font-style: normal;
 	font-display: swap;
 }
 @font-face {
 	font-family: 'FZXHYSZK LoL';
-	src: url('https://raw.communitydragon.org/latest/game/assets/ux/fonts/fzxhyszk.ttf') format('truetype');
+	src: url('https://raw.communitydragon.org/latest/game/assets/ux/fonts/fzxhyszk.ttf')
+		format('truetype');
 	font-weight: 400;
 	font-style: normal;
 	font-display: swap;
@@ -183,7 +206,8 @@
 /* --- Gill Sans --- */
 @font-face {
 	font-family: 'Gill Sans JA LoL';
-	src: url('https://raw.communitydragon.org/latest/game/assets/ux/fonts/gillsansja-regular.ttf') format('truetype');
+	src: url('https://raw.communitydragon.org/latest/game/assets/ux/fonts/gillsansja-regular.ttf')
+		format('truetype');
 	font-weight: 400;
 	font-style: normal;
 	font-display: swap;
@@ -191,21 +215,24 @@
 }
 @font-face {
 	font-family: 'Gill Sans MT Pro LoL';
-	src: url('https://raw.communitydragon.org/latest/game/assets/ux/fonts/gillsansmtpro-medium.otf') format('opentype');
+	src: url('https://raw.communitydragon.org/latest/game/assets/ux/fonts/gillsansmtpro-medium.otf')
+		format('opentype');
 	font-weight: 500;
 	font-style: normal;
 	font-display: swap;
 }
 @font-face {
 	font-family: 'Gill Sans MT Pro Cyr LoL';
-	src: url('https://raw.communitydragon.org/latest/game/assets/ux/fonts/gillsansmtprocyr-medium.otf') format('opentype');
+	src: url('https://raw.communitydragon.org/latest/game/assets/ux/fonts/gillsansmtprocyr-medium.otf')
+		format('opentype');
 	font-weight: 500;
 	font-style: normal;
 	font-display: swap;
 }
 @font-face {
 	font-family: 'Gill Sans MT Pro Greek LoL';
-	src: url('https://raw.communitydragon.org/latest/game/assets/ux/fonts/gillsansmtprogrk-medium.otf') format('opentype');
+	src: url('https://raw.communitydragon.org/latest/game/assets/ux/fonts/gillsansmtprogrk-medium.otf')
+		format('opentype');
 	font-weight: 500;
 	font-style: normal;
 	font-display: swap;
@@ -214,7 +241,8 @@
 /* --- Noto Sans CJK --- */
 @font-face {
 	font-family: 'Noto Sans CJK LoL';
-	src: url('https://raw.communitydragon.org/latest/game/assets/ux/fonts/notosanscjk-regular.ttf') format('truetype');
+	src: url('https://raw.communitydragon.org/latest/game/assets/ux/fonts/notosanscjk-regular.ttf')
+		format('truetype');
 	font-weight: 400;
 	font-style: normal;
 	font-display: swap;
@@ -224,49 +252,56 @@
 /* --- Spiegel --- */
 @font-face {
 	font-family: 'Spiegel';
-	src: url('https://raw.communitydragon.org/latest/game/assets/ux/fonts/spiegel-regular.otf') format('opentype');
+	src: url('https://raw.communitydragon.org/latest/game/assets/ux/fonts/spiegel-regular.otf')
+		format('opentype');
 	font-weight: 400;
 	font-style: normal;
 	font-display: swap;
 }
 @font-face {
 	font-family: 'Spiegel';
-	src: url('https://raw.communitydragon.org/latest/game/assets/ux/fonts/spiegel-regularitalic.otf') format('opentype');
+	src: url('https://raw.communitydragon.org/latest/game/assets/ux/fonts/spiegel-regularitalic.otf')
+		format('opentype');
 	font-weight: 400;
 	font-style: italic;
 	font-display: swap;
 }
 @font-face {
 	font-family: 'Spiegel';
-	src: url('https://raw.communitydragon.org/latest/game/assets/ux/fonts/spiegel-semibold.otf') format('opentype');
+	src: url('https://raw.communitydragon.org/latest/game/assets/ux/fonts/spiegel-semibold.otf')
+		format('opentype');
 	font-weight: 600;
 	font-style: normal;
 	font-display: swap;
 }
 @font-face {
 	font-family: 'Spiegel';
-	src: url('https://raw.communitydragon.org/latest/game/assets/ux/fonts/spiegel-semibolditalic.otf') format('opentype');
+	src: url('https://raw.communitydragon.org/latest/game/assets/ux/fonts/spiegel-semibolditalic.otf')
+		format('opentype');
 	font-weight: 600;
 	font-style: italic;
 	font-display: swap;
 }
 @font-face {
 	font-family: 'Spiegel';
-	src: url('https://raw.communitydragon.org/latest/game/assets/ux/fonts/spiegel-bold.otf') format('opentype');
+	src: url('https://raw.communitydragon.org/latest/game/assets/ux/fonts/spiegel-bold.otf')
+		format('opentype');
 	font-weight: 700;
 	font-style: normal;
 	font-display: swap;
 }
 @font-face {
 	font-family: 'Spiegel';
-	src: url('https://raw.communitydragon.org/latest/game/assets/ux/fonts/spiegel-bolditalic.otf') format('opentype');
+	src: url('https://raw.communitydragon.org/latest/game/assets/ux/fonts/spiegel-bolditalic.otf')
+		format('opentype');
 	font-weight: 700;
 	font-style: italic;
 	font-display: swap;
 }
 @font-face {
 	font-family: 'Spiegel JA';
-	src: url('https://raw.communitydragon.org/latest/game/assets/ux/fonts/spiegelja-regular.ttf') format('truetype');
+	src: url('https://raw.communitydragon.org/latest/game/assets/ux/fonts/spiegelja-regular.ttf')
+		format('truetype');
 	font-weight: 400;
 	font-style: normal;
 	font-display: swap;
@@ -274,7 +309,8 @@
 }
 @font-face {
 	font-family: 'Spiegel JA';
-	src: url('https://raw.communitydragon.org/latest/game/assets/ux/fonts/spiegelja-bold.ttf') format('truetype');
+	src: url('https://raw.communitydragon.org/latest/game/assets/ux/fonts/spiegelja-bold.ttf')
+		format('truetype');
 	font-weight: 700;
 	font-style: normal;
 	font-display: swap;
@@ -284,14 +320,16 @@
 /* --- Tahoma, Utum --- */
 @font-face {
 	font-family: 'Tahoma LoL';
-	src: url('https://raw.communitydragon.org/latest/game/assets/ux/fonts/tahoma.ttf') format('truetype');
+	src: url('https://raw.communitydragon.org/latest/game/assets/ux/fonts/tahoma.ttf')
+		format('truetype');
 	font-weight: 400;
 	font-style: normal;
 	font-display: swap;
 }
 @font-face {
 	font-family: 'Utum Dotum LoL';
-	src: url('https://raw.communitydragon.org/latest/game/assets/ux/fonts/uttumdotum.ttf') format('truetype');
+	src: url('https://raw.communitydragon.org/latest/game/assets/ux/fonts/uttumdotum.ttf')
+		format('truetype');
 	font-weight: 400;
 	font-style: normal;
 	font-display: swap;

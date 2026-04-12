@@ -21,27 +21,39 @@
 
 	<div class="journey-container">
 		<div class="timeline-line"></div>
-		
+
 		<div class="journey-events">
 			{#each journey as event, i (event.date + i)}
-				<div class="event-wrapper {event.type === 'achievement' ? 'is-achievement' : 'is-experience'}">
+				<div
+					class="event-wrapper {event.type === 'achievement' ? 'is-achievement' : 'is-experience'}"
+				>
 					<div class="event-marker">
 						<div class="marker-crystal"></div>
 					</div>
-					
+
 					<div class="event-card-container">
 						<div class="event-date">
-						{#if event.date.includes('->')}
-							{@const [start, end] = event.date.split('->').map(s => s.trim())}
-							<span class="date-start">{start}</span>
-							<svg class="date-arrow" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
-								<path d="M5 12h14m-7-7 7 7-7 7"/>
-							</svg>
-							<span class="date-end">{end}</span>
-						{:else}
-							{event.date}
-						{/if}
-					</div>
+							{#if event.date.includes('->')}
+								{@const [start, end] = event.date.split('->').map((s) => s.trim())}
+								<span class="date-start">{start}</span>
+								<svg
+									class="date-arrow"
+									width="12"
+									height="12"
+									viewBox="0 0 24 24"
+									fill="none"
+									stroke="currentColor"
+									stroke-width="3"
+									stroke-linecap="round"
+									stroke-linejoin="round"
+								>
+									<path d="M5 12h14m-7-7 7 7-7 7" />
+								</svg>
+								<span class="date-end">{end}</span>
+							{:else}
+								{event.date}
+							{/if}
+						</div>
 						<article class="event-card {event.type}">
 							{#if event.type === 'achievement'}
 								<div class="achievement-glow"></div>
@@ -52,16 +64,18 @@
 									? i18n.t?.experience?.tagAchievement
 									: i18n.t?.experience?.tagRole}
 							</span>
-							
+
 							<h3 class="event-title">{i18n.translate(event.title)}</h3>
-							
+
 							{#if event.type === 'achievement'}
 								<div class="achievement-details">
 									<div class="event-event">{event.event}</div>
 									<div class="event-place">{i18n.translate(event.place)}</div>
 								</div>
 							{:else}
-								<p class="event-desc">{i18n.translate(event.desc as any)}</p>
+								<p class="event-desc">
+									{i18n.translate(event.desc as { en: string; fr: string; ko?: string } | string)}
+								</p>
 							{/if}
 						</article>
 					</div>
@@ -188,11 +202,7 @@
 		padding: var(--spacing-md);
 		background: color-mix(in oklch, var(--color-bg-surface) 40%, transparent);
 		border: var(--border-hairline) solid;
-		border-image: linear-gradient(
-			to bottom,
-			oklch(73.5% 0.093 83.2),
-			oklch(44.8% 0.094 77.1)
-		);
+		border-image: linear-gradient(to bottom, oklch(73.5% 0.093 83.2), oklch(44.8% 0.094 77.1));
 		border-image-slice: 1;
 		width: 100%;
 		position: relative;
@@ -207,12 +217,9 @@
 			var(--color-bg-surface) 100%
 		);
 		border-width: var(--border-default);
-		border-image: linear-gradient(
-			to bottom right,
-			var(--color-gold-light),
-			var(--color-gold-dark)
-		) 1;
-		box-shadow: 
+		border-image: linear-gradient(to bottom right, var(--color-gold-light), var(--color-gold-dark))
+			1;
+		box-shadow:
 			0 12px 40px -12px rgba(0, 0, 0, 0.6),
 			inset 0 1px 1px color-mix(in oklch, var(--color-gold-light) 10%, transparent);
 	}
@@ -220,7 +227,7 @@
 	.achievement-glow {
 		position: absolute;
 		inset: 0;
-		background: 
+		background:
 			radial-gradient(
 				circle at 85% 15%,
 				color-mix(in oklch, var(--color-gold-base) 12%, transparent) 0%,
@@ -269,7 +276,8 @@
 		-webkit-text-fill-color: transparent;
 	}
 
-	.event-desc, .event-event {
+	.event-desc,
+	.event-event {
 		font-family: var(--font-serif);
 		font-size: var(--text-body);
 		color: var(--fg-prose);
@@ -294,7 +302,7 @@
 		color: var(--color-gold-base);
 		font-size: var(--text-subheading);
 		line-height: var(--leading-snug);
-		text-shadow: 0 0 5px rgba(0,0,0,0.5);
+		text-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
 		position: relative;
 		z-index: 1;
 	}

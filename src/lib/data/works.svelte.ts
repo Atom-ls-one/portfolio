@@ -27,7 +27,9 @@ const loadWorks = (): WorkEntry[] => {
 	const items: WorkEntry[] = [];
 
 	for (const path in workFiles) {
-		const work = (workFiles[path] as Record<string, unknown>).default || (workFiles[path] as Record<string, unknown>);
+		const work =
+			(workFiles[path] as Record<string, unknown>).default ||
+			(workFiles[path] as Record<string, unknown>);
 		const date = path.split('/').slice(-2, -1)[0];
 		items.push({ ...(work as Omit<WorkEntry, 'date'>), date });
 	}

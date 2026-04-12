@@ -25,13 +25,7 @@
 
 <footer id="footer" class="site-footer container section-lol-bg section-lol-bg--article">
 	<!-- Dégradé partagé pour les pictos (référencé via url(#…), hors écran). -->
-	<svg
-		class="footer__icon-gradient-defs"
-		aria-hidden="true"
-		focusable="false"
-		width="0"
-		height="0"
-	>
+	<svg class="footer__icon-gradient-defs" aria-hidden="true" focusable="false" width="0" height="0">
 		<defs>
 			<!-- Même dégradé que .footer__card (border-image : to bottom). -->
 			<linearGradient
@@ -125,7 +119,9 @@
 					stroke-linejoin="round"
 					aria-hidden="true"
 				>
-					<path d="M3 7a2 2 0 0 1 2 -2h14a2 2 0 0 1 2 2v10a2 2 0 0 1 -2 2h-14a2 2 0 0 1 -2 -2v-10z" />
+					<path
+						d="M3 7a2 2 0 0 1 2 -2h14a2 2 0 0 1 2 2v10a2 2 0 0 1 -2 2h-14a2 2 0 0 1 -2 -2v-10z"
+					/>
 					<path d="M3 7l9 6l9 -6" />
 				</svg>
 			</div>
@@ -141,7 +137,16 @@
 
 	<aside class="footer__info-block">
 		<div class="footer__info-item">
-			<svg class="footer__info-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+			<svg
+				class="footer__info-icon"
+				viewBox="0 0 24 24"
+				fill="none"
+				stroke="currentColor"
+				stroke-width="2"
+				stroke-linecap="round"
+				stroke-linejoin="round"
+				aria-hidden="true"
+			>
 				<circle cx="12" cy="12" r="10" />
 				<path d="M12 6v6l4 2" />
 			</svg>
@@ -161,7 +166,16 @@
 		</div>
 
 		<div class="footer__info-item">
-			<svg class="footer__info-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+			<svg
+				class="footer__info-icon"
+				viewBox="0 0 24 24"
+				fill="none"
+				stroke="currentColor"
+				stroke-width="2"
+				stroke-linecap="round"
+				stroke-linejoin="round"
+				aria-hidden="true"
+			>
 				<path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
 				<circle cx="12" cy="10" r="3" />
 			</svg>
@@ -210,11 +224,7 @@
 			color-mix(in oklch, var(--color-bg-base) 80%, transparent)
 		);
 		border: var(--border-default) solid;
-		border-image: linear-gradient(
-			to bottom,
-			oklch(73.5% 0.093 83.2),
-			oklch(44.8% 0.094 77.1)
-		);
+		border-image: linear-gradient(to bottom, oklch(73.5% 0.093 83.2), oklch(44.8% 0.094 77.1));
 		border-image-slice: 1;
 		text-decoration: none;
 		color: inherit;
@@ -308,7 +318,8 @@
 		width: 100%;
 		padding: var(--spacing-md);
 		background: color-mix(in oklch, var(--color-bg-surface) 35%, transparent);
-		border: var(--border-hairline) solid color-mix(in oklch, var(--color-gold-dark) 25%, transparent);
+		border: var(--border-hairline) solid
+			color-mix(in oklch, var(--color-gold-dark) 25%, transparent);
 		position: relative;
 		z-index: 1;
 	}

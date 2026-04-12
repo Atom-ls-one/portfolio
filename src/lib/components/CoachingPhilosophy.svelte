@@ -9,7 +9,10 @@
 	<div class="philosophy-content">
 		<blockquote class="philosophy-quote">
 			<svg class="quote-icon" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-				<path d="M10 8c-1.1 0-2 .9-2 2v4h4v-4H9.5c0-1.4 1.1-2.5 2.5-2.5V6C9.8 6 8 7.8 8 10h2zm8 0c-1.1 0-2 .9-2 2v4h4v-4h-2.5c0-1.4 1.1-2.5 2.5-2.5V6c-2.2 0-4 1.8-4 4h2z" fill="currentColor"/>
+				<path
+					d="M10 8c-1.1 0-2 .9-2 2v4h4v-4H9.5c0-1.4 1.1-2.5 2.5-2.5V6C9.8 6 8 7.8 8 10h2zm8 0c-1.1 0-2 .9-2 2v4h4v-4h-2.5c0-1.4 1.1-2.5 2.5-2.5V6c-2.2 0-4 1.8-4 4h2z"
+					fill="currentColor"
+				/>
 			</svg>
 			<p>{i18n.t?.philosophy?.quote}</p>
 		</blockquote>
@@ -39,7 +42,8 @@
 		gap: var(--spacing-sm);
 		padding: var(--spacing-md);
 		background: color-mix(in oklch, var(--color-bg-surface) 50%, transparent);
-		border: var(--border-hairline) solid color-mix(in oklch, var(--color-gold-dark) 30%, transparent);
+		border: var(--border-hairline) solid
+			color-mix(in oklch, var(--color-gold-dark) 30%, transparent);
 		border-left: var(--border-accent) solid var(--color-magic-base);
 	}
 

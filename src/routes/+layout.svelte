@@ -2,6 +2,7 @@
 	import '../app.css';
 	import type { Snippet } from 'svelte';
 	import { i18n } from '$lib/i18n.svelte';
+	import { base } from '$app/paths';
 	import MagicWaves from '$lib/components/MagicWaves.svelte';
 	import Footer from '$lib/components/Footer.svelte';
 
@@ -49,22 +50,44 @@
 <nav class="site-nav" aria-label="Navigation">
 	<div class="nav-links">
 		{#each sections as section (section.id)}
-			<a class="nav-link" href="#{section.id}">{i18n.t?.nav?.[section.key]}</a>
+			<!-- eslint-disable-next-line svelte/no-navigation-without-resolve -->
+			<a class="nav-link" href="{base}/#{section.id}">{i18n.t?.nav?.[section.key]}</a>
 		{/each}
 	</div>
 
 	<div class="nav-lang">
 		<button class="lang-toggle" onclick={() => (langOpen = !langOpen)} aria-expanded={langOpen}>
 			{i18n.locale.toUpperCase()}
-			<svg class="lang-chevron" class:lang-chevron--open={langOpen} viewBox="0 0 12 12" aria-hidden="true">
-				<path d="M3 5l3 3 3-3" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+			<svg
+				class="lang-chevron"
+				class:lang-chevron--open={langOpen}
+				viewBox="0 0 12 12"
+				aria-hidden="true"
+			>
+				<path
+					d="M3 5l3 3 3-3"
+					fill="none"
+					stroke="currentColor"
+					stroke-width="1.5"
+					stroke-linecap="round"
+					stroke-linejoin="round"
+				/>
 			</svg>
 		</button>
 		{#if langOpen}
 			<div class="lang-dropdown">
-				<button class="lang-option {i18n.locale === 'fr' ? 'lang-option--active' : ''}" onclick={() => selectLocale('fr')}>FR</button>
-				<button class="lang-option {i18n.locale === 'en' ? 'lang-option--active' : ''}" onclick={() => selectLocale('en')}>EN</button>
-				<button class="lang-option {i18n.locale === 'ko' ? 'lang-option--active' : ''}" onclick={() => selectLocale('ko')}>KO</button>
+				<button
+					class="lang-option {i18n.locale === 'fr' ? 'lang-option--active' : ''}"
+					onclick={() => selectLocale('fr')}>FR</button
+				>
+				<button
+					class="lang-option {i18n.locale === 'en' ? 'lang-option--active' : ''}"
+					onclick={() => selectLocale('en')}>EN</button
+				>
+				<button
+					class="lang-option {i18n.locale === 'ko' ? 'lang-option--active' : ''}"
+					onclick={() => selectLocale('ko')}>KO</button
+				>
 			</div>
 		{/if}
 	</div>
@@ -105,7 +128,8 @@
 		padding: var(--space-3) var(--spacing-lg);
 		background: color-mix(in oklch, var(--color-bg-base) 80%, transparent);
 		backdrop-filter: blur(12px);
-		border-bottom: var(--border-hairline) solid color-mix(in oklch, var(--color-gold-dark) 25%, transparent);
+		border-bottom: var(--border-hairline) solid
+			color-mix(in oklch, var(--color-gold-dark) 25%, transparent);
 		font-family: var(--font-heading);
 	}
 
@@ -170,7 +194,8 @@
 		flex-direction: column;
 		background: color-mix(in oklch, var(--color-bg-base) 92%, transparent);
 		backdrop-filter: blur(12px);
-		border: var(--border-hairline) solid color-mix(in oklch, var(--color-gold-dark) 30%, transparent);
+		border: var(--border-hairline) solid
+			color-mix(in oklch, var(--color-gold-dark) 30%, transparent);
 		min-width: var(--space-15);
 	}
 
@@ -181,7 +206,9 @@
 		letter-spacing: var(--tracking-caps);
 		color: var(--fg-subtle);
 		padding: var(--space-2) var(--space-3);
-		transition: color var(--transition-fast), background var(--transition-fast);
+		transition:
+			color var(--transition-fast),
+			background var(--transition-fast);
 		text-align: left;
 	}
 

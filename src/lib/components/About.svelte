@@ -102,11 +102,7 @@
 		);
 		border-style: solid;
 		border-width: var(--border-default);
-		border-image: linear-gradient(
-			to bottom,
-			oklch(73.5% 0.093 83.2),
-			oklch(44.8% 0.094 77.1)
-		);
+		border-image: linear-gradient(to bottom, oklch(73.5% 0.093 83.2), oklch(44.8% 0.094 77.1));
 		border-image-slice: 1;
 	}
 
@@ -222,13 +218,11 @@
 		);
 		border-style: solid;
 		border-width: var(--border-default);
-		border-image: linear-gradient(
-			to bottom,
-			oklch(73.5% 0.093 83.2),
-			oklch(44.8% 0.094 77.1)
-		);
+		border-image: linear-gradient(to bottom, oklch(73.5% 0.093 83.2), oklch(44.8% 0.094 77.1));
 		border-image-slice: 1;
-		transition: background var(--transition-fast), box-shadow var(--transition-fast);
+		transition:
+			background var(--transition-fast),
+			box-shadow var(--transition-fast);
 	}
 
 	/* Accordion FAQ : hauteur en ease-in-out (navigateurs récents ; sinon ouverture instantanée). */
@@ -345,7 +339,8 @@
 		gap: var(--spacing-md);
 		flex-shrink: 0;
 		padding-top: var(--spacing-md);
-		border-top: var(--border-hairline) solid color-mix(in oklch, var(--color-gold-dark) 28%, transparent);
+		border-top: var(--border-hairline) solid
+			color-mix(in oklch, var(--color-gold-dark) 28%, transparent);
 	}
 
 	.stat-item {
