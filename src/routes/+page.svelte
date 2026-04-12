@@ -10,8 +10,8 @@
 	<Hero />
 	<About />
 	<Experience />
-	<WorkExamples />
 	<CoachingPhilosophy />
+	<WorkExamples />
 </main>
 
 <style>
