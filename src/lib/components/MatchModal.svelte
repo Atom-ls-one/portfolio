@@ -162,7 +162,6 @@
 
 	.performance-status.win {
 		color: var(--color-magic-glow);
-		text-shadow: 0 0 0.625rem var(--color-magic-base);
 	}
 
 	.performance-status.loss {

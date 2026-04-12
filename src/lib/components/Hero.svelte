@@ -144,7 +144,8 @@
 		color: var(--color-magic-base);
 		font-style: normal;
 		font-weight: var(--font-weight-medium);
-		letter-spacing: var(--tracking-hero-sub);
+		text-transform: uppercase;
+		letter-spacing: var(--tracking-caps);
 		opacity: 0.9;
 	}
 

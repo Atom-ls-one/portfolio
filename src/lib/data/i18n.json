@@ -54,7 +54,7 @@
 			"tagAchievement": "Achievement"
 		},
 		"projects": {
-			"title": "History",
+			"title": "Work Example",
 			"viewAll": "View Full History",
 			"score": "KDA",
 			"btn": "View Details",
@@ -128,7 +128,7 @@
 			"tagAchievement": "Palmarès"
 		},
 		"projects": {
-			"title": "Historique",
+			"title": "Work Example",
 			"viewAll": "Voir tout l'historique",
 			"score": "KDA",
 			"btn": "Voir Détails",

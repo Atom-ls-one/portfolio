@@ -105,16 +105,16 @@
 		font-size: var(--text-card-title);
 		line-height: var(--leading-tight);
 		font-weight: var(--font-weight-bold);
+		text-transform: uppercase;
+		letter-spacing: var(--tracking-caps);
 	}
 
 	.match-card--victory .status-result {
 		color: var(--color-magic-glow);
-		text-shadow: 0 0 0.625rem var(--color-magic-base);
 	}
 
 	.match-card--defeat .status-result {
 		color: oklch(70% 0.15 20);
-		text-shadow: 0 0 0.625rem oklch(50% 0.15 20);
 	}
 
 	.status-divider {

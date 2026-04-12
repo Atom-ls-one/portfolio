@@ -28,20 +28,13 @@
 
 	<div class="footer__grid">
 		<div class="footer__card">
-			<div class="footer__icon">
-				<svg
-					viewBox="0 0 24 24"
-					fill="none"
-					stroke="currentColor"
-					stroke-linecap="round"
-					stroke-linejoin="round"
-					aria-hidden="true"
-				>
-					<path d="M4 4m0 2a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v12a2 2 0 0 1 -2 2h-12a2 2 0 0 1 -2 -2z" />
-					<path d="M8 11l0 5" />
-					<path d="M8 8l0 .01" />
-					<path d="M12 16l0 -5" />
-					<path d="M16 16v-3a2 2 0 0 0 -4 0" />
+			<div class="footer__icon footer__icon--fill">
+				<svg viewBox="0 0 24 24" aria-hidden="true">
+					<circle cx="4.983" cy="5.009" r="2.188" fill="currentColor" />
+					<path
+						fill="currentColor"
+						d="M9.237 8.855v12.139h3.769v-6.003c0-1.584.298-3.118 2.262-3.118c1.937 0 1.961 1.811 1.961 3.218v5.904H21v-6.657c0-3.27-.704-5.783-4.526-5.783c-1.835 0-3.065 1.007-3.568 1.96h-.051v-1.66zm-6.142 0H6.87v12.139H3.095z"
+					/>
 				</svg>
 			</div>
 			<div class="footer__info">
@@ -79,19 +72,18 @@
 		<div class="footer__card">
 			<div class="footer__icon">
 				<svg
-					viewBox="0 0 24 24"
+					viewBox="0 0 48 48"
 					fill="none"
 					stroke="currentColor"
 					stroke-linecap="round"
 					stroke-linejoin="round"
 					aria-hidden="true"
 				>
-					<path d="M8 12a1 1 0 1 0 2 0a1 1 0 0 0 -2 0" />
-					<path d="M14 12a1 1 0 1 0 2 0a1 1 0 0 0 -2 0" />
 					<path
-						d="M15.5 17c0 1 1.5 3 2 3c1.5 0 2.833 -1.667 3.5 -3c.667 -1.667 .5 -5.833 -1.5 -11.5c-1.457 -1.015 -3 -1.34 -4.5 -1.5l-.972 1.923a11.913 11.913 0 0 0 -4.053 0l-.975 -1.923c-1.5 .16 -3.043 .485 -4.5 1.5c-2 5.667 -2.167 9.833 -1.5 11.5c.667 1.333 2 3 3.5 3c.5 0 2 -2 2 -3"
+						d="M17.59 34.173A49 49 0 0 1 14.68 38C7.3 37.79 4.5 33 4.5 33a44.8 44.8 0 0 1 4.81-19.52A16.47 16.47 0 0 1 18.69 10l1 2.31A33 33 0 0 1 24 12a33 33 0 0 1 4.33.3l1-2.31a16.47 16.47 0 0 1 9.38 3.51A44.8 44.8 0 0 1 43.5 33s-2.8 4.79-10.18 5a47 47 0 0 1-2.86-3.81m6.46-2.9c-3.84 1.945-7.555 3.89-12.92 3.89s-9.08-1.945-12.92-3.89"
 					/>
-					<path d="M7 16.5c3.5 1 6.5 1 10 0" />
+					<circle cx="17.847" cy="26.23" r="3.35" />
+					<circle cx="30.153" cy="26.23" r="3.35" />
 				</svg>
 			</div>
 			<div class="footer__info">
@@ -206,8 +198,14 @@
 		width: 100%;
 		height: 100%;
 		display: block;
-		stroke-width: 1px;
+		stroke-width: 2px;
 		vector-effect: non-scaling-stroke;
+	}
+
+	.footer__icon--fill svg {
+		stroke: none;
+		stroke-width: 0;
+		vector-effect: none;
 	}
 
 	.footer__label {
