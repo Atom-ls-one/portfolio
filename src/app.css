@@ -318,6 +318,7 @@
 	background-size: cover, cover;
 	background-position: center, center;
 	background-repeat: no-repeat, no-repeat;
+	background-attachment: fixed, fixed;
 }
 
 .section-lol-bg--client::before {

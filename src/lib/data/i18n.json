@@ -49,14 +49,19 @@
 			]
 		},
 		"experience": {
-			"title": "Career & Palmarès",
+			"title": "Palmarès & Career",
 			"tagRole": "Role",
 			"tagAchievement": "Achievement"
 		},
 		"projects": {
-			"title": "Work Example",
-			"viewAll": "View Full History",
-			"score": "KDA",
+			"title": "Work Examples",
+			"categoryNav": "Work categories",
+			"categories": {
+				"scoutingReport": "Scouting Report",
+				"reviews": "Reviews",
+				"draftSimulations": "Draft Simulations"
+			},
+			"empty": "No entries in this category yet.",
 			"btn": "View Details",
 			"modalRole": "Role",
 			"modalDuration": "Duration",
@@ -70,7 +75,13 @@
 			"connect": "Connect",
 			"follow": "Follow",
 			"copyTag": "Copy tag",
-			"sendEmail": "Send message"
+			"sendEmail": "Send message",
+			"availability": "Availability",
+			"availabilityValue": "Open to relocate and able to travel when required",
+			"drivingLicense": "Driving license",
+			"drivingLicenseValue": "Permis B",
+			"replyTime": "Reply within 24-48h",
+			"location": "Lyon, France (CET)"
 		}
 	},
 	"fr": {
@@ -123,14 +134,19 @@
 			]
 		},
 		"experience": {
-			"title": "Parcours & Palmarès",
+			"title": "Palmarès & Parcours",
 			"tagRole": "Poste",
 			"tagAchievement": "Palmarès"
 		},
 		"projects": {
-			"title": "Work Example",
-			"viewAll": "Voir tout l'historique",
-			"score": "KDA",
+			"title": "Exemples de travail",
+			"categoryNav": "Catégories de travail",
+			"categories": {
+				"scoutingReport": "Scouting Report",
+				"reviews": "Reviews",
+				"draftSimulations": "Simulations de Draft"
+			},
+			"empty": "Aucune entrée dans cette catégorie pour le moment.",
 			"btn": "Voir Détails",
 			"modalRole": "Rôle",
 			"modalDuration": "Durée",
@@ -144,7 +160,13 @@
 			"connect": "Se connecter",
 			"follow": "Suivre",
 			"copyTag": "Copier le tag",
-			"sendEmail": "Envoyer un mail"
+			"sendEmail": "Envoyer un mail",
+			"availability": "Disponibilité",
+			"availabilityValue": "Ouvert à la relocalisation et disponible pour voyager",
+			"drivingLicense": "Permis de conduire",
+			"drivingLicenseValue": "Permis B",
+			"replyTime": "Réponse sous 24-48h",
+			"location": "Lyon, France (CET)"
 		}
 	}
 }

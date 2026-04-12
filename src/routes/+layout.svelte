@@ -61,13 +61,17 @@
 	}
 
 	.lang-switcher {
-		position: absolute;
+		position: fixed;
 		top: max(var(--page-gutter), env(safe-area-inset-top, 0px));
 		right: max(var(--page-gutter), env(safe-area-inset-right, 0px));
 		display: flex;
 		gap: var(--space-2);
 		z-index: 100;
 		font-family: var(--font-heading);
+		padding: var(--space-2) var(--space-3);
+		background: color-mix(in oklch, var(--color-bg-base) 80%, transparent);
+		backdrop-filter: blur(12px);
+		border: var(--border-hairline) solid color-mix(in oklch, var(--color-gold-dark) 25%, transparent);
 	}
 
 	.lang-btn {

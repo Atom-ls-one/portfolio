@@ -138,6 +138,36 @@
 			</div>
 		</div>
 	</div>
+
+	<aside class="footer__info-block">
+		<div class="footer__info-item">
+			<svg class="footer__info-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+				<circle cx="12" cy="12" r="10" />
+				<path d="M12 6v6l4 2" />
+			</svg>
+			<span class="footer__info-text">{i18n.t?.contact?.replyTime}</span>
+		</div>
+
+		<div class="footer__info-row">
+			<div class="footer__info-item footer__info-item--highlight">
+				<span class="footer__info-label">{i18n.t?.contact?.availability}:</span>
+				<span class="footer__info-text">{i18n.t?.contact?.availabilityValue}</span>
+			</div>
+
+			<div class="footer__info-item footer__info-item--highlight">
+				<span class="footer__info-label">{i18n.t?.contact?.drivingLicense}:</span>
+				<span class="footer__info-text">{i18n.t?.contact?.drivingLicenseValue}</span>
+			</div>
+		</div>
+
+		<div class="footer__info-item">
+			<svg class="footer__info-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+				<path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
+				<circle cx="12" cy="10" r="3" />
+			</svg>
+			<span class="footer__info-text">{i18n.t?.contact?.location}</span>
+		</div>
+	</aside>
 </footer>
 
 <style>
@@ -263,5 +293,60 @@
 		.footer__grid {
 			grid-template-columns: 1fr;
 		}
+
+		.footer__info-row {
+			flex-direction: column;
+		}
+	}
+
+	.footer__info-block {
+		display: flex;
+		flex-wrap: wrap;
+		align-items: center;
+		justify-content: center;
+		gap: var(--spacing-md) var(--spacing-lg);
+		width: 100%;
+		padding: var(--spacing-md);
+		background: color-mix(in oklch, var(--color-bg-surface) 35%, transparent);
+		border: var(--border-hairline) solid color-mix(in oklch, var(--color-gold-dark) 25%, transparent);
+		position: relative;
+		z-index: 1;
+	}
+
+	.footer__info-row {
+		display: flex;
+		gap: var(--spacing-lg);
+	}
+
+	.footer__info-item {
+		display: flex;
+		align-items: center;
+		gap: var(--space-2);
+	}
+
+	.footer__info-item--highlight .footer__info-label {
+		font-family: var(--font-heading);
+		font-size: var(--text-ui-sm);
+		line-height: var(--leading-ui);
+		color: var(--color-magic-base);
+		font-weight: var(--font-weight-bold);
+	}
+
+	.footer__info-item--highlight .footer__info-text {
+		color: var(--fg-ui);
+	}
+
+	.footer__info-icon {
+		width: var(--space-5);
+		height: var(--space-5);
+		flex-shrink: 0;
+		color: var(--color-magic-base);
+	}
+
+	.footer__info-text {
+		font-family: var(--font-body);
+		font-size: var(--text-ui-sm);
+		line-height: var(--leading-ui);
+		color: var(--fg-muted);
 	}
 </style>

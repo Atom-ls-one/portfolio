@@ -2,14 +2,14 @@
 	import Hero from '$lib/components/Hero.svelte';
 	import About from '$lib/components/About.svelte';
 	import Experience from '$lib/components/Experience.svelte';
-	import MatchHistory from '$lib/components/MatchHistory.svelte';
+	import WorkExamples from '$lib/components/WorkExamples.svelte';
 </script>
 
 <main class="portfolio-main">
 	<Hero />
 	<About />
 	<Experience />
-	<MatchHistory limit={3} />
+	<WorkExamples />
 </main>
 
 <style>

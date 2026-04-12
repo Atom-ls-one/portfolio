@@ -2,70 +2,60 @@
 	import Modal from './Modal.svelte';
 	import ChampionPortrait from './ChampionPortrait.svelte';
 	import { i18n } from '$lib/i18n.svelte';
-	import type { MatchEntry } from '$lib/data/matches.svelte';
+	import type { WorkEntry } from '$lib/data/works.svelte';
 	import { getYoutubeId } from '$lib/utils/video';
 
 	interface Props {
-		match: MatchEntry | null;
+		work: WorkEntry | null;
 		onClose: () => void;
 	}
 
-	let { match, onClose }: Props = $props();
+	let { work, onClose }: Props = $props();
 </script>
 
 <Modal
-	isOpen={!!match}
+	isOpen={!!work}
 	{onClose}
-	title={match ? match[i18n.locale].title : ''}
+	title={work ? work[i18n.locale].title : ''}
 >
-	{#if match}
-		<div class="match-modal-layout">
-			<div class="match-modal-header">
+	{#if work}
+		<div class="work-modal-layout">
+			<div class="work-modal-header">
 				<div class="champion-display">
 					<ChampionPortrait
-						championId={match.championId}
-						championName={match.championName}
+						championId={work.championId}
+						championName={work.championName}
 						variant="modal"
 					/>
-					<div class="match-main-info">
-						<div class="match-date">{match.date}</div>
-						<div class="match-type-tag">{match[i18n.locale].type}</div>
-					</div>
-				</div>
-
-				<div class="match-performance">
-					<div class="performance-metric">
-						<span class="metric-label">{i18n.t?.projects?.score}</span>
-						<span class="metric-value">{match.kda}</span>
-					</div>
-					<div class="performance-status {match.win ? 'win' : 'loss'}">
-						{match[i18n.locale].result}
+					<div class="work-main-info">
+						<div class="work-date">{work.date}</div>
+						<div class="work-type-tag">{work[i18n.locale].type}</div>
 					</div>
 				</div>
 			</div>
 
-			<div class="match-modal-grid">
+			<div class="work-modal-grid">
 				<div class="info-group">
 					<span class="group-label">{i18n.t?.projects?.modalRole}</span>
-					<span class="group-value">{match[i18n.locale].role}</span>
+					<span class="group-value">{work[i18n.locale].role}</span>
 				</div>
 				<div class="info-group">
 					<span class="group-label">{i18n.t?.projects?.modalDuration}</span>
-					<span class="group-value">{match[i18n.locale].duration}</span>
+					<span class="group-value">{work[i18n.locale].duration}</span>
 				</div>
 			</div>
 
-			<div class="match-modal-analysis">
+			<div class="work-modal-analysis">
 				<h3>{i18n.t?.projects?.modalAnalysis}</h3>
 				<div class="analysis-content">
-					<p>{match[i18n.locale].description}</p>
+					<p>{work[i18n.locale].description}</p>
 				</div>
 			</div>
 
-			{#if match.videoUrl}
-				{@const videoId = getYoutubeId(match.videoUrl)}
+			{#if work.videoUrl}
+				{@const videoId = getYoutubeId(work.videoUrl)}
 				{#if videoId}
-					<div class="match-modal-video">
+					<div class="work-modal-video">
 						<h3>{i18n.t?.projects?.modalVod}</h3>
 						<div class="video-container">
 							<iframe
@@ -86,13 +76,13 @@
 </Modal>
 
 <style>
-	.match-modal-layout {
+	.work-modal-layout {
 		display: flex;
 		flex-direction: column;
 		gap: var(--spacing-lg);
 	}
 
-	.match-modal-header {
+	.work-modal-header {
 		display: flex;
 		justify-content: space-between;
 		align-items: center;
@@ -106,20 +96,20 @@
 		gap: var(--spacing-md);
 	}
 
-	.match-main-info {
+	.work-main-info {
 		display: flex;
 		flex-direction: column;
 		gap: var(--space-1);
 	}
 
-	.match-date {
+	.work-date {
 		font-family: var(--font-heading);
 		font-size: var(--text-ui-sm);
 		line-height: var(--leading-ui);
 		color: var(--fg-muted);
 	}
 
-	.match-type-tag {
+	.work-type-tag {
 		font-size: var(--text-overline);
 		line-height: var(--leading-ui);
 		text-transform: uppercase;
@@ -130,52 +120,7 @@
 		width: fit-content;
 	}
 
-	.match-performance {
-		display: flex;
-		flex-direction: column;
-		align-items: flex-end;
-		gap: var(--space-1);
-	}
-
-	.performance-metric {
-		display: flex;
-		flex-direction: column;
-		align-items: flex-end;
-	}
-
-	.metric-label {
-		font-size: var(--text-overline);
-		line-height: var(--leading-ui);
-		color: var(--fg-subtle);
-		text-transform: uppercase;
-		letter-spacing: var(--tracking-caps-wide);
-	}
-
-	.performance-status {
-		font-family: var(--font-heading);
-		font-size: var(--text-ui-sm);
-		line-height: var(--leading-ui);
-		font-weight: var(--font-weight-bold);
-		text-transform: uppercase;
-		letter-spacing: var(--tracking-caps);
-	}
-
-	.performance-status.win {
-		color: var(--color-magic-glow);
-	}
-
-	.performance-status.loss {
-		color: oklch(70% 0.15 20);
-	}
-
-	.metric-value {
-		font-family: var(--font-heading);
-		font-size: var(--text-match-title);
-		line-height: var(--leading-tight);
-		color: var(--color-gold-light);
-	}
-
-	.match-modal-grid {
+	.work-modal-grid {
 		display: grid;
 		grid-template-columns: repeat(2, 1fr);
 		gap: var(--spacing-md);
@@ -205,15 +150,15 @@
 		color: var(--color-gold-base);
 	}
 
-	.match-modal-analysis,
-	.match-modal-video {
+	.work-modal-analysis,
+	.work-modal-video {
 		display: flex;
 		flex-direction: column;
 		gap: var(--spacing-md);
 	}
 
-	.match-modal-analysis h3,
-	.match-modal-video h3 {
+	.work-modal-analysis h3,
+	.work-modal-video h3 {
 		font-size: var(--text-subheading);
 		line-height: var(--leading-snug);
 		color: var(--color-gold-light);
@@ -234,8 +179,8 @@
 	.video-container {
 		position: relative;
 		width: 100%;
-		padding-top: 56.25%; /* 16:9 Aspect Ratio */
-		background: #000;
+		padding-top: 56.25%;
+		background: oklch(0% 0 0);
 		border: var(--border-hairline) solid var(--color-gold-dark);
 	}
 
@@ -248,20 +193,13 @@
 	}
 
 	@media (max-width: 37.5rem) {
-		.match-modal-header {
+		.work-modal-header {
 			flex-direction: column;
 			align-items: flex-start;
 			gap: var(--spacing-md);
 		}
 
-		.match-performance {
-			align-items: flex-start;
-			width: 100%;
-			flex-direction: row;
-			justify-content: space-between;
-		}
-
-		.match-modal-grid {
+		.work-modal-grid {
 			grid-template-columns: 1fr;
 		}
 	}

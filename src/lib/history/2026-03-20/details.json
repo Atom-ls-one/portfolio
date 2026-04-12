@@ -1,23 +1,21 @@
 {
+	"id": "macro-dominance",
+	"category": "reviews",
 	"championId": "Thresh",
 	"championName": "Thresh",
-	"win": true,
-	"kda": "2/1/18",
 	"url": "#",
 	"videoUrl": "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
 	"en": {
 		"title": "Macro Dominance",
 		"role": "Analyst",
-		"result": "Victory",
-		"type": "Scrim",
+		"type": "VOD Review",
 		"duration": "24:30",
 		"description": "Perfect objective control and vision rotation leading to a clean 20-minute lead."
 	},
 	"fr": {
 		"title": "Dominance Macro",
 		"role": "Analyste",
-		"result": "Victoire",
-		"type": "Scrim",
+		"type": "Review VOD",
 		"duration": "24:30",
 		"description": "Contrôle parfait des objectifs et rotation de vision menant à une avance nette dès 20 min."
 	}

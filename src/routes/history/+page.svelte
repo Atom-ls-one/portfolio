@@ -1,5 +1,5 @@
 <script lang="ts">
-	import MatchHistory from '$lib/components/MatchHistory.svelte';
+	import WorkExamples from '$lib/components/WorkExamples.svelte';
 	import Button from '$lib/components/Button.svelte';
 	import { i18n } from '$lib/i18n.svelte';
 	import { base } from '$app/paths';
@@ -11,7 +11,7 @@
 	</nav>
 
 	<main class="history-main">
-		<MatchHistory />
+		<WorkExamples />
 	</main>
 </div>
 

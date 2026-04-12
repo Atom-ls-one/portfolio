@@ -1,0 +1,21 @@
+{
+	"id": "draft-adaptation",
+	"category": "draft-simulations",
+	"championId": "TwistedFate",
+	"championName": "Twisted Fate",
+	"url": "#",
+	"en": {
+		"title": "Draft Adaptation",
+		"role": "Analyst",
+		"type": "Draft Simulation",
+		"duration": "15:00",
+		"description": "Simulated draft phase exploring flex pick priority and ban sequencing against a strong bot-centric composition."
+	},
+	"fr": {
+		"title": "Adaptation de Draft",
+		"role": "Analyste",
+		"type": "Simulation de Draft",
+		"duration": "15:00",
+		"description": "Phase de draft simulée explorant la priorité des picks flex et le séquençage des bans contre une composition centrée bot."
+	}
+}
