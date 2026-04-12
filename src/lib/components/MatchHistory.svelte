@@ -26,7 +26,7 @@
 </script>
 
 <section id="projects" class="portfolio-section container section-lol-bg section-lol-bg--alpha">
-	<SectionHeader title={i18n.t?.projects?.title} subtitle={i18n.t?.projects?.subtitle} />
+	<SectionHeader title={i18n.t?.projects?.title} />
 
 	<div class="match-history-stack">
 		<div class="match-list">

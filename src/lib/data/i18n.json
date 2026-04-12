@@ -19,9 +19,8 @@
 			"btn2": "Contact"
 		},
 		"about": {
-			"title": "In-Game Profile",
-			"subtitle": "The architect behind the strategy.",
-			"bio": "Passionate League of Legends coach with a focus on meta-analysis, macro-strategy, and individual player growth. I transform raw talent into tactical dominance.",
+			"title": "About Me",
+			"bio": "My name is Théo Menini, a League of Legends Assistant Coach and Analyst based in Lyon, France. I've been involved in League since 2012 and started team coaching in 2020 with Team Alkya. Since October 2025, I've been Assistant Coach at Antic Esport, supporting draft preparation, VOD reviews, scouting during tryouts, and maintaining a scrim database to track progress week to week.\n\nI focus on turning complexity into execution: clear draft priorities, reviews built around recurring themes, and documentation that helps players repeat the right actions under pressure.\n\nI'm completing a Bachelor in Business & Management, Video Games and Esports at Gaming Campus Lyon, and I'm looking for a high-performance staff where I can contribute immediately while learning from top European standards. Long term, I want to help Europe win Worlds. I'm ready to relocate.",
 			"faqLabel": "Quick info",
 			"stats": {
 				"role": "Role",
@@ -56,7 +55,6 @@
 		},
 		"projects": {
 			"title": "History",
-			"subtitle": "In-depth analysis of competitive and high-elo games.",
 			"viewAll": "View Full History",
 			"score": "KDA",
 			"btn": "View Details",
@@ -68,7 +66,6 @@
 		},
 		"contact": {
 			"title": "Contact",
-			"subtitle": "Join the network and stay updated on latest strategies.",
 			"copied": "Copied!",
 			"connect": "Connect",
 			"follow": "Follow",
@@ -96,9 +93,8 @@
 			"btn2": "Contact"
 		},
 		"about": {
-			"title": "Profil In-Game",
-			"subtitle": "L'architecte derrière la stratégie.",
-			"bio": "Coach League of Legends passionné, expert en méta-analyse, macro-stratégie et progression individuelle. Je transforme le talent brut en domination tactique.",
+			"title": "À propos de moi",
+			"bio": "Je m'appelle Théo Menini, assistant coach et analyste League of Legends, basé à Lyon, France. Je suis sur League depuis 2012 et j'ai commencé le coaching d'équipe en 2020 avec Team Alkya. Depuis octobre 2025, je suis assistant coach chez Antic Esport : préparation des drafts, revues VOD, scouting pendant les tryouts et suivi via une base de données de scrims pour mesurer la progression semaine après semaine.\n\nJe cherche à transformer la complexité en exécution : priorités de draft claires, revues centrées sur des thèmes récurrents, et documentation pour que les joueurs répètent les bons gestes sous pression.\n\nJe termine un Bachelor Business & Management, Jeux vidéo et Esport au Gaming Campus Lyon, et je recherche un staff haute performance où contribuer immédiatement tout en montant en niveau aux standards européens les plus exigeants. À long terme, je veux aider l'Europe à gagner les Worlds. Je suis prêt à déménager.",
 			"faqLabel": "Infos rapides",
 			"stats": {
 				"role": "Rôle",
@@ -133,7 +129,6 @@
 		},
 		"projects": {
 			"title": "Historique",
-			"subtitle": "Analyses approfondies de parties compétitives et haut elo.",
 			"viewAll": "Voir tout l'historique",
 			"score": "KDA",
 			"btn": "Voir Détails",
@@ -145,7 +140,6 @@
 		},
 		"contact": {
 			"title": "Contact",
-			"subtitle": "Rejoignez le réseau pour rester informé des dernières stratégies.",
 			"copied": "Copié !",
 			"connect": "Se connecter",
 			"follow": "Suivre",

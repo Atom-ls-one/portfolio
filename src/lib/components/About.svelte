@@ -21,13 +21,17 @@
 			<header class="section-header">
 				<p class="about-eyebrow">{i18n.t?.about?.title}</p>
 				<h2>Théo <span class="text-gold">&ldquo;Atom&rdquo;</span> Menini</h2>
-				<p class="about-tagline">{i18n.t?.about?.subtitle}</p>
 			</header>
 
 			<div class="about-main">
 				<div class="bio-container">
 					<div class="bio-card">
-						<p>{i18n.t?.about?.bio}</p>
+						{#each (i18n.t?.about?.bio ?? '')
+							.split(/\n\n+/)
+							.map((s) => s.trim())
+							.filter(Boolean) as para, i (i)}
+							<p>{para}</p>
+						{/each}
 					</div>
 				</div>
 
@@ -131,14 +135,6 @@
 		color: var(--color-magic-base);
 	}
 
-	.about-tagline {
-		margin: 0;
-		font-size: var(--text-ui-sm);
-		line-height: var(--leading-snug);
-		color: var(--fg-muted);
-		max-width: var(--about-prose-measure);
-	}
-
 	.text-gold {
 		color: var(--color-gold-light);
 	}
@@ -181,6 +177,7 @@
 	}
 
 	.bio-card p {
+		margin: 0;
 		max-width: var(--about-prose-measure);
 		font-family: var(--font-serif);
 		font-size: var(--text-lead);
@@ -190,7 +187,12 @@
 		letter-spacing: var(--tracking-normal);
 	}
 
+	.bio-card p + p {
+		margin-top: var(--spacing-sm);
+	}
+
 	.faq-aside {
+		--faq-disclosure-duration: 320ms;
 		display: flex;
 		flex-direction: column;
 		gap: var(--spacing-sm);
@@ -222,6 +224,28 @@
 		);
 		border-image-slice: 1;
 		transition: background var(--transition-fast), box-shadow var(--transition-fast);
+	}
+
+	/* Accordion FAQ : hauteur en ease-in-out (navigateurs récents ; sinon ouverture instantanée). */
+	@media (prefers-reduced-motion: no-preference) {
+		@supports (interpolate-size: allow-keywords) and selector(details::details-content) {
+			.faq-item {
+				interpolate-size: allow-keywords;
+			}
+
+			.faq-item::details-content {
+				overflow: hidden;
+				height: 0;
+				transition-behavior: allow-discrete;
+				transition-property: height, content-visibility;
+				transition-duration: var(--faq-disclosure-duration);
+				transition-timing-function: ease-in-out;
+			}
+
+			.faq-item[open]::details-content {
+				height: auto;
+			}
+		}
 	}
 
 	.faq-item:hover {
@@ -277,7 +301,7 @@
 		font-size: var(--text-ui);
 		line-height: var(--leading-ui);
 		color: var(--color-magic-base);
-		transition: transform var(--transition-fast);
+		transition: transform var(--faq-disclosure-duration) ease-in-out;
 	}
 
 	.faq-item[open] .faq-chevron {

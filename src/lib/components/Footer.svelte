@@ -24,7 +24,7 @@
 </script>
 
 <footer id="footer" class="site-footer container section-lol-bg section-lol-bg--article">
-	<SectionHeader title={i18n.t?.contact?.title} subtitle={i18n.t?.contact?.subtitle} />
+	<SectionHeader title={i18n.t?.contact?.title} />
 
 	<div class="footer__grid">
 		<div class="footer__card">
