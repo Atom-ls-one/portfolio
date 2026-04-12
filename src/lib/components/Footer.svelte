@@ -33,17 +33,17 @@
 		height="0"
 	>
 		<defs>
+			<!-- Même dégradé que .footer__card (border-image : to bottom). -->
 			<linearGradient
 				id="footer-contact-icon-gradient"
 				gradientUnits="objectBoundingBox"
-				x1="0"
+				x1="0.5"
 				y1="0"
-				x2="1"
+				x2="0.5"
 				y2="1"
 			>
-				<stop offset="0%" stop-color="var(--color-gold-light)" />
-				<stop offset="50%" stop-color="var(--color-gold-base)" />
-				<stop offset="100%" stop-color="var(--color-magic-base)" />
+				<stop offset="0%" stop-color="oklch(73.5% 0.093 83.2)" />
+				<stop offset="100%" stop-color="oklch(44.8% 0.094 77.1)" />
 			</linearGradient>
 		</defs>
 	</svg>
