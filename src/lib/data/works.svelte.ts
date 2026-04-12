@@ -1,5 +1,13 @@
 export type WorkCategory = 'scouting-report' | 'reviews' | 'draft-simulations';
 
+interface WorkLocale {
+	title: string;
+	role: string;
+	type: string;
+	duration: string;
+	description: string;
+}
+
 export interface WorkEntry {
 	id: string;
 	category: WorkCategory;
@@ -8,20 +16,9 @@ export interface WorkEntry {
 	url: string;
 	videoUrl?: string;
 	date: string;
-	en: {
-		title: string;
-		role: string;
-		type: string;
-		duration: string;
-		description: string;
-	};
-	fr: {
-		title: string;
-		role: string;
-		type: string;
-		duration: string;
-		description: string;
-	};
+	en: WorkLocale;
+	fr: WorkLocale;
+	ko: WorkLocale;
 }
 
 const workFiles = import.meta.glob('../history/*/details.json', { eager: true });

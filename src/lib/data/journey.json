@@ -9,65 +9,70 @@
 	{
 		"date": "Mars 2026 -> Ongoing",
 		"type": "experience",
-		"title": { "en": "Stuverance", "fr": "Stuverance" },
+		"title": { "en": "Stuverance", "fr": "Stuverance", "ko": "Stuverance" },
 		"desc": {
 			"en": "Assistant Coach Analyst (Nexus Tour)",
-			"fr": "Assistant Coach Analyste (Nexus Tour)"
+			"fr": "Assistant Coach Analyste (Nexus Tour)",
+			"ko": "어시스턴트 코치 애널리스트 (Nexus Tour)"
 		}
 	},
 	{
 		"date": "Oct 2025 -> Mars 2026",
 		"type": "experience",
-		"title": { "en": "Antic Esport", "fr": "Antic Esport" },
+		"title": { "en": "Antic Esport", "fr": "Antic Esport", "ko": "Antic Esport" },
 		"desc": {
 			"en": "Assistant Coach Analyst (Nexus Tour)",
-			"fr": "Assistant Coach Analyste (Nexus Tour)"
+			"fr": "Assistant Coach Analyste (Nexus Tour)",
+			"ko": "어시스턴트 코치 애널리스트 (Nexus Tour)"
 		}
 	},
 	{
 		"date": "Sep 2025 -> Ongoing",
 		"type": "experience",
-		"title": { "en": "Alkya Main", "fr": "Alkya Main" },
+		"title": { "en": "Alkya Main", "fr": "Alkya Main", "ko": "Alkya Main" },
 		"desc": {
 			"en": "Head Coach (OUAT League)",
-			"fr": "Head Coach (Ligue OUAT)"
+			"fr": "Head Coach (Ligue OUAT)",
+			"ko": "헤드 코치 (OUAT 리그)"
 		}
 	},
 	{
 		"date": "Sep 2025 -> Ongoing",
 		"type": "experience",
-		"title": { "en": "Alkya Academy", "fr": "Alkya Academy" },
+		"title": { "en": "Alkya Academy", "fr": "Alkya Academy", "ko": "Alkya Academy" },
 		"desc": {
 			"en": "Head Coach (SGN Student League)",
-			"fr": "Head Coach (SGN Student League)"
+			"fr": "Head Coach (SGN Student League)",
+			"ko": "헤드 코치 (SGN 학생 리그)"
 		}
 	},
 	{
 		"date": "2025 -> Ongoing",
 		"type": "experience",
-		"title": { "en": "LCKCL Watch Party", "fr": "LCKCL Watch Party" },
-		"desc": { "en": "Caster", "fr": "Caster" }
+		"title": { "en": "LCKCL Watch Party", "fr": "LCKCL Watch Party", "ko": "LCKCL 워치 파티" },
+		"desc": { "en": "Caster", "fr": "Caster", "ko": "캐스터" }
 	},
 	{
 		"date": "2024-2025",
 		"type": "achievement",
 		"title": "Top 2 Regional & National",
 		"event": "SGN Student League (Alkya)",
-		"place": { "en": "2nd Place", "fr": "2ème Place" }
+		"place": { "en": "2nd Place", "fr": "2ème Place", "ko": "2위" }
 	},
 	{
 		"date": "2024",
 		"type": "experience",
-		"title": { "en": "Thônon Gaming Fest", "fr": "Thônon Gaming Fest" },
-		"desc": { "en": "Caster (TGF Tournament)", "fr": "Caster (Tournoi TGF)" }
+		"title": { "en": "Thônon Gaming Fest", "fr": "Thônon Gaming Fest", "ko": "Thônon Gaming Fest" },
+		"desc": { "en": "Caster (TGF Tournament)", "fr": "Caster (Tournoi TGF)", "ko": "캐스터 (TGF 토너먼트)" }
 	},
 	{
 		"date": "2023 -> 2025",
 		"type": "experience",
-		"title": { "en": "Alkya", "fr": "Alkya" },
+		"title": { "en": "Alkya", "fr": "Alkya", "ko": "Alkya" },
 		"desc": {
 			"en": "Head Coach (SGN Student League)",
-			"fr": "Head Coach (SGN Student League)"
+			"fr": "Head Coach (SGN Student League)",
+			"ko": "헤드 코치 (SGN 학생 리그)"
 		}
 	},
 	{
@@ -75,31 +80,33 @@
 		"type": "achievement",
 		"title": "Top 2 Regional & National",
 		"event": "SGN Student League (Alkya)",
-		"place": { "en": "2nd Place", "fr": "2ème Place" }
+		"place": { "en": "2nd Place", "fr": "2ème Place", "ko": "2위" }
 	},
 	{
 		"date": "Winter 2023",
 		"type": "achievement",
-		"title": { "en": "Tournament Winner", "fr": "Vainqueur de tournoi" },
-		"event": "Yuurei Winter Tournament",
-		"place": { "en": "1st Place", "fr": "1ère Place" }
+		"title": { "en": "Tournament Winner", "fr": "Vainqueur de tournoi", "ko": "토너먼트 우승" },
+		"event": "Yuurei Winter Tournament (Alkya)",
+		"place": { "en": "1st Place", "fr": "1ère Place", "ko": "1위" }
 	},
 	{
 		"date": "2020 -> 2021",
 		"type": "experience",
-		"title": { "en": "Team Red Flag", "fr": "Team Red Flag" },
+		"title": { "en": "Team Red Flag", "fr": "Team Red Flag", "ko": "Team Red Flag" },
 		"desc": {
 			"en": "Toplaner (Mastercard Nexus Tour)",
-			"fr": "Toplaner (Mastercard Nexus Tour)"
+			"fr": "Toplaner (Mastercard Nexus Tour)",
+			"ko": "탑라이너 (Mastercard Nexus Tour)"
 		}
 	},
 	{
 		"date": "2020 -> Ongoing",
 		"type": "experience",
-		"title": { "en": "Freelance", "fr": "Freelance" },
+		"title": { "en": "Freelance", "fr": "Freelance", "ko": "프리랜서" },
 		"desc": {
 			"en": "Positional Coach (Various Students)",
-			"fr": "Coach de position (Différents élèves)"
+			"fr": "Coach de position (Différents élèves)",
+			"ko": "포지션 코치 (다양한 학생)"
 		}
 	}
 ]

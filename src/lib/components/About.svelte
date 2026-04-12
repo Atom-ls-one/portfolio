@@ -74,6 +74,10 @@
 		padding-block: var(--spacing-xl);
 	}
 
+	:global(.about-section)::before {
+		background-attachment: fixed, fixed !important;
+	}
+
 	.about-grid {
 		display: grid;
 		grid-template-columns: minmax(0, 40%) minmax(0, 1fr);

@@ -3,6 +3,7 @@
 	import About from '$lib/components/About.svelte';
 	import Experience from '$lib/components/Experience.svelte';
 	import WorkExamples from '$lib/components/WorkExamples.svelte';
+	import CoachingPhilosophy from '$lib/components/CoachingPhilosophy.svelte';
 </script>
 
 <main class="portfolio-main">
@@ -10,6 +11,7 @@
 	<About />
 	<Experience />
 	<WorkExamples />
+	<CoachingPhilosophy />
 </main>
 
 <style>

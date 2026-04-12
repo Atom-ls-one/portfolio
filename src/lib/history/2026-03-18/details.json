@@ -17,5 +17,12 @@
 		"type": "Simulation de Draft",
 		"duration": "15:00",
 		"description": "Phase de draft simulée explorant la priorité des picks flex et le séquençage des bans contre une composition centrée bot."
+	},
+	"ko": {
+		"title": "드래프트 적응",
+		"role": "애널리스트",
+		"type": "드래프트 시뮬레이션",
+		"duration": "15:00",
+		"description": "강력한 봇 중심 조합에 대한 플렉스 픽 우선순위와 밴 시퀀싱을 탐색하는 드래프트 시뮬레이션."
 	}
 }

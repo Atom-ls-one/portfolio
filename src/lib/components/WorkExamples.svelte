@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { fade } from 'svelte/transition';
 	import WorkCard from './WorkCard.svelte';
 	import WorkModal from './WorkModal.svelte';
 	import SectionHeader from './SectionHeader.svelte';
@@ -56,15 +57,17 @@
 	</nav>
 
 	<div class="work-stack">
-		<div class="work-list">
-			{#each displayedWorks() as work (work.id)}
-				<WorkCard {work} onViewDetails={openWorkDetails} />
-			{/each}
+		{#key activeCategory}
+			<div class="work-list" in:fade={{ duration: 200, delay: 100 }} out:fade={{ duration: 100 }}>
+				{#each displayedWorks() as work (work.id)}
+					<WorkCard {work} onViewDetails={openWorkDetails} />
+				{/each}
 
-			{#if displayedWorks().length === 0}
-				<p class="work-empty">{i18n.t?.projects?.empty}</p>
-			{/if}
-		</div>
+				{#if displayedWorks().length === 0}
+					<p class="work-empty">{i18n.t?.projects?.empty}</p>
+				{/if}
+			</div>
+		{/key}
 	</div>
 
 </section>

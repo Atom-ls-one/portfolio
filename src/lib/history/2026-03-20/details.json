@@ -18,5 +18,12 @@
 		"type": "Review VOD",
 		"duration": "24:30",
 		"description": "Contrôle parfait des objectifs et rotation de vision menant à une avance nette dès 20 min."
+	},
+	"ko": {
+		"title": "매크로 지배력",
+		"role": "애널리스트",
+		"type": "VOD 리뷰",
+		"duration": "24:30",
+		"description": "완벽한 오브젝트 컨트롤과 시야 로테이션으로 20분 만에 확실한 리드 확보."
 	}
 }
