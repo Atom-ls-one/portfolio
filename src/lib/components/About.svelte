@@ -193,6 +193,7 @@
 
 	.faq-aside {
 		--faq-disclosure-duration: 320ms;
+		--faq-chevron-width: var(--space-7);
 		display: flex;
 		flex-direction: column;
 		gap: var(--spacing-sm);
@@ -296,10 +297,10 @@
 
 	.faq-chevron {
 		flex-shrink: 0;
-		width: var(--space-5);
+		width: var(--faq-chevron-width);
 		text-align: center;
-		font-size: var(--text-ui);
-		line-height: var(--leading-ui);
+		font-size: var(--text-lead);
+		line-height: var(--leading-snug);
 		color: var(--color-magic-base);
 		transition: transform var(--faq-disclosure-duration) ease-in-out;
 	}
@@ -317,7 +318,8 @@
 		display: flex;
 		flex-direction: column;
 		gap: var(--space-2-5);
-		padding: var(--space-2-5) var(--space-3a) var(--space-3) var(--space-10);
+		padding: var(--space-2-5) var(--space-3a) var(--space-3)
+			calc(var(--space-3a) + var(--faq-chevron-width) + var(--space-2));
 		border-top: var(--border-hairline) solid
 			color-mix(in oklch, var(--color-gold-dark) 70%, transparent);
 	}
