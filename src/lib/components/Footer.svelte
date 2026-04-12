@@ -24,15 +24,39 @@
 </script>
 
 <footer id="footer" class="site-footer container section-lol-bg section-lol-bg--article">
+	<!-- Dégradé partagé pour les pictos (référencé via url(#…), hors écran). -->
+	<svg
+		class="footer__icon-gradient-defs"
+		aria-hidden="true"
+		focusable="false"
+		width="0"
+		height="0"
+	>
+		<defs>
+			<linearGradient
+				id="footer-contact-icon-gradient"
+				gradientUnits="objectBoundingBox"
+				x1="0"
+				y1="0"
+				x2="1"
+				y2="1"
+			>
+				<stop offset="0%" stop-color="var(--color-gold-light)" />
+				<stop offset="50%" stop-color="var(--color-gold-base)" />
+				<stop offset="100%" stop-color="var(--color-magic-base)" />
+			</linearGradient>
+		</defs>
+	</svg>
+
 	<SectionHeader title={i18n.t?.contact?.title} />
 
 	<div class="footer__grid">
 		<div class="footer__card">
 			<div class="footer__icon footer__icon--fill">
 				<svg viewBox="0 0 24 24" aria-hidden="true">
-					<circle cx="4.983" cy="5.009" r="2.188" fill="currentColor" />
+					<circle cx="4.983" cy="5.009" r="2.188" fill="url(#footer-contact-icon-gradient)" />
 					<path
-						fill="currentColor"
+						fill="url(#footer-contact-icon-gradient)"
 						d="M9.237 8.855v12.139h3.769v-6.003c0-1.584.298-3.118 2.262-3.118c1.937 0 1.961 1.811 1.961 3.218v5.904H21v-6.657c0-3.27-.704-5.783-4.526-5.783c-1.835 0-3.065 1.007-3.568 1.96h-.051v-1.66zm-6.142 0H6.87v12.139H3.095z"
 					/>
 				</svg>
@@ -51,7 +75,7 @@
 				<svg
 					viewBox="0 0 24 24"
 					fill="none"
-					stroke="currentColor"
+					stroke="url(#footer-contact-icon-gradient)"
 					stroke-linecap="round"
 					stroke-linejoin="round"
 					aria-hidden="true"
@@ -70,20 +94,12 @@
 		</div>
 
 		<div class="footer__card">
-			<div class="footer__icon">
-				<svg
-					viewBox="0 0 48 48"
-					fill="none"
-					stroke="currentColor"
-					stroke-linecap="round"
-					stroke-linejoin="round"
-					aria-hidden="true"
-				>
+			<div class="footer__icon footer__icon--fill">
+				<svg viewBox="0 0 16 16" aria-hidden="true">
 					<path
-						d="M17.59 34.173A49 49 0 0 1 14.68 38C7.3 37.79 4.5 33 4.5 33a44.8 44.8 0 0 1 4.81-19.52A16.47 16.47 0 0 1 18.69 10l1 2.31A33 33 0 0 1 24 12a33 33 0 0 1 4.33.3l1-2.31a16.47 16.47 0 0 1 9.38 3.51A44.8 44.8 0 0 1 43.5 33s-2.8 4.79-10.18 5a47 47 0 0 1-2.86-3.81m6.46-2.9c-3.84 1.945-7.555 3.89-12.92 3.89s-9.08-1.945-12.92-3.89"
+						fill="url(#footer-contact-icon-gradient)"
+						d="M13.545 2.907a13.2 13.2 0 0 0-3.257-1.011a.05.05 0 0 0-.052.025c-.141.25-.297.577-.406.833a12.2 12.2 0 0 0-3.658 0a8 8 0 0 0-.412-.833a.05.05 0 0 0-.052-.025c-1.125.194-2.22.534-3.257 1.011a.04.04 0 0 0-.021.018C.356 6.024-.213 9.047.066 12.032q.003.022.021.037a13.3 13.3 0 0 0 3.995 2.02a.05.05 0 0 0 .056-.019q.463-.63.818-1.329a.05.05 0 0 0-.01-.059l-.018-.011a9 9 0 0 1-1.248-.595a.05.05 0 0 1-.02-.066l.015-.019q.127-.095.248-.195a.05.05 0 0 1 .051-.007c2.619 1.196 5.454 1.196 8.041 0a.05.05 0 0 1 .053.007q.121.1.248.195a.05.05 0 0 1-.004.085a8 8 0 0 1-1.249.594a.05.05 0 0 0-.03.03a.05.05 0 0 0 .003.041c.24.465.515.909.817 1.329a.05.05 0 0 0 .056.019a13.2 13.2 0 0 0 4.001-2.02a.05.05 0 0 0 .021-.037c.334-3.451-.559-6.449-2.366-9.106a.03.03 0 0 0-.02-.019m-8.198 7.307c-.789 0-1.438-.724-1.438-1.612s.637-1.613 1.438-1.613c.807 0 1.45.73 1.438 1.613c0 .888-.637 1.612-1.438 1.612m5.316 0c-.788 0-1.438-.724-1.438-1.612s.637-1.613 1.438-1.613c.807 0 1.451.73 1.438 1.613c0 .888-.631 1.612-1.438 1.612"
 					/>
-					<circle cx="17.847" cy="26.23" r="3.35" />
-					<circle cx="30.153" cy="26.23" r="3.35" />
 				</svg>
 			</div>
 			<div class="footer__info">
@@ -104,7 +120,7 @@
 				<svg
 					viewBox="0 0 24 24"
 					fill="none"
-					stroke="currentColor"
+					stroke="url(#footer-contact-icon-gradient)"
 					stroke-linecap="round"
 					stroke-linejoin="round"
 					aria-hidden="true"
@@ -126,11 +142,19 @@
 
 <style>
 	.site-footer {
+		position: relative;
 		display: flex;
 		flex-direction: column;
 		gap: var(--spacing-xl);
 		align-items: center;
 		padding-block: var(--spacing-xl);
+	}
+
+	.footer__icon-gradient-defs {
+		position: absolute;
+		overflow: hidden;
+		width: 0;
+		height: 0;
 	}
 
 	.footer__grid {
@@ -191,7 +215,6 @@
 		z-index: 1;
 		width: var(--size-icon-contact);
 		height: var(--size-icon-contact);
-		color: var(--color-gold-base);
 	}
 
 	.footer__icon svg {
