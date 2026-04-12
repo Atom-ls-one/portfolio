@@ -67,8 +67,9 @@
 		</div>
 	</div>
 
-	<WorkModal work={selectedWork} onClose={closeWorkDetails} />
 </section>
+
+<WorkModal work={selectedWork} onClose={closeWorkDetails} />
 
 <style>
 	.category-tabs {
