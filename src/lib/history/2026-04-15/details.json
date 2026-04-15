@@ -1,0 +1,28 @@
+{
+	"id": "stuverance-vs-shortcut",
+	"category": "draft-simulations",
+	"championId": "Gwen",
+	"championName": "Gwen",
+	"url": "#",
+	"en": {
+		"title": "Draft Simulation",
+		"role": "Analyst",
+		"type": "Draft Simulation",
+		"duration": "12:00",
+		"description": "Red side draft review from Stuverance vs Shortcut at Gamers Assembly, focused on how a pick oriented composition was built into a front to back scaling opponent draft and where the adaptation should have been cleaner."
+	},
+	"fr": {
+		"title": "Simulation de Draft",
+		"role": "Analyste",
+		"type": "Simulation de Draft",
+		"duration": "12:00",
+		"description": "Analyse de draft côté rouge de Stuverance vs Shortcut à Gamers Assembly, axée sur la construction d'une composition orientée picks contre un draft scaling front-to-back et où l'adaptation aurait dû être plus propre."
+	},
+	"ko": {
+		"title": "드래프트 시뮬레이션",
+		"role": "애널리스트",
+		"type": "드래프트 시뮬레이션",
+		"duration": "12:00",
+		"description": "Gamers Assembly에서 Stuverance vs Shortcut의 레드 사이드 드래프트 리뷰. 픽 중심 조합이 프론트 투 백 스케일링 상대 드래프트에 어떻게 구축되었는지와 어디서 적응이 더 깔끔했어야 하는지에 초점을 맞춤."
+	}
+}
