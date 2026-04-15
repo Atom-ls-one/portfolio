@@ -20,7 +20,7 @@
 	const linkedinUrl = 'https://www.linkedin.com/in/théo-menini-43695b298/';
 	const twitterUrl = 'https://x.com/ls_atom';
 	const discordTag = 'atom.0601';
-	const emailAddress = 'theo.menini@hotmail.fr';
+	const emailAddress = 'tmenini@gaming.bs';
 </script>
 
 <footer id="footer" class="site-footer container section-lol-bg section-lol-bg--article">
