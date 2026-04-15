@@ -14,8 +14,6 @@
 
 <article class="work-card">
 	<div class="work-status">
-		<span class="status-type">{work[i18n.locale]?.type}</span>
-		<div class="status-divider"></div>
 		<time class="status-duration">{work[i18n.locale]?.duration}</time>
 	</div>
 
@@ -76,22 +74,6 @@
 		gap: var(--space-1);
 	}
 
-	.status-divider {
-		width: var(--space-11);
-		height: var(--border-default);
-		background-color: var(--color-gold-dark);
-	}
-
-	.status-type {
-		font-family: var(--font-heading);
-		font-size: var(--text-card-title);
-		line-height: var(--leading-tight);
-		font-weight: var(--font-weight-bold);
-		text-transform: uppercase;
-		letter-spacing: var(--tracking-caps);
-		color: var(--color-gold-light);
-	}
-
 	.status-duration {
 		font-size: var(--text-overline);
 		line-height: var(--leading-ui);
@@ -139,10 +121,6 @@
 			width: 100%;
 			border-bottom: var(--border-hairline) solid var(--color-gold-dark);
 			padding-bottom: var(--spacing-xs);
-		}
-
-		.status-divider {
-			display: none;
 		}
 	}
 </style>
