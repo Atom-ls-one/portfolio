@@ -15,12 +15,6 @@
 <Modal isOpen={!!work} {onClose} title={work ? work[i18n.locale].title : ''}>
 	{#if work}
 		<div class="work-modal-layout">
-			<div class="work-modal-header">
-				<div class="work-main-info">
-					<div class="work-date">{work.date}</div>
-				</div>
-			</div>
-
 			<div class="work-modal-analysis">
 				<h3>{i18n.t?.projects?.modalAnalysis}</h3>
 				<div class="analysis-content">
@@ -64,28 +58,6 @@
 		gap: var(--spacing-lg);
 	}
 
-	.work-modal-header {
-		display: flex;
-		justify-content: space-between;
-		align-items: center;
-		padding-bottom: var(--spacing-md);
-		border-bottom: var(--border-hairline) solid
-			color-mix(in oklch, var(--color-gold-dark) 20%, transparent);
-	}
-
-	.work-main-info {
-		display: flex;
-		flex-direction: column;
-		gap: var(--space-1);
-	}
-
-	.work-date {
-		font-family: var(--font-heading);
-		font-size: var(--text-ui-sm);
-		line-height: var(--leading-ui);
-		color: var(--fg-muted);
-	}
-
 	.work-modal-analysis,
 	.work-modal-video {
 		display: flex;
@@ -120,12 +92,21 @@
 		font-size: var(--text-subheading);
 		line-height: var(--leading-snug);
 		color: var(--color-gold-light);
-		margin-top: var(--spacing-xl);
-		margin-bottom: var(--spacing-md);
+		margin-top: var(--spacing-2xl);
+		margin-bottom: var(--spacing-lg);
 	}
 
 	.content-body h2:first-child {
 		margin-top: 0;
+	}
+
+	.content-body h3 {
+		font-family: var(--font-heading);
+		font-size: var(--text-body);
+		line-height: var(--leading-snug);
+		color: var(--color-gold-base);
+		margin-top: var(--spacing-xl);
+		margin-bottom: var(--spacing-md);
 	}
 
 	.content-body p {
