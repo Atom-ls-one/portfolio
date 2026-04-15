@@ -22,8 +22,10 @@
 	$effect(() => {
 		if (isOpen) {
 			document.body.style.overflow = 'hidden';
+			document.documentElement.style.overflow = 'hidden';
 		} else {
-			document.body.style.overflow = 'auto';
+			document.body.style.overflow = '';
+			document.documentElement.style.overflow = '';
 		}
 	});
 </script>

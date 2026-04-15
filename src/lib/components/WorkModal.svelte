@@ -16,17 +16,14 @@
 	{#if work}
 		<div class="work-modal-layout">
 			<div class="work-modal-analysis">
-				<h3>{i18n.t?.projects?.modalAnalysis}</h3>
-				<div class="analysis-content">
-					{#if work[i18n.locale].content}
-						<div class="content-body">
-							{@html work[i18n.locale].content}
-						</div>
-					{:else}
-						<p>{work[i18n.locale].description}</p>
-					{/if}
+			{#if work[i18n.locale].content}
+				<div class="content-body">
+					{@html work[i18n.locale].content}
 				</div>
-			</div>
+			{:else}
+				<p>{work[i18n.locale].description}</p>
+			{/if}
+		</div>
 
 			{#if work.videoUrl}
 				{@const videoId = getYoutubeId(work.videoUrl)}
@@ -65,7 +62,6 @@
 		gap: var(--spacing-md);
 	}
 
-	.work-modal-analysis h3,
 	.work-modal-video h3 {
 		font-size: var(--text-subheading);
 		line-height: var(--leading-snug);
@@ -74,46 +70,42 @@
 		padding-left: var(--spacing-sm);
 	}
 
-	.analysis-content {
+	.content-body {
 		font-size: var(--text-body);
 		line-height: var(--leading-relaxed);
 		letter-spacing: var(--tracking-ui);
 		color: var(--fg-prose);
-		background: color-mix(in oklch, var(--color-bg-surface) 30%, transparent);
-		padding: var(--spacing-md);
-		border: var(--border-hairline) solid
-			color-mix(in oklch, var(--color-gold-dark) 10%, transparent);
 		max-height: 60vh;
 		overflow-y: auto;
 	}
 
-	.content-body h2 {
+	.content-body :global(h2) {
 		font-family: var(--font-heading);
 		font-size: var(--text-subheading);
 		line-height: var(--leading-snug);
 		color: var(--color-gold-light);
-		margin-top: var(--spacing-2xl);
-		margin-bottom: var(--spacing-xl);
+		margin-top: var(--spacing-lg);
+		margin-bottom: var(--spacing-md);
 	}
 
-	.content-body h2:first-child {
+	.content-body :global(h2:first-child) {
 		margin-top: 0;
 	}
 
-	.content-body h3 {
+	.content-body :global(h3) {
 		font-family: var(--font-heading);
 		font-size: var(--text-body);
 		line-height: var(--leading-snug);
 		color: var(--color-gold-base);
-		margin-top: var(--spacing-xl);
-		margin-bottom: var(--spacing-lg);
+		margin-top: var(--spacing-md);
+		margin-bottom: var(--spacing-sm);
 	}
 
-	.content-body p {
-		margin-bottom: var(--spacing-xl);
+	.content-body :global(p) {
+		margin-bottom: var(--spacing-md);
 	}
 
-	.content-body p:last-child {
+	.content-body :global(p:last-child) {
 		margin-bottom: 0;
 	}
 
