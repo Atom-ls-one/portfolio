@@ -1,6 +1,5 @@
 <script lang="ts">
 	import Modal from './Modal.svelte';
-	import ChampionPortrait from './ChampionPortrait.svelte';
 	import { i18n } from '$lib/i18n.svelte';
 	import type { WorkEntry } from '$lib/data/works.svelte';
 	import { getYoutubeId } from '$lib/utils/video';
@@ -17,34 +16,21 @@
 	{#if work}
 		<div class="work-modal-layout">
 			<div class="work-modal-header">
-				<div class="champion-display">
-					<ChampionPortrait
-						championId={work.championId}
-						championName={work.championName}
-						variant="modal"
-					/>
-					<div class="work-main-info">
-						<div class="work-date">{work.date}</div>
-						<div class="work-type-tag">{work[i18n.locale].type}</div>
-					</div>
-				</div>
-			</div>
-
-			<div class="work-modal-grid">
-				<div class="info-group">
-					<span class="group-label">{i18n.t?.projects?.modalRole}</span>
-					<span class="group-value">{work[i18n.locale].role}</span>
-				</div>
-				<div class="info-group">
-					<span class="group-label">{i18n.t?.projects?.modalDuration}</span>
-					<span class="group-value">{work[i18n.locale].duration}</span>
+				<div class="work-main-info">
+					<div class="work-date">{work.date}</div>
 				</div>
 			</div>
 
 			<div class="work-modal-analysis">
 				<h3>{i18n.t?.projects?.modalAnalysis}</h3>
 				<div class="analysis-content">
-					<p>{work[i18n.locale].description}</p>
+					{#if work[i18n.locale].content}
+						<div class="content-body">
+							{@html work[i18n.locale].content}
+						</div>
+					{:else}
+						<p>{work[i18n.locale].description}</p>
+					{/if}
 				</div>
 			</div>
 
@@ -87,12 +73,6 @@
 			color-mix(in oklch, var(--color-gold-dark) 20%, transparent);
 	}
 
-	.champion-display {
-		display: flex;
-		align-items: center;
-		gap: var(--spacing-md);
-	}
-
 	.work-main-info {
 		display: flex;
 		flex-direction: column;
@@ -104,48 +84,6 @@
 		font-size: var(--text-ui-sm);
 		line-height: var(--leading-ui);
 		color: var(--fg-muted);
-	}
-
-	.work-type-tag {
-		font-size: var(--text-overline);
-		line-height: var(--leading-ui);
-		text-transform: uppercase;
-		letter-spacing: var(--tracking-caps);
-		color: var(--color-magic-base);
-		background: color-mix(in oklch, var(--color-magic-base) 10%, transparent);
-		padding: var(--space-1) var(--space-2);
-		width: fit-content;
-	}
-
-	.work-modal-grid {
-		display: grid;
-		grid-template-columns: repeat(2, 1fr);
-		gap: var(--spacing-md);
-		background: color-mix(in oklch, var(--color-bg-surface) 50%, transparent);
-		padding: var(--spacing-md);
-		border: var(--border-hairline) solid
-			color-mix(in oklch, var(--color-gold-dark) 10%, transparent);
-	}
-
-	.info-group {
-		display: flex;
-		flex-direction: column;
-		gap: var(--space-0-5);
-	}
-
-	.group-label {
-		font-size: var(--text-overline);
-		line-height: var(--leading-ui);
-		color: var(--fg-subtle);
-		text-transform: uppercase;
-		letter-spacing: var(--tracking-caps-wide);
-	}
-
-	.group-value {
-		font-family: var(--font-heading);
-		font-size: var(--text-subheading);
-		line-height: var(--leading-snug);
-		color: var(--color-gold-base);
 	}
 
 	.work-modal-analysis,
@@ -173,6 +111,29 @@
 		padding: var(--spacing-md);
 		border: var(--border-hairline) solid
 			color-mix(in oklch, var(--color-gold-dark) 10%, transparent);
+		max-height: 60vh;
+		overflow-y: auto;
+	}
+
+	.content-body h2 {
+		font-family: var(--font-heading);
+		font-size: var(--text-subheading);
+		line-height: var(--leading-snug);
+		color: var(--color-gold-light);
+		margin-top: var(--spacing-xl);
+		margin-bottom: var(--spacing-md);
+	}
+
+	.content-body h2:first-child {
+		margin-top: 0;
+	}
+
+	.content-body p {
+		margin-bottom: var(--spacing-lg);
+	}
+
+	.content-body p:last-child {
+		margin-bottom: 0;
 	}
 
 	.video-container {
@@ -196,10 +157,6 @@
 			flex-direction: column;
 			align-items: flex-start;
 			gap: var(--spacing-md);
-		}
-
-		.work-modal-grid {
-			grid-template-columns: 1fr;
 		}
 	}
 </style>

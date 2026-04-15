@@ -6,6 +6,7 @@ interface WorkLocale {
 	type: string;
 	duration: string;
 	description: string;
+	content?: string;
 }
 
 export interface WorkEntry {
