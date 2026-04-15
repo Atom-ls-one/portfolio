@@ -28,7 +28,6 @@
 
 		<div class="work-details">
 			<h3 class="work-title">{work[i18n.locale]?.title}</h3>
-			<span class="work-role">{work[i18n.locale]?.role}</span>
 			<p class="work-desc">{work[i18n.locale]?.description}</p>
 		</div>
 	</div>
@@ -115,15 +114,6 @@
 		font-size: var(--text-match-title);
 		line-height: var(--leading-tight);
 		color: var(--color-gold-light);
-	}
-
-	.work-role {
-		font-size: var(--text-ui-sm);
-		line-height: var(--leading-ui);
-		color: var(--color-magic-base);
-		font-weight: var(--font-weight-semibold);
-		text-transform: uppercase;
-		letter-spacing: var(--tracking-hero-sub);
 	}
 
 	.work-desc {
