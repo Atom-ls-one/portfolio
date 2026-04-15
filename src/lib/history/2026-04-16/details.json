@@ -4,6 +4,7 @@
 	"championId": "Syndra",
 	"championName": "Syndra",
 	"url": "#",
+	"imageUrl": "/stats-image.png",
 	"en": {
 		"title": "Game Review",
 		"role": "Analyst",

@@ -12,7 +12,7 @@
 
 	let { limit }: Props = $props();
 
-	const categories: WorkCategory[] = ['scouting-report', 'reviews', 'draft-simulations'];
+	const categories: WorkCategory[] = ['scouting-report', 'draft-simulations', 'reviews'];
 
 	let activeCategory = $state<WorkCategory>('scouting-report');
 	let selectedWork = $state<WorkEntry | null>(null);

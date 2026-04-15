@@ -15,6 +15,12 @@
 <Modal isOpen={!!work} {onClose} title={work ? work[i18n.locale].title : ''}>
 	{#if work}
 		<div class="work-modal-layout">
+			{#if work.imageUrl}
+				<div class="work-modal-image">
+					<img src={work.imageUrl} alt="Game stats" />
+				</div>
+			{/if}
+
 			<div class="work-modal-analysis">
 			{#if work[i18n.locale].content}
 				<div class="content-body">
@@ -53,6 +59,21 @@
 		display: flex;
 		flex-direction: column;
 		gap: var(--spacing-lg);
+	}
+
+	.work-modal-image {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		border: var(--border-hairline) solid var(--color-gold-dark);
+		padding: var(--spacing-md);
+		background: oklch(0% 0 0);
+	}
+
+	.work-modal-image img {
+		max-width: 100%;
+		height: auto;
+		border-radius: var(--radius-sm);
 	}
 
 	.work-modal-analysis,

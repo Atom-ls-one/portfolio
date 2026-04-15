@@ -16,6 +16,7 @@ export interface WorkEntry {
 	championName: string;
 	url: string;
 	videoUrl?: string;
+	imageUrl?: string;
 	date: string;
 	en: WorkLocale;
 	fr: WorkLocale;
