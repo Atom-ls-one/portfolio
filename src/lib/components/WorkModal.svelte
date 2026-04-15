@@ -93,7 +93,7 @@
 		line-height: var(--leading-snug);
 		color: var(--color-gold-light);
 		margin-top: var(--spacing-2xl);
-		margin-bottom: var(--spacing-lg);
+		margin-bottom: var(--spacing-xl);
 	}
 
 	.content-body h2:first-child {
@@ -106,11 +106,11 @@
 		line-height: var(--leading-snug);
 		color: var(--color-gold-base);
 		margin-top: var(--spacing-xl);
-		margin-bottom: var(--spacing-md);
+		margin-bottom: var(--spacing-lg);
 	}
 
 	.content-body p {
-		margin-bottom: var(--spacing-lg);
+		margin-bottom: var(--spacing-xl);
 	}
 
 	.content-body p:last-child {
@@ -134,10 +134,5 @@
 	}
 
 	@media (max-width: 37.5rem) {
-		.work-modal-header {
-			flex-direction: column;
-			align-items: flex-start;
-			gap: var(--spacing-md);
-		}
 	}
 </style>
